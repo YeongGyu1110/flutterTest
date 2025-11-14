@@ -898,6 +898,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
         ),
       ),
+      Container()
     ];
 
     late final List<Widget> _currentPage2_4Widget = [
@@ -1072,7 +1073,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      _page2SizeBarIndex++;
+                      // _page2SizeBarIndex++;
+                      _currentPage2_2Index++;
                     });
                   },
                   child: Container(
@@ -1129,6 +1131,172 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
         ),
       ),
+      Container()
+    ];
+
+    late final List<Widget> _currentPage2_5Widget = [
+      Expanded(
+        child: Container(
+          clipBehavior: Clip.antiAlias,
+          alignment: Alignment.bottomRight,
+          padding: EdgeInsets.only(
+            top: uiHeight / (designHeight / 16),
+            bottom: uiHeight / (designHeight / 14),
+            left: uiWidth / (designWidth / 24),
+            right: uiWidth / (designWidth / 16),
+          ),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Color.fromRGBO(255, 255, 255, 0.55),
+              width: uiWidth / (designWidth / 1.5),
+            ),
+            borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "AI으로 인한 `코딩(Codeing)`의 변화",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: fontScale * 50,
+                                  fontWeight: FontWeight.w100,
+                                  fontFamily: "DoHyeon",
+                                ),
+                              ),
+                              Container(
+                                color: Colors.white,
+                                height: uiHeight / 1000,
+                                width: uiWidth / 2.5,
+                              ),
+                              SizedBox(height: uiHeight / 200),
+                              Text(
+                                '생성형 AI는 코드 생성 및 자동 완성으로 개발 생산성을 극대화시키고 있습니다. 이로 인해 개발자의 역할은 단순 코딩에서 시스템 설계, 복잡한 문제 정의, 그리고 AI 생성 코드의 검토 및 통합과 같은 고차원적인 작업으로 변화하고 있습니다. 따라서 개발자는 AI 도구의 활용 능력을 높이는 동시에, 코드의 근본 원리에 대한 깊은 이해를 바탕으로 AI 생성 코드를 검증하고 최적화하는 역량이 더욱 중요해질 것입니다.',
+                                style: TextStyle(
+                                  color: Color.fromRGBO(255, 255, 255, 0.85),
+                                  fontSize: fontScale * 26,
+                                  fontWeight: FontWeight.w100,
+                                  fontFamily: "DoHyeon",
+                                ),
+                              ),
+                              SizedBox(height: uiHeight / 20),
+                              Text(
+                                "코드의 미래를 묻다: 인간과 AI의 협업 시대",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: fontScale * 50,
+                                  fontWeight: FontWeight.w100,
+                                  fontFamily: "DoHyeon",
+                                ),
+                              ),
+                              Container(
+                                color: Colors.white,
+                                height: uiHeight / 1000,
+                                width: uiWidth / 2.5,
+                              ),
+                              SizedBox(height: uiHeight / 200),
+                              Text(
+                                '생성형 AI는 개발자의 생산성을 혁신적으로 높이는 강력한 도구이자 협업자이며, 아이디어를 코드로 구현하는 진입 장벽을 낮출 잠재력을 가집니다. 다만, AI가 생성한 코드의 정확성, 보안, 그리고 윤리적/법적 문제에 대한 인간의 필수적인 검토와 책임이 뒤따라야 합니다.',
+                                style: TextStyle(
+                                  color: Color.fromRGBO(255, 255, 255, 0.85),
+                                  fontSize: fontScale * 26,
+                                  fontWeight: FontWeight.w100,
+                                  fontFamily: "DoHyeon",
+                                ),
+                              ),
+                              SizedBox(height: uiHeight / 100),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: uiWidth / 200,),
+                      Align(
+                        alignment: Alignment.centerRight ,
+                        child: Container(
+                          clipBehavior: Clip.antiAlias,
+                          height: uiHeight / 1.9,
+                          width: uiWidth / 10,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Colors.white24
+                            ),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(uiWidth / (designWidth / 24)),
+                              topRight: Radius.circular(uiWidth / (designWidth / 24)),
+                              bottomLeft: Radius.circular(
+                                uiWidth / (designWidth / 24),
+                              ),
+                              bottomRight: Radius.circular(
+                                uiWidth / (designWidth / 24),
+                              ),
+                            ),
+                          ),
+                          child: Image(
+                            image: AssetImage('assets/halftone_5.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      _page2SizeBarIndex++;
+                    });
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(255, 100, 0, 1),
+                      borderRadius: BorderRadius.circular(
+                        uiWidth / (designWidth / 32),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Next",
+                          style: TextStyle(
+                            fontSize: fontScale * 18,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: "StackSansText",
+                          ),
+                        ),
+                        SizedBox(width: 8),
+                        Icon(
+                          Icons.arrow_forward_outlined,
+                          size: fontScale * 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      Container()
     ];
     // LLM으로 인한 긍정 부정적 영향 =====================================
 
@@ -1144,9 +1312,10 @@ class _MyStatefulPageState extends State<MyStatefulPage>
       ),
       Row(
         children: [
-          _currentPage2_3Widget[(_currentPage2_2Index == 0) ? 0 : 1],
+          _currentPage2_3Widget[(_currentPage2_2Index == 0) ? 0 : (_currentPage2_2Index == 2) ? 2 : 1],
           SizedBox(width: uiWidth / 200),
-          _currentPage2_4Widget[(_currentPage2_2Index == 1) ? 0 : 1],
+          _currentPage2_4Widget[(_currentPage2_2Index == 1) ? 0 : (_currentPage2_2Index == 2) ? 2 : 1],
+          _currentPage2_5Widget[(_currentPage2_2Index == 2) ? 0 : 1],
         ],
       ),
       Row(),
@@ -1314,7 +1483,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                 InkWell(
                   onTap: () {
                     print("${uiWidth}, ${uiHeight}");
-                    launchUrl(Uri.parse("https://github.com/yeonggyu1110"));
+                    launchUrl(Uri.parse("https://github.com/yeonggyu1110/project_jinro"));
                   },
                   borderRadius: BorderRadius.circular(
                     uiWidth / (designWidth / 8),
@@ -1411,7 +1580,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                     ),
                     child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
                           padding: EdgeInsets.only(
@@ -1424,13 +1592,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           width: uiWidth / 30,
                           height: uiHeight / 1,
                           decoration: BoxDecoration(
-                            // color: Colors.white,
-                            // borderRadius: BorderRadius.only(
-                            //   topLeft: Radius.circular(24),
-                            //   bottomLeft: Radius.circular(24),
-                            //   topRight: Radius.circular(8),
-                            //   bottomRight: Radius.circular(8),
-                            // ),
                             borderRadius: BorderRadius.circular(
                               uiWidth / (designWidth / 26),
                             ),
@@ -1447,7 +1608,11 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                   InkWell(
                                     onTap: () {
                                       setState(() {
-                                        _page2SizeBarIndex = 0;
+                                        if (_page2SizeBarIndex == 0) {
+                                          _currentPage2_1Index = 0;
+                                        } else {
+                                          _page2SizeBarIndex = 0;
+                                        }
                                       });
                                     },
                                     child: Container(
@@ -1485,11 +1650,14 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                       ),
                                     ),
                                   ),
-                                  // SizedBox(height: uiHeight / 120,),
                                   InkWell(
                                     onTap: () {
                                       setState(() {
-                                        _page2SizeBarIndex = 1;
+                                        if (_page2SizeBarIndex == 1) {
+                                          _currentPage2_2Index = 0;
+                                        } else {
+                                          _page2SizeBarIndex = 1;
+                                        }
                                       });
                                     },
                                     child: Container(
@@ -1502,7 +1670,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                             ? BoxShape.rectangle
                                             : BoxShape.circle,
                                         color: (_page2SizeBarIndex == 1)
-                                            // ? Color.fromRGBO(255, 255, 255, 0.9)
                                             ? Color.fromRGBO(255, 100, 0, 1)
                                             : Color.fromRGBO(255, 255, 255, 0),
                                         borderRadius: (_page2SizeBarIndex == 1)
@@ -1525,11 +1692,13 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                       ),
                                     ),
                                   ),
-                                  // SizedBox(height: uiHeight / 120,),
                                   InkWell(
                                     onTap: () {
                                       setState(() {
-                                        _page2SizeBarIndex = 2;
+                                        if (_page2SizeBarIndex == 2) {
+                                        } else {
+                                          _page2SizeBarIndex = 2;
+                                        }
                                       });
                                     },
                                     child: Container(
@@ -1542,7 +1711,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                             ? BoxShape.rectangle
                                             : BoxShape.circle,
                                         color: (_page2SizeBarIndex == 2)
-                                            // ? Color.fromRGBO(255, 255, 255, 0.9)
                                             ? Color.fromRGBO(255, 100, 0, 1)
                                             : Color.fromRGBO(255, 255, 255, 0),
                                         borderRadius: (_page2SizeBarIndex == 2)
