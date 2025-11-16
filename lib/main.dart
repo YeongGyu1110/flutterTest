@@ -1867,7 +1867,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          // _currentPage2_3Index ++;
+                          _currentIndex++;
                         });
                       },
                       child: Container(
@@ -2055,9 +2055,18 @@ class _MyStatefulPageState extends State<MyStatefulPage>
     late final List<Widget> _widgetList = [
       Stack(
         children: [
+          Image(
+            width: uiWidth,
+            height: uiHeight,
+            image: AssetImage("assets/background0.png"),
+            fit: BoxFit.fill,
+          ),
           Container(
-            padding: EdgeInsets.only(top: uiHeight / 4),
-            decoration: BoxDecoration(color: Colors.black),
+            padding: EdgeInsets.only(top: uiHeight / 2),
+            decoration: BoxDecoration(
+                // color: Colors.black
+              // image: DecorationImage(image: AssetImage(".png"), )
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -2065,7 +2074,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                 SlideTransition(
                   position: _leftAnimation,
                   child: Image(
-                    image: AssetImage('assets/ascii_left.jpg'),
+                    width: uiWidth / 3,
+                    image: AssetImage('assets/ascii_left.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -2073,7 +2083,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                 SlideTransition(
                   position: _rightAnimation,
                   child: Image(
-                    image: AssetImage('assets/ascii_right.jpg'),
+                    width: uiWidth / 3,
+                    image: AssetImage('assets/ascii_right.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -2102,7 +2113,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Home",
+                          "Interface",
                           style: TextStyle(
                             fontFamily: "StackSansText",
                             fontWeight: FontWeight.w200,
@@ -2112,7 +2123,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ),
                         SizedBox(width: uiWidth / 28),
                         Text(
-                          "About",
+                          "Reference",
                           style: TextStyle(
                             fontFamily: "StackSansText",
                             fontWeight: FontWeight.w200,
@@ -2122,7 +2133,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ),
                         SizedBox(width: uiWidth / 32),
                         Text(
-                          "Features",
+                          "Experience",
                           style: TextStyle(
                             fontFamily: "StackSansText",
                             fontWeight: FontWeight.w200,
@@ -2250,17 +2261,120 @@ class _MyStatefulPageState extends State<MyStatefulPage>
         ],
       ),
       Stack(
+        children: [
+          InkWell(
+            onTap: () {
+              setState(() {
+                _currentIndex += 1;
+              });
+            },
+            child: Stack(
+              children: [
+                Image(
+                  height: uiHeight,
+                  width: uiWidth,
+                  fit: BoxFit.fill,
+                  image: AssetImage("assets/background1.png"),
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Container(
+              padding: EdgeInsets.only(
+                top: uiHeight / 50
+              ),
+              child: Text("CHAPTER ONE", style: TextStyle(
+                color: Colors.white,
+                fontSize: fontScale * 28,
+                fontWeight: FontWeight.w400,
+                fontFamily: "DoHyeon",
+              ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("HOW TO MOVE FORWARD INTO\nTHE FUTRUE", style: TextStyle(
+                      fontSize: fontScale * 70,
+                      color: Colors.white,
+                      fontFamily: 'RobotoSlab',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: uiHeight / 100,),
+                  Text("MY EXACT WORKFLOW FOR CLEAN, PRODUCTION-READY UIS", style: TextStyle(
+                    fontSize: fontScale * 30,
+                    color: Colors.white,
+                    fontFamily: 'RobotoSlab',
+                    fontWeight: FontWeight.w400,
+                  ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: uiHeight / 100,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.code,
+                        size: fontScale * 50,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: uiWidth / 200,),
+                      Icon(Icons.widgets,
+                        size: fontScale * 40,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: uiWidth / 200,),
+                      Icon(Icons.memory,
+                        size: fontScale * 40,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: uiWidth / 200,),
+                      Icon(Icons.terminal,
+                        size: fontScale * 40,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: uiWidth / 200,),
+                      Icon(Icons.palette_outlined,
+                        size: fontScale * 40,
+                        color: Colors.white,
+                      ),
+
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+      Stack(
         alignment: Alignment.center,
         children: [
           Stack(
             children: [
-              Container(color: Colors.black),
+              // Container(color: Colors.black),
+              Image(
+                width: uiWidth,
+                height: uiHeight,
+                image: AssetImage("assets/background2.png"),
+                fit: BoxFit.fill,
+              ),
               Positioned(
                 left: 0,
                 top: 0,
                 child: SlideTransition(
                   position: _topAnimation,
-                  child: Image(image: AssetImage("assets/ascii_2_top.png")),
+                  child: Image(
+                    width: uiWidth / 2.3,
+                      image: AssetImage("assets/ascii_top.png")),
                 ),
               ),
               Positioned(
@@ -2268,7 +2382,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                 bottom: 0,
                 child: SlideTransition(
                   position: _bottomAnimation,
-                  child: Image(image: AssetImage("assets/ascii_2_bottom.png")),
+                  child: Image(
+                      width: uiWidth / 2.6,
+                      image: AssetImage("assets/ascii_bottom.png")),
                 ),
               ),
             ],
@@ -2523,6 +2639,106 @@ class _MyStatefulPageState extends State<MyStatefulPage>
               ),
             ],
           ),
+        ],
+      ),
+      Stack(
+        children: [
+          InkWell(
+            onTap: () {
+              setState(() {
+                // _currentIndex += 1;
+              });
+            },
+            child: Stack(
+              children: [
+                Image(
+                  height: uiHeight,
+                  width: uiWidth,
+                  fit: BoxFit.fill,
+                  image: AssetImage("assets/background3.png"),
+                ),
+                // Container(
+                //   height: uiHeight,
+                //   width: uiWidth,
+                //   color: Color.fromRGBO(0, 0, 0, 0.3),
+                // )
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Container(
+              padding: EdgeInsets.only(
+                  top: uiHeight / 50
+              ),
+              child: Text("CHAPTER TWO", style: TextStyle(
+                color: Colors.white,
+                fontSize: fontScale * 28,
+                fontWeight: FontWeight.w400,
+                fontFamily: "DoHyeon",
+              ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("PREPARING TO TAKE THE RIGHT \nCAREER PATH", style: TextStyle(
+                    fontSize: fontScale * 70,
+                    color: Colors.white,
+                    fontFamily: 'RobotoSlab',
+                    fontWeight: FontWeight.w500,
+                  ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: uiHeight / 100,),
+                  Text("WHAT WILL THE FUTRUE LOOK LIKE?", style: TextStyle(
+                    fontSize: fontScale * 30,
+                    color: Colors.white,
+                    fontFamily: 'RobotoSlab',
+                    fontWeight: FontWeight.w400,
+                  ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: uiHeight / 100,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.pages_rounded,
+                        size: fontScale * 45,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: uiWidth / 200,),
+                      Icon(Icons.remove_red_eye,
+                        size: fontScale * 40,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: uiWidth / 200,),
+                      Icon(Icons.earbuds_rounded,
+                        size: fontScale * 40,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: uiWidth / 200,),
+                      Icon(Icons.free_breakfast_outlined,
+                        size: fontScale * 40,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: uiWidth / 200,),
+                      Icon(Icons.palette_outlined,
+                        size: fontScale * 40,
+                        color: Colors.white,
+                      ),
+
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       ),
     ];
