@@ -1,3 +1,4 @@
+// GEMINI_TEST_COMMENT_SYNC_20241117
 import 'dart:math';
 import 'dart:ui';
 import 'package:url_launcher/url_launcher.dart';
@@ -1325,189 +1326,189 @@ class _MyStatefulPageState extends State<MyStatefulPage>
     late final List<Widget> _currentPage2_6Widget = [
       Expanded(
         child: Container(
-          height: uiHeight / 1.9,
-          clipBehavior: Clip.antiAlias,
-          alignment: Alignment.bottomRight,
-          padding: EdgeInsets.only(
-            top: uiHeight / (designHeight / 16),
-            bottom: uiHeight / (designHeight / 14),
-            left: uiWidth / (designWidth / 24),
-            right: uiWidth / (designWidth / 16),
-          ),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Color.fromRGBO(255, 255, 255, 0.55),
-              width: uiWidth / (designWidth / 1.5),
+            height: uiHeight / 1.9,
+            clipBehavior: Clip.antiAlias,
+            alignment: Alignment.bottomRight,
+            padding: EdgeInsets.only(
+              top: uiHeight / (designHeight / 16),
+              bottom: uiHeight / (designHeight / 14),
+              left: uiWidth / (designWidth / 24),
+              right: uiWidth / (designWidth / 16),
             ),
-            borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
-          ),
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Container(
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(uiWidth / (designWidth / 24)),
-                            topRight: Radius.circular(uiWidth / (designWidth / 24)),
-                            bottomLeft: Radius.circular(
-                              uiWidth / (designWidth / 24),
-                            ),
-                            bottomRight: Radius.circular(
-                              uiWidth / (designWidth / 24),
-                            ),
-                          ),
-                        ),
-                        child: Image(
-                          image: AssetImage('assets/halftone_6.png'),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          _currentPage2_3Index ++;
-                        });
-                      },
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(255, 100, 0, 1),
-                          borderRadius: BorderRadius.circular(
-                            uiWidth / (designWidth / 32),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Next",
-                              style: TextStyle(
-                                fontSize: fontScale * 18,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "StackSansText",
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Color.fromRGBO(255, 255, 255, 0.55),
+                width: uiWidth / (designWidth / 1.5),
+              ),
+              borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
+            ),
+            child: Stack(
+              children: [
+                Column(
+                    children: [
+                      Expanded(
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(uiWidth / (designWidth / 24)),
+                                topRight: Radius.circular(uiWidth / (designWidth / 24)),
+                                bottomLeft: Radius.circular(
+                                  uiWidth / (designWidth / 24),
+                                ),
+                                bottomRight: Radius.circular(
+                                  uiWidth / (designWidth / 24),
+                                ),
                               ),
                             ),
-                            SizedBox(width: 8),
-                            Icon(
-                              Icons.arrow_forward_outlined,
-                              size: fontScale * 20,
+                            child: Image(
+                              image: AssetImage('assets/halftone_6.png'),
                             ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              _currentPage2_3Index ++;
+                            });
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(255, 100, 0, 1),
+                              borderRadius: BorderRadius.circular(
+                                uiWidth / (designWidth / 32),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Next",
+                                  style: TextStyle(
+                                    fontSize: fontScale * 18,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: "StackSansText",
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                Icon(
+                                  Icons.arrow_forward_outlined,
+                                  size: fontScale * 20,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ]
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                      right: uiWidth / 10
                   ),
-                ]
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                  right: uiWidth / 10
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "미래: 프로그래머의 진화",
-                      style: TextStyle(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "미래: 프로그래머의 진화",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 50,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      SizedBox(width: uiWidth / 300),
+                      Container(
                         color: Colors.white,
-                        fontSize: fontScale * 50,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
+                        height: uiHeight / 1000,
+                        width: uiWidth / 2.85,
                       ),
-                    ),
-                    SizedBox(width: uiWidth / 300),
-                    Container(
-                      color: Colors.white,
-                      height: uiHeight / 1000,
-                      width: uiWidth / 2.85,
-                    ),
-                    SizedBox(height: uiHeight / 200),
-                    Text(
-                      'AI의 발전으로 프로그래머는 큰 발전의 기회를 얻게 되었다.',
-                      style: TextStyle(
-                        color: Color.fromRGBO(255, 255, 255, 1),
-                        fontSize: fontScale * 28,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          ' ◈ 디지털 전환 가속화',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: fontScale * 28,
-                            fontWeight: FontWeight.w100,
-                            fontFamily: "DoHyeon",
-                          ),
+                      SizedBox(height: uiHeight / 200),
+                      Text(
+                        'AI의 발전으로 프로그래머는 큰 발전의 기회를 얻게 되었다.',
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                          fontSize: fontScale * 28,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
                         ),
-                        SizedBox(width: uiWidth / 200),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          ' ◈ AI/클라우드/빅데이터 분야 폭발적 성장',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: fontScale * 28,
-                            fontWeight: FontWeight.w100,
-                            fontFamily: "DoHyeon",
-                          ),
-                        ),
-                        SizedBox(width: uiWidth / 200),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          ' ◈ 높은 수요 대비 공급 부족 현상',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: fontScale * 28,
-                            fontWeight: FontWeight.w100,
-                            fontFamily: "DoHyeon",
-                          ),
-                        ),
-                        SizedBox(width: uiWidth / 200),
-                      ],
-                    ),
-                    SizedBox(height: uiHeight / 16),
-                    Text(
-                      "AI, 기회의 문을 열다.",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: fontScale * 38,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
                       ),
-                    ),
-                    Text(
-                      '프로그래머는 현재 전 산업 분야의 디지털 전환 가속화와 AI, 클라우드 컴퓨팅, 빅데이터 등 혁신적인 신기술 분야의 폭발적인 성장으로 인해 전례 없는 높은 수요를 누리고 있습니다. 이러한 수요는 숙련된 인력의 공급을 초과하고 있어, 프로그래머에게 높은 연봉과 유연한 근무 환경이라는 실질적인 보상으로 이어지고 있습니다. 따라서 기술 변화에 발맞춰 지속적으로 성장하는 프로그래머에게는 무궁무진한 커리어 확장 기회가 열려 있습니다.',
-                      style: TextStyle(
-                        color: Color.fromRGBO(255, 255, 255, 0.85),
-                        fontSize: fontScale * 26,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
+                      Row(
+                        children: [
+                          Text(
+                            ' ◈ 디지털 전환 가속화',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: fontScale * 28,
+                              fontWeight: FontWeight.w100,
+                              fontFamily: "DoHyeon",
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                        ],
                       ),
-                    ),
-                    SizedBox(height: uiHeight / 200),
-                  ],
+                      Row(
+                        children: [
+                          Text(
+                            ' ◈ AI/클라우드/빅데이터 분야 폭발적 성장',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: fontScale * 28,
+                              fontWeight: FontWeight.w100,
+                              fontFamily: "DoHyeon",
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            ' ◈ 높은 수요 대비 공급 부족 현상',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: fontScale * 28,
+                              fontWeight: FontWeight.w100,
+                              fontFamily: "DoHyeon",
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                        ],
+                      ),
+                      SizedBox(height: uiHeight / 16),
+                      Text(
+                        "AI, 기회의 문을 열다.",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 38,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      Text(
+                        '프로그래머는 현재 전 산업 분야의 디지털 전환 가속화와 AI, 클라우드 컴퓨팅, 빅데이터 등 혁신적인 신기술 분야의 폭발적인 성장으로 인해 전례 없는 높은 수요를 누리고 있습니다. 이러한 수요는 숙련된 인력의 공급을 초과하고 있어, 프로그래머에게 높은 연봉과 유연한 근무 환경이라는 실질적인 보상으로 이어지고 있습니다. 따라서 기술 변화에 발맞춰 지속적으로 성장하는 프로그래머에게는 무궁무진한 커리어 확장 기회가 열려 있습니다.',
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 0.85),
+                          fontSize: fontScale * 26,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 200),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          )
+              ],
+            )
         ),
       ),
       InkWell(
@@ -1795,199 +1796,199 @@ class _MyStatefulPageState extends State<MyStatefulPage>
     late final List<Widget> _currentPage2_8Widget = [
       Expanded(
         child: Container(
-          height: uiHeight / 1.9,
-          clipBehavior: Clip.antiAlias,
-          alignment: Alignment.bottomRight,
-          padding: EdgeInsets.only(
-            top: uiHeight / (designHeight / 16),
-            bottom: uiHeight / (designHeight / 14),
-            left: uiWidth / (designWidth / 24),
-            right: uiWidth / (designWidth / 16),
-          ),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Color.fromRGBO(255, 255, 255, 0.55),
-              width: uiWidth / (designWidth / 1.5),
+            height: uiHeight / 1.9,
+            clipBehavior: Clip.antiAlias,
+            alignment: Alignment.bottomRight,
+            padding: EdgeInsets.only(
+              top: uiHeight / (designHeight / 16),
+              bottom: uiHeight / (designHeight / 14),
+              left: uiWidth / (designWidth / 24),
+              right: uiWidth / (designWidth / 16),
             ),
-            borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
-          ),
-          child: Stack(
-            children: [
-              Expanded(
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(uiWidth / (designWidth / 24)),
-                        topRight: Radius.circular(uiWidth / (designWidth / 24)),
-                        bottomLeft: Radius.circular(
-                          uiWidth / (designWidth / 24),
-                        ),
-                        bottomRight: Radius.circular(
-                          uiWidth / (designWidth / 24),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Color.fromRGBO(255, 255, 255, 0.55),
+                width: uiWidth / (designWidth / 1.5),
+              ),
+              borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
+            ),
+            child: Stack(
+              children: [
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(uiWidth / (designWidth / 24)),
+                          topRight: Radius.circular(uiWidth / (designWidth / 24)),
+                          bottomLeft: Radius.circular(
+                            uiWidth / (designWidth / 24),
+                          ),
+                          bottomRight: Radius.circular(
+                            uiWidth / (designWidth / 24),
+                          ),
                         ),
                       ),
-                    ),
-                    child: Image(
-                      image: AssetImage('assets/halftone_8.png'),
+                      child: Image(
+                        image: AssetImage('assets/halftone_8.png'),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Column(
-                children: [
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Container(
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(uiWidth / (designWidth / 24)),
-                            topRight: Radius.circular(uiWidth / (designWidth / 24)),
-                            bottomLeft: Radius.circular(
-                              uiWidth / (designWidth / 24),
-                            ),
-                            bottomRight: Radius.circular(
-                              uiWidth / (designWidth / 24),
-                            ),
-                          ),
-                        ),
-                        child: Image(
-                          image: AssetImage('assets/halftone_9.png'),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: uiHeight / 100,),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          _currentIndex++;
-                        });
-                      },
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(255, 100, 0, 1),
-                          borderRadius: BorderRadius.circular(
-                            uiWidth / (designWidth / 32),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Next",
-                              style: TextStyle(
-                                fontSize: fontScale * 18,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "StackSansText",
+                Column(
+                    children: [
+                      Expanded(
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(uiWidth / (designWidth / 24)),
+                                topRight: Radius.circular(uiWidth / (designWidth / 24)),
+                                bottomLeft: Radius.circular(
+                                  uiWidth / (designWidth / 24),
+                                ),
+                                bottomRight: Radius.circular(
+                                  uiWidth / (designWidth / 24),
+                                ),
                               ),
                             ),
-                            SizedBox(width: 8),
-                            Icon(
-                              Icons.arrow_forward_outlined,
-                              size: fontScale * 20,
+                            child: Image(
+                              image: AssetImage('assets/halftone_9.png'),
                             ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
+                      SizedBox(height: uiHeight / 100,),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              _currentIndex++;
+                            });
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(255, 100, 0, 1),
+                              borderRadius: BorderRadius.circular(
+                                uiWidth / (designWidth / 32),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Next",
+                                  style: TextStyle(
+                                    fontSize: fontScale * 18,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: "StackSansText",
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                Icon(
+                                  Icons.arrow_forward_outlined,
+                                  size: fontScale * 20,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ]
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                      right: uiWidth / 10,
+                      left: uiWidth / 11
                   ),
-                ]
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                  right: uiWidth / 10,
-                  left: uiWidth / 11
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "다가올 큰 변화를 위한 준비",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 50,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      SizedBox(width: uiWidth / 300),
+                      Container(
+                        color: Colors.white,
+                        height: uiHeight / 1000,
+                        width: uiWidth / 2.85,
+                      ),
+                      SizedBox(height: uiHeight / 300),
+                      Text(
+                        '"AI가 일으킨 혼란에서 살아남아야 할것이다."',
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 0.9),
+                          fontSize: fontScale * 24,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      Text(
+                        '"설계"',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 32,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      Text(
+                        '"협업"',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 32,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      Text(
+                        '"도메인"',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 30,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 50),
+                      Text(
+                        "프로그래머: 변화",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 40,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      Text(
+                        '     미래의 프로그래머는 AI 코파일럿의 도움을 받아 단순한 `코드 작성자`의 역할을 넘어 시스템 전체를 구상하고 설계하는 `설계자`로 진화할것 입니다. 이에 따라 개발자는 복잡한 문제를 정의하고 추상화하는 고차원적 사고 능력을 최우선으로 강화해야 합니다. 나아가, 개발하는 산업의 도메인 지식과 비기술직 팀원들과의 효과적인 소통 능력을 겸비한 융합 인재만이 AI 시대의 기회를 선점하고 핵심 역할을 수행할 수 있습니다.',
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 0.85),
+                          fontSize: fontScale * 28,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "DoHyeon",
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 200),
+                    ],
+                  ),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "다가올 큰 변화를 위한 준비",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: fontScale * 50,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
-                      ),
-                    ),
-                    SizedBox(width: uiWidth / 300),
-                    Container(
-                      color: Colors.white,
-                      height: uiHeight / 1000,
-                      width: uiWidth / 2.85,
-                    ),
-                    SizedBox(height: uiHeight / 300),
-                    Text(
-                      '"AI가 일으킨 혼란에서 살아남아야 할것이다."',
-                      style: TextStyle(
-                        color: Color.fromRGBO(255, 255, 255, 0.9),
-                        fontSize: fontScale * 24,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
-                      ),
-                    ),
-                    Text(
-                      '"설계"',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: fontScale * 32,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
-                      ),
-                    ),
-                    Text(
-                      '"협업"',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: fontScale * 32,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
-                      ),
-                    ),
-                    Text(
-                      '"도메인"',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: fontScale * 30,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
-                      ),
-                    ),
-                    SizedBox(height: uiHeight / 50),
-                    Text(
-                      "프로그래머: 변화",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: fontScale * 40,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
-                      ),
-                    ),
-                    Text(
-                      '     미래의 프로그래머는 AI 코파일럿의 도움을 받아 단순한 `코드 작성자`의 역할을 넘어 시스템 전체를 구상하고 설계하는 `설계자`로 진화할것 입니다. 이에 따라 개발자는 복잡한 문제를 정의하고 추상화하는 고차원적 사고 능력을 최우선으로 강화해야 합니다. 나아가, 개발하는 산업의 도메인 지식과 비기술직 팀원들과의 효과적인 소통 능력을 겸비한 융합 인재만이 AI 시대의 기회를 선점하고 핵심 역할을 수행할 수 있습니다.',
-                      style: TextStyle(
-                        color: Color.fromRGBO(255, 255, 255, 0.85),
-                        fontSize: fontScale * 28,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "DoHyeon",
-                      ),
-                    ),
-                    SizedBox(height: uiHeight / 200),
-                  ],
-                ),
-              ),
-            ],
-          )
+              ],
+            )
         ),
       ),
       Expanded(
@@ -2064,7 +2065,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           Container(
             padding: EdgeInsets.only(top: uiHeight / 2),
             decoration: BoxDecoration(
-                // color: Colors.black
+              // color: Colors.black
               // image: DecorationImage(image: AssetImage(".png"), )
             ),
             child: Row(
@@ -2283,7 +2284,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
             alignment: Alignment.topCenter,
             child: Container(
               padding: EdgeInsets.only(
-                top: uiHeight / 50
+                  top: uiHeight / 50
               ),
               child: Text("CHAPTER ONE", style: TextStyle(
                 color: Colors.white,
@@ -2302,12 +2303,12 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text("HOW TO MOVE FORWARD INTO\nTHE FUTRUE", style: TextStyle(
-                      fontSize: fontScale * 70,
-                      color: Colors.white,
-                      fontFamily: 'RobotoSlab',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  textAlign: TextAlign.center,
+                    fontSize: fontScale * 70,
+                    color: Colors.white,
+                    fontFamily: 'RobotoSlab',
+                    fontWeight: FontWeight.w500,
+                  ),
+                    textAlign: TextAlign.center,
                   ),
                   SizedBox(height: uiHeight / 100,),
                   Text("MY EXACT WORKFLOW FOR CLEAN, PRODUCTION-READY UIS", style: TextStyle(
@@ -2373,7 +2374,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                 child: SlideTransition(
                   position: _topAnimation,
                   child: Image(
-                    width: uiWidth / 2.3,
+                      width: uiWidth / 2.3,
                       image: AssetImage("assets/ascii_top.png")),
                 ),
               ),
@@ -2450,135 +2451,149 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Column(
+                              Stack(
                                 children: [
-                                  InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        if (_page2SizeBarIndex == 0) {
-                                          _currentPage2_1Index = 0;
-                                        } else {
-                                          _page2SizeBarIndex = 0;
-                                        }
-                                      });
-                                    },
+                                  AnimatedPositioned(
+                                    duration: const Duration(milliseconds: 250),
+                                    curve: Curves.easeInOut,
+                                    top: _page2SizeBarIndex *
+                                        (uiHeight / 24),
+                                    height: uiHeight / 12,
+                                    width: uiWidth / 40,
                                     child: Container(
-                                      width: uiWidth / 40,
-                                      height:
-                                          uiHeight /
-                                          ((_page2SizeBarIndex == 0)
-                                              ? 12
-                                              : 23.5),
                                       decoration: BoxDecoration(
-                                        shape: (_page2SizeBarIndex == 0)
-                                            ? BoxShape.rectangle
-                                            : BoxShape.circle,
-                                        color: (_page2SizeBarIndex == 0)
-                                            // ? Color.fromRGBO(255, 255, 255, 0.9)
-                                            ? Color.fromRGBO(255, 100, 0, 1)
-                                            : Color.fromRGBO(255, 255, 255, 0),
-                                        borderRadius: (_page2SizeBarIndex == 0)
-                                            ? BorderRadius.circular(
-                                                uiWidth / (designWidth / 32),
-                                              )
-                                            : null,
-                                      ),
-                                      child: Icon(
-                                        Icons.schedule,
-                                        size: uiWidth / (designWidth / 24),
-                                        color: (_page2SizeBarIndex == 0)
-                                            ? Colors.black
-                                            : Color.fromRGBO(
-                                                255,
-                                                255,
-                                                255,
-                                                0.8,
-                                              ),
+                                        color: const Color.fromRGBO(255, 100, 0, 1),
+                                        borderRadius: BorderRadius.circular(uiWidth / (designWidth / 31)),
                                       ),
                                     ),
                                   ),
-                                  InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        if (_page2SizeBarIndex == 1) {
-                                          _currentPage2_2Index = 0;
-                                        } else {
-                                          _page2SizeBarIndex = 1;
-                                        }
-                                      });
-                                    },
-                                    child: Container(
-                                      width: uiWidth / 40,
-                                      height:
+                                  Column(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          setState(() {
+                                            if (_page2SizeBarIndex == 0) {
+                                              _currentPage2_1Index = 0;
+                                            } else {
+                                              _page2SizeBarIndex = 0;
+                                            }
+                                          });
+                                        },
+                                        child: Container(
+                                          width: uiWidth / 40,
+                                          height:
                                           uiHeight /
-                                          ((_page2SizeBarIndex == 1) ? 12 : 24),
-                                      decoration: BoxDecoration(
-                                        shape: (_page2SizeBarIndex == 1)
-                                            ? BoxShape.rectangle
-                                            : BoxShape.circle,
-                                        color: (_page2SizeBarIndex == 1)
-                                            ? Color.fromRGBO(255, 100, 0, 1)
-                                            : Color.fromRGBO(255, 255, 255, 0),
-                                        borderRadius: (_page2SizeBarIndex == 1)
-                                            ? BorderRadius.circular(
-                                                uiWidth / (designWidth / 32),
-                                              )
-                                            : null,
+                                              ((_page2SizeBarIndex == 0)
+                                                  ? 12
+                                                  : 23.5),
+                                          // decoration: BoxDecoration(
+                                          //   // shape: (_page2SizeBarIndex == 0)
+                                          //   //     ? BoxShape.rectangle
+                                          //   //     : BoxShape.circle,
+                                          //   // borderRadius: (_page2SizeBarIndex == 0)
+                                          //   //     ? BorderRadius.circular(
+                                          //   //   uiWidth / (designWidth / 32),
+                                          //   // )
+                                          //   //     : null,
+                                          // ),
+                                          child: Icon(
+                                            Icons.schedule,
+                                            size: uiWidth / (designWidth / 24),
+                                            color: (_page2SizeBarIndex == 0)
+                                                ? Colors.black
+                                                : Color.fromRGBO(
+                                              255,
+                                              255,
+                                              255,
+                                              0.8,
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                      child: Icon(
-                                        Icons.select_all,
-                                        size: uiWidth / (designWidth / 24),
-                                        color: (_page2SizeBarIndex == 1)
-                                            ? Colors.black
-                                            : Color.fromRGBO(
-                                                255,
-                                                255,
-                                                255,
-                                                0.8,
-                                              ),
-                                      ),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        if (_page2SizeBarIndex == 2) {
-                                        } else {
-                                          _page2SizeBarIndex = 2;
-                                        }
-                                      });
-                                    },
-                                    child: Container(
-                                      width: uiWidth / 40,
-                                      height:
+                                      InkWell(
+                                        onTap: () {
+                                          setState(() {
+                                            if (_page2SizeBarIndex == 1) {
+                                              _currentPage2_2Index = 0;
+                                            } else {
+                                              _page2SizeBarIndex = 1;
+                                            }
+                                          });
+                                        },
+                                        child: Container(
+                                          width: uiWidth / 40,
+                                          height:
                                           uiHeight /
-                                          ((_page2SizeBarIndex == 2) ? 12 : 24),
-                                      decoration: BoxDecoration(
-                                        shape: (_page2SizeBarIndex == 2)
-                                            ? BoxShape.rectangle
-                                            : BoxShape.circle,
-                                        color: (_page2SizeBarIndex == 2)
-                                            ? Color.fromRGBO(255, 100, 0, 1)
-                                            : Color.fromRGBO(255, 255, 255, 0),
-                                        borderRadius: (_page2SizeBarIndex == 2)
-                                            ? BorderRadius.circular(
-                                                uiWidth / (designWidth / 32),
-                                              )
-                                            : null,
+                                              ((_page2SizeBarIndex == 1) ? 12 : 24),
+                                          // decoration: BoxDecoration(
+                                          //   shape: (_page2SizeBarIndex == 1)
+                                          //       ? BoxShape.rectangle
+                                          //       : BoxShape.circle,
+                                          //   // color: (_page2SizeBarIndex == 1)
+                                          //   //     ? Color.fromRGBO(255, 100, 0, 1)
+                                          //   //     : Color.fromRGBO(255, 255, 255, 0),
+                                          //   borderRadius: (_page2SizeBarIndex == 1)
+                                          //       ? BorderRadius.circular(
+                                          //     uiWidth / (designWidth / 32),
+                                          //   )
+                                          //       : null,
+                                          // ),
+                                          child: Icon(
+                                            Icons.select_all,
+                                            size: uiWidth / (designWidth / 24),
+                                            color: (_page2SizeBarIndex == 1)
+                                                ? Colors.black
+                                                : Color.fromRGBO(
+                                              255,
+                                              255,
+                                              255,
+                                              0.8,
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                      child: Icon(
-                                        Icons.change_circle_outlined,
-                                        size: uiWidth / (designWidth / 24),
-                                        color: (_page2SizeBarIndex == 2)
-                                            ? Colors.black
-                                            : Color.fromRGBO(
-                                                255,
-                                                255,
-                                                255,
-                                                0.8,
-                                              ),
+                                      InkWell(
+                                        onTap: () {
+                                          setState(() {
+                                            if (_page2SizeBarIndex == 2) {
+                                            } else {
+                                              _page2SizeBarIndex = 2;
+                                            }
+                                          });
+                                        },
+                                        child: Container(
+                                          width: uiWidth / 40,
+                                          height:
+                                          uiHeight /
+                                              ((_page2SizeBarIndex == 2) ? 12 : 24),
+                                          // decoration: BoxDecoration(
+                                          //   shape: (_page2SizeBarIndex == 2)
+                                          //       ? BoxShape.rectangle
+                                          //       : BoxShape.circle,
+                                          //   // color: (_page2SizeBarIndex == 2)
+                                          //   //     ? Color.fromRGBO(255, 100, 0, 1)
+                                          //   //     : Color.fromRGBO(255, 255, 255, 0),
+                                          //   borderRadius: (_page2SizeBarIndex == 2)
+                                          //       ? BorderRadius.circular(
+                                          //     uiWidth / (designWidth / 32),
+                                          //   )
+                                          //       : null,
+                                          // ),
+                                          child: Icon(
+                                            Icons.change_circle_outlined,
+                                            size: uiWidth / (designWidth / 24),
+                                            color: (_page2SizeBarIndex == 2)
+                                                ? Colors.black
+                                                : Color.fromRGBO(
+                                              255,
+                                              255,
+                                              255,
+                                              0.8,
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ],
                               ),
@@ -2732,7 +2747,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         size: fontScale * 40,
                         color: Colors.white,
                       ),
-
                     ],
                   )
                 ],
