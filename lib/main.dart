@@ -437,7 +437,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     ),
                   ),
                   Text(
-                    "AI가 데이터 기반 솔루루션을 제공해도, 사용자의 감정, 문화 등 정성적인 '진짜 문제'를 파악하고 정의하는 리서치와 공감 능력은 인간의 고유 영역으로 남습니다.",
+                    "AI가 데이터 기반 솔루션을 제공해도, 사용자의 감정, 문화 등 정성적인 '진짜 문제'를 파악하고 정의하는 리서치와 공감 능력은 인간의 고유 영역으로 남습니다.",
                     style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 0.95),
                       fontSize: fontScale * 18,
