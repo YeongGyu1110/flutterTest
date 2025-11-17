@@ -30,12 +30,14 @@ class MyStatefulPage extends StatefulWidget {
 // 1. TickerProviderStateMixin으로 변경
 class _MyStatefulPageState extends State<MyStatefulPage>
     with TickerProviderStateMixin {
-  int _currentIndex = 0;
+  int _currentIndex = 4;
   int _page2SizeBarIndex = 0;
 
   int _currentPage2_1Index = 0;
   int _currentPage2_2Index = 0;
   int _currentPage2_3Index = 0;
+
+  int _currentPage3_1Index = 0;
 
 
   // 2. 각 이미지를 위한 별도의 컨트롤러와 애니메이션 선언
@@ -2016,8 +2018,325 @@ class _MyStatefulPageState extends State<MyStatefulPage>
         ),
       )
     ];
-
     // 직업 세계에 영향을 주는 요인 ======================================
+
+    late final List<Widget> _currentpage3_0Widget = [
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "미래의 직업",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: fontScale * 50,
+              fontWeight: FontWeight.w100,
+              fontFamily: "DoHyeon",
+            ),
+          ),
+          SizedBox(height: uiHeight / 200,),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                clipBehavior: Clip.antiAlias,
+                height: uiHeight / 1.46,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Color.fromRGBO(255, 255, 255, 0/5)
+                  ),
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                child: Image(
+                  image: AssetImage("assets/careerPoster1.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SizedBox(width: uiWidth / 48,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "AI verification expert",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 80,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: "StackSansText-Bold",
+                    ),
+                  ),
+                  Text(
+                    "AI 검증 전문가",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 32,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: uiHeight / 60,),
+                  Text(
+                    "AI 검증 전문가는 개발된 AI 모델의 성능, 정확성,\n공정성, 보안 등을 다각도로 평가하고 검증하여 AI 시스템의\n신뢰성과 안정성을 확보하는 중요한 역할을 합니다.",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: uiHeight / 20,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text("Analysis",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),),
+                          ),
+                          SizedBox(width: uiWidth / 200,),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text("Logic",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),),
+                          ),
+                          SizedBox(width: uiWidth / 200,),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text("Technical Knowledge",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),),
+                          ),
+                          SizedBox(width: uiWidth / 200,),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text("Ethical Judgment",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),),
+                          ),
+                          SizedBox(width: uiWidth / 200,),
+                        ],
+                      ),
+                      SizedBox(height: uiHeight / 100,),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                        decoration: BoxDecoration(
+                          color: const Color.fromRGBO(255, 255, 255, 1),
+                          borderRadius: BorderRadius.circular(100.0),
+                        ),
+                        child: Text("Communication",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: fontScale * 20,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "StackSansText-Bold",
+                            )
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          )
+        ],
+      ),
+      Container()
+    ];
+
+    late final List<Widget> _currentpage3_1Widget = [
+      Stack(
+        children: [
+          Text(
+            "미래의 직업",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: fontScale * 50,
+              fontWeight: FontWeight.w100,
+              fontFamily: "DoHyeon",
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: uiHeight / 30,),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Prompt Engineer",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 80,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "StackSansText-Bold",
+                        ),
+                      ),
+                      Text(
+                        "질문 설계사",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 32,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 60,),
+                      Text(
+                        "프롬프트 엔지니어는 AI 모델이 사용자의 의도를\n정확히 이해하고 최적의 결과를생성하도록 돕는 프롬프트(질문)를\n설계하고 개선하는 전문가입니다.",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 24,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 20,),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                                decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(255, 255, 255, 1),
+                                  borderRadius: BorderRadius.circular(100.0),
+                                ),
+                                child: Text("Problem Solving",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: fontScale * 20,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "StackSansText-Bold",
+                                  ),),
+                              ),
+                              SizedBox(width: uiWidth / 200,),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                                decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(255, 255, 255, 1),
+                                  borderRadius: BorderRadius.circular(100.0),
+                                ),
+                                child: Text("Creativity",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: fontScale * 20,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "StackSansText-Bold",
+                                  ),),
+                              ),
+                              SizedBox(width: uiWidth / 200,),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                                decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(255, 255, 255, 1),
+                                  borderRadius: BorderRadius.circular(100.0),
+                                ),
+                                child: Text("Language Understanding",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: fontScale * 20,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "StackSansText-Bold",
+                                  ),),
+                              ),
+                              SizedBox(width: uiWidth / 200,),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                                decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(255, 255, 255, 1),
+                                  borderRadius: BorderRadius.circular(100.0),
+                                ),
+                                child: Text("Analysis",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: fontScale * 20,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "StackSansText-Bold",
+                                    )
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: uiHeight / 100,),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12.0,),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text("Technical Knowledge",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(width: uiWidth / 7.6,),
+                  Align(
+                    child: Container(
+                      clipBehavior: Clip.antiAlias,
+                      height: uiHeight / 1.5,
+                      width: uiWidth / 2.6,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromRGBO(255, 255, 255, 0/5)
+                        ),
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                      child: Image(
+                        image: AssetImage("assets/careerPoster2.png"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+        ],
+      ),
+      Container()
+    ];
 
     late final List<Widget> _page2Widget = [
       Row(
@@ -2361,7 +2680,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
         children: [
           Stack(
             children: [
-              // Container(color: Colors.black),
               Image(
                 width: uiWidth,
                 height: uiHeight,
@@ -2486,16 +2804,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                               ((_page2SizeBarIndex == 0)
                                                   ? 12
                                                   : 23.5),
-                                          // decoration: BoxDecoration(
-                                          //   // shape: (_page2SizeBarIndex == 0)
-                                          //   //     ? BoxShape.rectangle
-                                          //   //     : BoxShape.circle,
-                                          //   // borderRadius: (_page2SizeBarIndex == 0)
-                                          //   //     ? BorderRadius.circular(
-                                          //   //   uiWidth / (designWidth / 32),
-                                          //   // )
-                                          //   //     : null,
-                                          // ),
                                           child: Icon(
                                             Icons.schedule,
                                             size: uiWidth / (designWidth / 24),
@@ -2525,19 +2833,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                           height:
                                           uiHeight /
                                               ((_page2SizeBarIndex == 1) ? 12 : 24),
-                                          // decoration: BoxDecoration(
-                                          //   shape: (_page2SizeBarIndex == 1)
-                                          //       ? BoxShape.rectangle
-                                          //       : BoxShape.circle,
-                                          //   // color: (_page2SizeBarIndex == 1)
-                                          //   //     ? Color.fromRGBO(255, 100, 0, 1)
-                                          //   //     : Color.fromRGBO(255, 255, 255, 0),
-                                          //   borderRadius: (_page2SizeBarIndex == 1)
-                                          //       ? BorderRadius.circular(
-                                          //     uiWidth / (designWidth / 32),
-                                          //   )
-                                          //       : null,
-                                          // ),
                                           child: Icon(
                                             Icons.select_all,
                                             size: uiWidth / (designWidth / 24),
@@ -2566,19 +2861,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                           height:
                                           uiHeight /
                                               ((_page2SizeBarIndex == 2) ? 12 : 24),
-                                          // decoration: BoxDecoration(
-                                          //   shape: (_page2SizeBarIndex == 2)
-                                          //       ? BoxShape.rectangle
-                                          //       : BoxShape.circle,
-                                          //   // color: (_page2SizeBarIndex == 2)
-                                          //   //     ? Color.fromRGBO(255, 100, 0, 1)
-                                          //   //     : Color.fromRGBO(255, 255, 255, 0),
-                                          //   borderRadius: (_page2SizeBarIndex == 2)
-                                          //       ? BorderRadius.circular(
-                                          //     uiWidth / (designWidth / 32),
-                                          //   )
-                                          //       : null,
-                                          // ),
                                           child: Icon(
                                             Icons.change_circle_outlined,
                                             size: uiWidth / (designWidth / 24),
@@ -2661,7 +2943,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           InkWell(
             onTap: () {
               setState(() {
-                // _currentIndex += 1;
+                _currentIndex += 1;
               });
             },
             child: Stack(
@@ -2755,6 +3037,153 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           )
         ],
       ),
+      Stack(
+        children: [
+          Stack(
+            children: [
+              Image(
+                width: uiWidth,
+                height: uiHeight,
+                image: AssetImage(
+                  "assets/background4.png",
+                ),
+                fit: BoxFit.fill,
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: uiHeight / 40,
+                  bottom: uiHeight / 40
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SlideTransition(
+                      position: _leftAnimation,
+                      child: Align(
+                        alignment: Alignment.topRight,
+                          child: Image(
+                            height: uiHeight / 4,
+                            image: AssetImage(
+                              "assets/ascii_top2.png",
+                            ),
+                            fit: BoxFit.cover,
+                          )
+                      ),
+                    ),
+                    // 5. 오른쪽 이미지에 전용 애니메이션 적용
+                    SlideTransition(
+                        position: _rightAnimation,
+                        child: Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Image(
+                              height: uiHeight / 4,
+                              image: AssetImage(
+                                "assets/ascii_bottom2.png",
+                              ),
+                              fit: BoxFit.cover,
+                            )
+                        )
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: ClipRRect(
+              clipBehavior: Clip.antiAlias,
+              borderRadius: BorderRadius.circular(
+                uiWidth / (designWidth / 24.0),
+              ),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: uiWidth / (designWidth / 8.0),
+                  sigmaY: uiWidth / (designWidth / 8.0),
+                ),
+                child: Container(
+                  clipBehavior: Clip.antiAlias,
+                  padding: EdgeInsets.only(
+                    top: uiHeight / (designHeight / 6),
+                    bottom: uiHeight / (designHeight / 12),
+                    left: uiWidth / (designWidth / 12),
+                    right: uiWidth / (designWidth / 12)
+                  ),
+                  width: uiWidth / 1.2,
+                  height: uiHeight / 1.3,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.fromRGBO(255, 255, 255, 0.1),
+                        Color.fromRGBO(255, 255, 255, 0.02),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(
+                      uiWidth / (designWidth / 24.0),
+                    ),
+                    border: Border.all(
+                      color: Color.fromRGBO(255, 255, 255, 0.3),
+                      width: uiWidth / (designWidth / 1.5),
+                    ),
+                  ),
+                  child: Stack(
+                    children: [
+                      Row(
+                        children: [
+                          (_currentPage3_1Index == 0
+                              ? _currentpage3_0Widget[(_currentPage3_1Index == 0) ? 0 : 1]
+                              : _currentpage3_1Widget[(_currentPage3_1Index == 1) ? 0 : 1]
+                          )
+                        ],
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              (_currentPage3_1Index == 0 ? _currentPage3_1Index ++ : _currentIndex ++);
+                            });
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(255, 100, 0, 1),
+                              borderRadius: BorderRadius.circular(
+                                uiWidth / (designWidth / 32),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Next",
+                                  style: TextStyle(
+                                    fontSize: fontScale * 18,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: "StackSansText",
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                Icon(
+                                  Icons.arrow_forward_outlined,
+                                  size: fontScale * 20,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ),
+              ),
+            ),
+          ),
+        ],
+      )
     ];
 
     return Scaffold(body: _widgetList[_currentIndex]);
