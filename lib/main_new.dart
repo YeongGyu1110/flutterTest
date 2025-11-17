@@ -30,7 +30,7 @@ class MyStatefulPage extends StatefulWidget {
 // 1. TickerProviderStateMixin으로 변경
 class _MyStatefulPageState extends State<MyStatefulPage>
     with TickerProviderStateMixin {
-  int _currentIndex = 0;
+  int _currentIndex = 4;
   int _page2SizeBarIndex = 0;
 
   int _currentPage2_1Index = 0;
@@ -68,7 +68,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
       vsync: this,
     )..repeat(reverse: true);
 
-    _leftAnimation = 
+    _leftAnimation =
         Tween<Offset>(
           begin: Offset.zero,
           end: const Offset(0.0, 0.022), // 약간 다른 움직임 범위
@@ -82,7 +82,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
       vsync: this,
     )..repeat(reverse: true);
 
-    _topAnimation = 
+    _topAnimation =
         Tween<Offset>(
           begin: Offset.zero,
           end: const Offset(0.0, 0.044), // 약간 다른 움직임 범위
@@ -102,7 +102,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
       vsync: this,
     )..repeat(reverse: true);
 
-    _rightAnimation = 
+    _rightAnimation =
         Tween<Offset>(
           begin: Offset.zero,
           end: const Offset(0.0, 0.018), // 약간 다른 움직임 범위
@@ -116,7 +116,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
       vsync: this,
     )..repeat(reverse: true);
 
-    _bottomAnimation = 
+    _bottomAnimation =
         Tween<Offset>(
           begin: Offset.zero,
           end: const Offset(0.0, 0.054), // 약간 다른 움직임 범위
@@ -437,7 +437,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     ),
                   ),
                   Text(
-                    "AI가 데이터 기반 솔루루션을 제공해도, 사용자의 감정, 문화 등 정성적인 '진짜 문제'를 파악하고 정의하는 리서치와 공감 능력은 인간의 고유 영역으로 남습니다.",
+                    "AI가 데이터 기반 솔루션을 제공해도, 사용자의 감정, 문화 등 정성적인 '진짜 문제'를 파악하고 정의하는 리서치와 공감 능력은 인간의 고유 영역으로 남습니다.",
                     style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 0.95),
                       fontSize: fontScale * 18,
@@ -1044,7 +1044,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                       SizedBox(width: uiWidth / 200),
                       Text(
-                        'LLM 자체가 지능적인 피싱이나 악성코드 생성에 사용되어 사이버 위협의 수준을 높일 수 있음.',
+                        'LLM 자체가 지능적인 피싱이나 악성코드 생성에 사용되어 사이버 위협의 수준을 높일 수 있습니다.',
                         style: TextStyle(
                           color: Color.fromRGBO(255, 255, 255, 0.9),
                           fontSize: fontScale * 24,
@@ -1252,8 +1252,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ),
                       ),
-                      SizedBox(width: uiWidth / 200,)
-                      ,Align(
+                      SizedBox(width: uiWidth / 200,),
+                      Align(
                         alignment: Alignment.centerRight ,
                         child: Container(
                           clipBehavior: Clip.antiAlias,
@@ -1876,11 +1876,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         alignment: Alignment.bottomRight,
                         child: InkWell(
                           onTap: () {
-                            _pageController.animateToPage(
-                              3,
-                              duration: const Duration(milliseconds: 500),
-                              curve: Curves.easeInOut,
-                            );
+                            setState(() {
+                              _currentIndex++;
+                            });
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -2108,7 +2106,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 fontSize: fontScale * 20,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: "StackSansText-Bold",
-                              ),), 
+                              ),),
                           ),
                           SizedBox(width: uiWidth / 200,),
                           Container(
@@ -2123,7 +2121,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 fontSize: fontScale * 20,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: "StackSansText-Bold",
-                              ),), 
+                              ),),
                           ),
                           SizedBox(width: uiWidth / 200,),
                           Container(
@@ -2138,7 +2136,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 fontSize: fontScale * 20,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: "StackSansText-Bold",
-                              ),), 
+                              ),),
                           ),
                           SizedBox(width: uiWidth / 200,),
                           Container(
@@ -2153,7 +2151,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 fontSize: fontScale * 20,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: "StackSansText-Bold",
-                              ),), 
+                              ),),
                           ),
                           SizedBox(width: uiWidth / 200,),
                         ],
@@ -2251,7 +2249,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                     fontSize: fontScale * 20,
                                     fontWeight: FontWeight.w500,
                                     fontFamily: "StackSansText-Bold",
-                                  ),), 
+                                  ),),
                               ),
                               SizedBox(width: uiWidth / 200,),
                               Container(
@@ -2266,7 +2264,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                     fontSize: fontScale * 20,
                                     fontWeight: FontWeight.w500,
                                     fontFamily: "StackSansText-Bold",
-                                  ),), 
+                                  ),),
                               ),
                               SizedBox(width: uiWidth / 200,),
                               Container(
@@ -2281,7 +2279,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                     fontSize: fontScale * 20,
                                     fontWeight: FontWeight.w500,
                                     fontFamily: "StackSansText-Bold",
-                                  ),), 
+                                  ),),
                               ),
                               SizedBox(width: uiWidth / 200,),
                               Container(
@@ -2314,7 +2312,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 fontSize: fontScale * 20,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: "StackSansText-Bold",
-                              ),), 
+                              ),),
                           ),
                         ],
                       )
@@ -2381,7 +2379,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
       ),
     ];
 
-        final List<Widget> _backgrounds = [
+    final List<Widget> _backgrounds = [
       'assets/background0.png',
       'assets/background1.png',
       'assets/background2.png',
@@ -2497,7 +2495,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: uiHeight / 4,),
+                            SizedBox(height: uiHeight / 4),
                             // SizedBox(height: uiHeight / 8,),
                             Text(
                               "Where Inspiration Meets",
@@ -2515,7 +2513,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 overflow: TextOverflow.clip,
                               ),
                             ),
-                            SizedBox(height: uiHeight / 40,),
+                            SizedBox(height: uiHeight / 40),
                             Text(
                               "the creative leap between human and machine.",
                               style: TextStyle(
@@ -2526,7 +2524,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 overflow: TextOverflow.clip,
                               ),
                             ),
-                            SizedBox(height: uiHeight / 24,),
+                            SizedBox(height: uiHeight / 24),
                             InkWell(
                               onTap: () {
                                 _pageController.animateToPage(
@@ -2811,7 +2809,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                     width: uiWidth / 40,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: 
+                                        color:
                                             const Color.fromRGBO(255, 100, 0, 1),
                                         borderRadius: BorderRadius.circular(
                                             uiWidth / (designWidth / 31)),
@@ -2841,7 +2839,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                             size: uiWidth / (designWidth / 24),
                                             color: (_page2SizeBarIndex == 0)
                                                 ? Colors.black
-                                                : Color.fromRGBO(
+                                                :
+                                                Color.fromRGBO(
                                                     255,
                                                     255,
                                                     255,
@@ -2869,7 +2868,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                             size: uiWidth / (designWidth / 24),
                                             color: (_page2SizeBarIndex == 1)
                                                 ? Colors.black
-                                                : Color.fromRGBO(
+                                                :
+                                                Color.fromRGBO(
                                                     255,
                                                     255,
                                                     255,
@@ -2896,7 +2896,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                             size: uiWidth / (designWidth / 24),
                                             color: (_page2SizeBarIndex == 2)
                                                 ? Colors.black
-                                                : Color.fromRGBO(
+                                                :
+                                                Color.fromRGBO(
                                                     255,
                                                     255,
                                                     255,
@@ -3110,7 +3111,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 "assets/ascii_bottom2.png",
                               ),
                               fit: BoxFit.cover,
-                            ))),
+                            )))
                   ],
                 ),
               )
@@ -3222,7 +3223,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
     ];
 
     return Scaffold(
-      backgroundColor: Colors.black,
         body: Stack(
       children: [
         ..._backgrounds.asMap().entries.map((entry) {
@@ -3248,7 +3248,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           );
         }),
         PageView(
-          scrollDirection: Axis.vertical,
           controller: _pageController,
           onPageChanged: (index) {
             setState(() {
