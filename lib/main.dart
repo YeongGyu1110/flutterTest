@@ -878,6 +878,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 color: Color.fromRGBO(44, 44, 44, 1),
                                 fontSize: fontScale * 54,
                                 fontWeight: FontWeight.w800,
+                                decoration: TextDecoration.underline
                               ),
                             ),
                             SizedBox(height: uiHeight / 80),
@@ -2463,7 +2464,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   borderRadius: BorderRadius.circular(24),
                 ),
                 child: Image(
-                  image: AssetImage("assets/career-poster/careerPoster1.png"),
+                  image: AssetImage("assets/career-poster/careerPoster0.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -2606,10 +2607,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
         ],
       ),
-      Container(),
-    ];
-
-    late final List<Widget> _currentpage3_1Widget = [
       Stack(
         children: [
           Column(
@@ -2767,7 +2764,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         borderRadius: BorderRadius.circular(24),
                       ),
                       child: Image(
-                        image: AssetImage("assets/career-poster/careerPoster2.png"),
+                        image: AssetImage("assets/career-poster/careerPoster1.png"),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -2778,6 +2775,470 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
         ],
       ),
+      Stack(
+        children: [
+          Row(
+            children: [
+              Container(
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(24)
+                ),
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/career-poster/careerPoster2..jpg"),
+                ),
+              ),
+              SizedBox(width: uiWidth / 40,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Autobot Developer",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 80,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: "StackSansText-Bold",
+                    ),
+                  ),
+                  Text(
+                    "오토봇 개발자",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 32,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: uiHeight / 60),
+                  Text(
+                    "로봇의 관절과 골격을 인간의 구조와 유사하게 설계하여\n자연스러운 보행과 운동 범위를 확보합니다.\n이를 위해 생체 모방적 액추에이터를 통합합니다.",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: uiHeight / 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Biomimetic Robotics",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Embodied AI",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "HRI & Social Integration",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Advanced Mechatronics",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                        ],
+                      ),
+                      SizedBox(height: uiHeight / 100),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                        decoration: BoxDecoration(
+                          color: const Color.fromRGBO(255, 255, 255, 1),
+                          borderRadius: BorderRadius.circular(100.0),
+                        ),
+                        child: Text(
+                          "Ethical Firmware",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: fontScale * 20,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: "StackSansText-Bold",
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+      Stack(
+        children: [
+          Row(
+            children: [
+              Container(
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24)
+                ),
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/career-poster/careerPoster3.png"),
+                ),
+              ),
+              SizedBox(width: uiWidth / 40,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Smart Factory Engineer",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 80,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: "StackSansText-Bold",
+                    ),
+                  ),
+                  Text(
+                    "스마트 공장 엔지니어",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 32,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: uiHeight / 60),
+                  Text(
+                    "설비 데이터를 수집/분석하고, AI 및 머신러닝을 적용하여\n불량 예측 및 생산 효율을 높입니다.\n공장 현장 기술과 기업의 전산 시스템을 연동하여 생산 전반을\n유기적으로 관리합니다.",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: uiHeight / 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Manufacturing AI",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "OT-IT Integration",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Industrial Automation",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Digital Twin",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                        ],
+                      ),
+                      SizedBox(height: uiHeight / 100),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                        decoration: BoxDecoration(
+                          color: const Color.fromRGBO(255, 255, 255, 1),
+                          borderRadius: BorderRadius.circular(100.0),
+                        ),
+                        child: Text(
+                          "Predictive Maintenance",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: fontScale * 20,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: "StackSansText-Bold",
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+      Stack(
+        children: [
+          Row(
+            children: [
+              Container(
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24)
+                ),
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/career-poster/careerPoster4.png"),
+                ),
+              ),
+              SizedBox(width: uiWidth / 40,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Apparel Psychologist",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 80,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: "StackSansText-Bold",
+                    ),
+                  ),
+                  Text(
+                    "패션 치료사",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 32,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: uiHeight / 60),
+                  Text(
+                    "옷을 통해 감정 조절을 돕거나,\n원하는 사회적 이미지를 전달하여 상호작용 및 적응을 개선합니다.\n심리적 목표에 맞춰 의복을 의도적으로 선택하여\n자신감을 높이고 긍정적인 자기 인식을 강화합니다.",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: uiHeight / 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Apparel Psychology",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Identity Design",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Color Therapy",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
+                            child: Text(
+                              "Non-Verbal Communication",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText-Bold",
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 200),
+                        ],
+                      ),
+                      SizedBox(height: uiHeight / 100),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                        decoration: BoxDecoration(
+                          color: const Color.fromRGBO(255, 255, 255, 1),
+                          borderRadius: BorderRadius.circular(100.0),
+                        ),
+                        child: Text(
+                          "Ethical Firmware",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: fontScale * 20,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: "StackSansText-Bold",
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+      Container(),
+    ];
+
+    late final List<Widget> _currentpage3_1Widget = [
+
       Container(),
     ];
 
@@ -3593,15 +4054,34 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
           Container(
             padding: EdgeInsets.only(top: uiHeight / 17, left: uiWidth / 11),
-            child: Text(
-              "미래의 직업",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: fontScale * 50,
-                fontWeight: FontWeight.w100,
-                fontFamily: "DoHyeon",
-              ),
-            ),
+            child: Row(
+              children: [
+                Text(
+                  "미래의 직업 by ",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: fontScale * 50,
+                    fontWeight: FontWeight.w100,
+                    fontFamily: "DoHyeon",
+                  ),
+                ),
+                Text(
+                  (_currentPage3_1Index == 0 || _currentPage3_1Index == 1)
+                    ? "user1"
+                    : (_currentPage3_1Index == 2 )
+                        ? "user2"
+                        : (_currentPage3_1Index == 3 )
+                            ? "user3"
+                            : "user4",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: fontScale * 50,
+                    fontWeight: FontWeight.w100,
+                    fontFamily: "DoHyeon",
+                  ),
+                ),
+              ],
+            )
           ),
           Align(
             alignment: Alignment.center,
@@ -3646,65 +4126,107 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     children: [
                       Row(
                         children: [
-                          (_currentPage3_1Index == 0
-                              ? _currentpage3_0Widget[(_currentPage3_1Index ==
-                                        0)
-                                    ? 0
-                                    : 1]
-                              : _currentpage3_1Widget[(_currentPage3_1Index ==
-                                        1)
-                                    ? 0
-                                    : 1]),
+                          _currentpage3_0Widget[_currentPage3_1Index]
                         ],
                       ),
                       Align(
                         alignment: Alignment.bottomRight,
-                        child: InkWell(
-                          onTap: () {
-                            if (_currentPage3_1Index == 0) {
-                              setState(() {
-                                _currentPage3_1Index++;
-                              });
-                            } else {
-                              _pageController.animateToPage(
-                                5, // Loop back to the first page
-                                duration: const Duration(milliseconds: 500),
-                                curve: Curves.easeInOut,
-                              );
-                            }
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Color.fromRGBO(255, 100, 0, 1),
-                              borderRadius: BorderRadius.circular(
-                                uiWidth / (designWidth / 32),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Next",
-                                  style: TextStyle(
-                                    fontSize: fontScale * 18,
-                                    fontWeight: FontWeight.w400,
-                                    fontFamily: "StackSansText",
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                if (_currentPage3_1Index == 0) {
+                                  _pageController.animateToPage( 3, // Loop back to the first page
+                                    duration: const Duration(milliseconds: 500),
+                                    curve: Curves.easeInOut,
+                                  );
+                                } else {
+                                  setState(() {
+                                    _currentPage3_1Index--;
+                                  });
+                                }
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 8,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(255, 100, 0, 1),
+                                  borderRadius: BorderRadius.circular(
+                                    uiWidth / (designWidth / 32),
                                   ),
                                 ),
-                                SizedBox(width: 8),
-                                Icon(
-                                  Icons.arrow_forward_outlined,
-                                  size: fontScale * 20,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.arrow_back_outlined,
+                                      size: fontScale * 20,
+                                    ),
+                                    SizedBox(width: 8),
+                                    Text(
+                                      "After",
+                                      style: TextStyle(
+                                        fontSize: fontScale * 18,
+                                        fontWeight: FontWeight.w600,
+                                        fontFamily: "StackSansText",
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
+                            SizedBox(width: 8),
+                            InkWell(
+                              onTap: () {
+                                if (_currentPage3_1Index == 4) {
+                                  _pageController.animateToPage( 5, // Loop back to the first page
+                                    duration: const Duration(milliseconds: 500),
+                                    curve: Curves.easeInOut,
+                                  );
+                                } else {
+                                  setState(() {
+                                    _currentPage3_1Index++;
+                                  });
+                                }
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 8,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(255, 100, 0, 1),
+                                  borderRadius: BorderRadius.circular(
+                                    uiWidth / (designWidth / 32),
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Next",
+                                      style: TextStyle(
+                                        fontSize: fontScale * 18,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: "StackSansText",
+                                      ),
+                                    ),
+                                    SizedBox(width: 8),
+                                    Icon(
+                                      Icons.arrow_forward_outlined,
+                                      size: fontScale * 20,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
                       ),
                     ],
                   ),
