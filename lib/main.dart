@@ -30,7 +30,6 @@ class MyStatefulPage extends StatefulWidget {
 // 1. TickerProviderStateMixin으로 변경
 class _MyStatefulPageState extends State<MyStatefulPage>
     with TickerProviderStateMixin {
-
   bool _isHovered_GetStart = false;
   bool _isHovered_Follow = false;
   bool _isFollowed = false;
@@ -161,9 +160,10 @@ class _MyStatefulPageState extends State<MyStatefulPage>
     late final List<Widget> _currentPage2_0Widget = [
       Expanded(
         child: Container(
+          height: uiHeight / 1.8,
           alignment: Alignment.bottomRight,
           padding: EdgeInsets.only(
-            top: uiHeight / (designHeight / 16),
+            top: uiHeight / (designHeight / 10),
             bottom: uiHeight / (designHeight / 16),
             left: uiWidth / (designWidth / 24),
             right: uiWidth / (designWidth / 16),
@@ -188,7 +188,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     "사라질 직업",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 50,
+                      fontSize: fontScale * 48,
                       fontWeight: FontWeight.w100,
                       fontFamily: "DoHyeon",
                     ),
@@ -221,23 +221,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       fit: BoxFit.cover,
                     ),
                   ),
-                  SizedBox(height: uiHeight / 200),
+                  // SizedBox(height: uiHeight / 200),
                   Text(
                     "웹 퍼블리셔 & 콘텐츠 디자이너",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 40,
-                      fontWeight: FontWeight.w100,
-                      fontFamily: "DoHyeon",
+                      fontSize: fontScale * 38,
+                      fontWeight: FontWeight.w800,
+                      // fontFamily: "DoHyeon",
                     ),
                   ),
                   Text(
                     '"코딩은 `설계`의 영역입니다. AI는 이미 `단순 답안`을 생성 중입니다. UI 구현 역할은 소멸합니다."',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 28,
-                      fontWeight: FontWeight.w100,
-                      fontFamily: "DoHyeon",
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w700,
+                      // fontFamily: "DoHyeon",
                     ),
                   ),
                   Text(
@@ -249,16 +249,16 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   ),
                   SizedBox(height: uiHeight / 200),
                   Text(
-                    '프롬프트 하나로 수십 가지의 마케팅 배너를 1분 만에 제작하는 시대입니다. "찍어내기" 식의 디자인 작업은 더 이상 가치가 없습니다',
+                    'AI로 수십 가지의 마케팅 배너를 1분 만에 제작하는 시대, "템플릿" 디자인 작업은 비효율적입니다.',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 28,
-                      fontWeight: FontWeight.w100,
-                      fontFamily: "DoHyeon",
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w700,
+                      // fontFamily: "DoHyeon",
                     ),
                   ),
                   Text(
-                    "이미지 생성 AI는 스케치를 넘어 최종 결과물을 즉각 제공하여 속도, 비용, 다양성에서 인간의 수작업을 압도하며, 마케팅/콘텐츠 제작에서 해당 직무를 소멸시킬 것입니다.",
+                    "이미지 생성 AI는 스케치를 넘어 최종 결과물을 즉각 제공하여 속도, 비용, 다양성에서 인간의 수작업을 압도하며, 콘텐츠 제작에서 해당 직무를 소멸시킬 것입니다.",
                     style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 0.95),
                       fontSize: fontScale * 18,
@@ -275,8 +275,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     });
                   },
                   child: Container(
-                    // height: uiHeight / 28,
-                    // width: uiWidth / 18,
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
                       color: Color.fromRGBO(255, 100, 0, 1),
@@ -321,27 +319,35 @@ class _MyStatefulPageState extends State<MyStatefulPage>
         child: Container(
           padding: EdgeInsets.all(uiWidth / (designWidth / 24)),
           width: uiWidth / 30,
+          height: uiHeight / 1.8,
           decoration: BoxDecoration(
             border: Border.all(
-              // color: Color.fromRGBO(255, 255, 255, 0.55),
               color: Colors.white12,
               width: uiWidth / (designWidth / 1.5),
             ),
             // color: Colors.red,
             borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Text("20년 후 사라질 직업",
-              //   style: TextStyle(
-              //       color: Colors.white,
-              //       fontSize: 32,
-              //       fontWeight: FontWeight.w100,
-              //       fontFamily: "DoHyeon"
-              //   ),
-              // )
-            ],
+        ),
+      ),
+      InkWell(
+        onTap: () {
+          setState(() {
+            if (_currentPage2_1Index > 0) {
+              _currentPage2_1Index = 0;
+            }
+          });
+        },
+        child: Container(
+          padding: EdgeInsets.all(uiWidth / (designWidth / 24)),
+          height: uiHeight / 20,
+          width: uiWidth / 5.3,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.white12,
+              width: uiWidth / (designWidth / 1.5),
+            ),
+            borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
           ),
         ),
       ),
@@ -350,9 +356,10 @@ class _MyStatefulPageState extends State<MyStatefulPage>
     late final List<Widget> _currentPage2_1Widget = [
       Expanded(
         child: Container(
+          height: uiHeight / 1.8,
           alignment: Alignment.bottomRight,
           padding: EdgeInsets.only(
-            top: uiHeight / (designHeight / 16),
+            top: uiHeight / (designHeight / 10),
             bottom: uiHeight / (designHeight / 16),
             left: uiWidth / (designWidth / 24),
             right: uiWidth / (designWidth / 16),
@@ -377,7 +384,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     "살아남을 직업",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 50,
+                      fontSize: fontScale * 48,
                       fontWeight: FontWeight.w100,
                       fontFamily: "DoHyeon",
                     ),
@@ -415,7 +422,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     "AI 시스템 설계자 & UX 디자인 전략가",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 40,
+                      fontSize: fontScale * 38,
                       fontWeight: FontWeight.w100,
                       fontFamily: "DoHyeon",
                     ),
@@ -424,9 +431,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     '"AI는 코드를 만들지라도, 인간은 `시스템`을 설계하고 `비즈니스 가치`를 연결합니다."',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 28,
-                      fontWeight: FontWeight.w100,
-                      fontFamily: "DoHyeon",
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w700,
+                      // fontFamily: "DoHyeon",
                     ),
                   ),
                   Text(
@@ -441,9 +448,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     '"AI는 답을 내놓지만, 인간은 `진짜 문제`를 정의하고 `공감`을 설계합니다."',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 28,
-                      fontWeight: FontWeight.w100,
-                      fontFamily: "DoHyeon",
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w700,
+                      // fontFamily: "DoHyeon",
                     ),
                   ),
                   Text(
@@ -508,6 +515,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
         child: Container(
           padding: EdgeInsets.all(uiWidth / (designWidth / 24)),
           width: uiWidth / 30,
+          height: uiHeight / 1.8,
           decoration: BoxDecoration(
             border: Border.all(
               // color: Color.fromRGBO(255, 255, 255, 0.55),
@@ -532,14 +540,36 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
         ),
       ),
+      InkWell(
+        onTap: () {
+          setState(() {
+            if (_currentPage2_1Index > 1) {
+              _currentPage2_1Index = 1;
+            }
+          });
+        },
+        child: Container(
+          padding: EdgeInsets.all(uiWidth / (designWidth / 24)),
+          height: uiHeight / 20,
+          width: uiWidth / 5.3,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.white12,
+              width: uiWidth / (designWidth / 1.5),
+            ),
+            borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
+          ),
+        ),
+      ),
     ];
 
     late final List<Widget> _currentPage2_2Widget = [
       Expanded(
         child: Container(
+          height: uiHeight / 1.8,
           alignment: Alignment.bottomRight,
           padding: EdgeInsets.only(
-            top: uiHeight / (designHeight / 16),
+            top: uiHeight / (designHeight / 10),
             bottom: uiHeight / (designHeight / 16),
             left: uiWidth / (designWidth / 24),
             right: uiWidth / (designWidth / 16),
@@ -564,7 +594,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     "새로운 직업",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 50,
+                      fontSize: fontScale * 48,
                       fontWeight: FontWeight.w100,
                       fontFamily: "DoHyeon",
                     ),
@@ -602,7 +632,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     "프롬프트 엔지니어 & AI 윤리 및 투명성 검증 전문가",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 40,
+                      fontSize: fontScale * 38,
                       fontWeight: FontWeight.w100,
                       fontFamily: "DoHyeon",
                     ),
@@ -611,9 +641,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     '"미래의 가치는 `답`이 아닌 `질문`에 있습니다. AI를 움직이는 질문을 설계하는 직업이 탄생합니다."',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 28,
-                      fontWeight: FontWeight.w100,
-                      fontFamily: "DoHyeon",
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w700,
+                      // fontFamily: "DoHyeon",
                     ),
                   ),
                   Text(
@@ -628,9 +658,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     '"AI의 결과물, 인간의 책임으로 통제됩니다."',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontScale * 28,
-                      fontWeight: FontWeight.w100,
-                      fontFamily: "DoHyeon",
+                      fontSize: fontScale * 24,
+                      fontWeight: FontWeight.w700,
+                      // fontFamily: "DoHyeon",
                     ),
                   ),
                   Text(
@@ -647,8 +677,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      _page2SizeBarIndex++;
-                      _currentPage2_2Index = 0;
+                      _currentPage2_1Index++;
+                      // _page2SizeBarIndex++;
+                      // _currentPage2_2Index = 0;
                     });
                   },
                   child: Container(
@@ -696,6 +727,28 @@ class _MyStatefulPageState extends State<MyStatefulPage>
         child: Container(
           padding: EdgeInsets.all(uiWidth / (designWidth / 24)),
           width: uiWidth / 30,
+          height: uiHeight / 1.8,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.white12,
+              width: uiWidth / (designWidth / 1.5),
+            ),
+            borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
+          ),
+        ),
+      ),
+      InkWell(
+        onTap: () {
+          setState(() {
+            if (_currentPage2_1Index > 2) {
+              _currentPage2_1Index = 2;
+            }
+          });
+        },
+        child: Container(
+          padding: EdgeInsets.all(uiWidth / (designWidth / 24)),
+          height: uiHeight / 20,
+          width: uiWidth / 5.3,
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.white12,
@@ -706,6 +759,342 @@ class _MyStatefulPageState extends State<MyStatefulPage>
         ),
       ),
     ];
+
+    late final List<Widget> _currentPage2_21Widget = [
+      Expanded(
+        child: Container(
+          alignment: Alignment.bottomRight,
+          padding: EdgeInsets.only(
+            top: uiHeight / (designHeight / 18),
+            bottom: uiHeight / (designHeight / 16),
+            left: uiWidth / (designWidth / 16),
+            right: uiWidth / (designWidth / 16),
+          ),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Color.fromRGBO(255, 255, 255, 0.55),
+              width: uiWidth / (designWidth / 1.5),
+            ),
+            borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
+          ),
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(width: uiWidth / 200),
+                      Container(
+                        width: uiWidth / 6,
+                        height: uiHeight / 4,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(width: 2, color: Colors.white12),
+                        ),
+                        child: Column(
+                          children: [
+                            SizedBox(height: uiHeight / 20),
+                            Text(
+                              '프로그램',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: fontScale * 36,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 80),
+                            Text(
+                              '+ 정확함  ',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              '+ 세부적  ',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              '+ 정확함  ',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 60),
+                            Container(
+                              alignment: Alignment.center,
+                              width: uiWidth / 7,
+                              height: uiHeight / 30,
+                              decoration: BoxDecoration(
+                                color: Colors.white70,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  width: 2,
+                                  color: Colors.white12,
+                                ),
+                              ),
+                              child: Text(
+                                'Program',
+                                style: TextStyle(
+                                  color: Color.fromRGBO(44, 44, 44, 1),
+                                  fontSize: fontScale * 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Text(
+                        '→',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 36,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Container(
+                        width: uiWidth / 5.8,
+                        height: uiHeight / 3.6,
+                        decoration: BoxDecoration(
+                          color: Colors.white70,
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(width: 2, color: Colors.white12),
+                        ),
+                        child: Column(
+                          children: [
+                            SizedBox(height: uiHeight / 40),
+                            Text(
+                              '검증 전문가',
+                              style: TextStyle(
+                                color: Color.fromRGBO(44, 44, 44, 1),
+                                fontSize: fontScale * 54,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 80),
+                            Text(
+                              '+ 책임  ',
+                              style: TextStyle(
+                                color: Color.fromRGBO(44, 44, 44, 1),
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              '+ 세부적  ',
+                              style: TextStyle(
+                                color: Color.fromRGBO(44, 44, 44, 1),
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              '+ 범용성  ',
+                              style: TextStyle(
+                                color: Color.fromRGBO(44, 44, 44, 1),
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 40),
+                            Container(
+                              alignment: Alignment.center,
+                              width: uiWidth / 7,
+                              height: uiHeight / 25,
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(44, 44, 44, 1),
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  width: 2,
+                                  color: Colors.white12,
+                                ),
+                              ),
+                              child: Text(
+                                'HUMAN',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: fontScale * 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Text(
+                        '←',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontScale * 36,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Container(
+                        width: uiWidth / 6,
+                        height: uiHeight / 4,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(width: 2, color: Colors.white12),
+                        ),
+                        child: Column(
+                          children: [
+                            SizedBox(height: uiHeight / 20),
+                            Text(
+                              '인공지능',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: fontScale * 36,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 80),
+                            Text(
+                              '+ 빠른 속도  ',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              '+ 범용성  ',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              '+ 보편성  ',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: fontScale * 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 60),
+                            Container(
+                              alignment: Alignment.center,
+                              width: uiWidth / 7,
+                              height: uiHeight / 30,
+                              decoration: BoxDecoration(
+                                color: Colors.white70,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  width: 2,
+                                  color: Colors.white12,
+                                ),
+                              ),
+                              child: Text(
+                                'A.I.',
+                                style: TextStyle(
+                                  color: Color.fromRGBO(44, 44, 44, 1),
+                                  fontSize: fontScale * 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: uiWidth / 200),
+                    ],
+                  ),
+                  SizedBox(height: uiHeight / 40),
+                  Text(
+                    'AI를 다각도로 평가하고 검증한다. ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontScale * 28,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    "개발된 AI 모델의 성능, 정확성, 보안, 공정성 등을 다각도로 검증하여 AI 시스템의 신뢰성과 안정성을 확보한다.\n또한 AI 시스템의 잠재적 오류, 평향, 취약점을 발견하고 개선 방안을 제시합니다.\n"
+                    "\nAI 제품 및 서비스의 품질을 향상시키고, 사용자에게 신뢰를 제공하는 데 기여한다.",
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 0.95),
+                      fontSize: fontScale * 22,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: uiHeight / 2.15,
+                  left: uiWidth / 1.925,
+                ),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      _page2SizeBarIndex++;
+                      _currentPage2_2Index = 0;
+                    });
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(255, 100, 0, 1),
+                      borderRadius: BorderRadius.circular(
+                        uiWidth / (designWidth / 32),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Next",
+                          style: TextStyle(
+                            fontSize: fontScale * 18,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: "StackSansText",
+                          ),
+                        ),
+                        SizedBox(width: 8),
+                        Icon(
+                          Icons.arrow_forward_outlined,
+                          size: fontScale * 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      Expanded(
+        child: Container(
+          alignment: Alignment.bottomRight,
+          padding: EdgeInsets.only(
+            top: uiHeight / (designHeight / 16),
+            bottom: uiHeight / (designHeight / 16),
+            left: uiWidth / (designWidth / 24),
+            right: uiWidth / (designWidth / 16),
+          ),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.white12,
+              width: uiWidth / (designWidth / 1.5),
+            ),
+            borderRadius: BorderRadius.circular(uiWidth / (designWidth / 32)),
+          ),
+        ),
+      ),
+    ];
+
     // 20년 ==========================================================
 
     // LLM으로 인한 긍정 부정적 영향 =====================================
@@ -2393,13 +2782,31 @@ class _MyStatefulPageState extends State<MyStatefulPage>
     ];
 
     late final List<Widget> _page2Widget = [
-      Row(
+      Column(
         children: [
-          _currentPage2_0Widget[(_currentPage2_1Index == 0) ? 0 : 1],
-          SizedBox(width: uiWidth / 200),
-          _currentPage2_1Widget[(_currentPage2_1Index == 1) ? 0 : 1],
-          SizedBox(width: uiWidth / 200),
-          _currentPage2_2Widget[(_currentPage2_1Index == 2) ? 0 : 1],
+          Row(
+            children: [
+              _currentPage2_0Widget[(_currentPage2_1Index == 0)
+                  ? 0
+                  : (_currentPage2_1Index == 3)
+                  ? 2
+                  : 1],
+              SizedBox(width: uiWidth / 200),
+              _currentPage2_1Widget[(_currentPage2_1Index == 1)
+                  ? 0
+                  : (_currentPage2_1Index == 3)
+                  ? 2
+                  : 1],
+              SizedBox(width: uiWidth / 200),
+              _currentPage2_2Widget[(_currentPage2_1Index == 2)
+                  ? 0
+                  : (_currentPage2_1Index == 3)
+                  ? 2
+                  : 1],
+            ],
+          ),
+          SizedBox(height: uiHeight / 80),
+          _currentPage2_21Widget[(_currentPage2_1Index == 3) ? 0 : 1],
         ],
       ),
       Row(
@@ -2444,24 +2851,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
 
     final List<Widget> _backgrounds =
         [
-          'assets/background0.png',
-          'assets/background1.png',
-          'assets/background2.png',
-          'assets/background3.png',
-          'assets/background4.png',
-          'assets/background1.png',
-          'assets/background3.png',
-          'assets/background1.png',
-          'assets/background4.png',
-        ]
-          .map(
-            (path) =>
-                SizedBox.expand(child: Image.asset(path, fit: BoxFit.fill)),
-          )
-          .toList();
+              'assets/background0.png',
+              'assets/background1.png',
+              'assets/background2.png',
+              'assets/background3.png',
+              'assets/background4.png',
+              'assets/background1.png',
+              'assets/background3.png',
+              'assets/background1.png',
+              'assets/background5.png',
+            ]
+            .map(
+              (path) =>
+                  SizedBox.expand(child: Image.asset(path, fit: BoxFit.fill)),
+            )
+            .toList();
 
     late final List<Widget> _contentWidgets = [
-      // Page 0 Content
       Container(
         child: Stack(
           children: [
@@ -2619,7 +3025,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                   width: uiWidth / 8,
                                   height: uiHeight / 24,
                                   decoration: BoxDecoration(
-                                    color: (_isHovered_GetStart) ? Color.fromRGBO(255, 255, 255, 0.8) : Color.fromRGBO(255, 255, 255, 1),
+                                    color: (_isHovered_GetStart)
+                                        ? Color.fromRGBO(255, 255, 255, 0.8)
+                                        : Color.fromRGBO(255, 255, 255, 1),
                                     borderRadius: BorderRadius.circular(
                                       uiWidth / (designWidth / 4),
                                     ),
@@ -2684,7 +3092,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ],
         ),
       ),
-      // Page 1 Content
       InkWell(
         onTap: () {
           _pageController.animateToPage(
@@ -2780,7 +3187,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ],
         ),
       ),
-      // Page 2 Content
       Stack(
         alignment: Alignment.center,
         children: [
@@ -3050,7 +3456,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
         ],
       ),
-      // Page 3 Content
       InkWell(
         onTap: () {
           _pageController.animateToPage(
@@ -3146,7 +3551,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ],
         ),
       ),
-      // Page 4 Content
       Stack(
         children: [
           Stack(
@@ -3188,10 +3592,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
             ],
           ),
           Container(
-            padding: EdgeInsets.only(
-              top: uiHeight / 17,
-              left: uiWidth / 11,
-            ),
+            padding: EdgeInsets.only(top: uiHeight / 17, left: uiWidth / 11),
             child: Text(
               "미래의 직업",
               style: TextStyle(
@@ -3319,77 +3720,86 @@ class _MyStatefulPageState extends State<MyStatefulPage>
             padding: EdgeInsets.only(
               top: uiHeight / 6.5,
               left: uiWidth / 7,
-              right: uiWidth / 7
+              right: uiWidth / 7,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            " 06",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: fontScale * 50,
-                              fontWeight: FontWeight.w800,
-                              fontFamily: "RobotoMono",
-                            ),
+              children: [
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          " 06",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: fontScale * 50,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: "RobotoMono",
                           ),
-                          // SizedBox(height: uiHeight / 100)
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          SizedBox(height: uiHeight / 200),
-                          Text(
-                            ":관심 직업인의 진로 경로 탐색",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: fontScale * 50,
-                              fontWeight: FontWeight.w100,
-                              fontFamily: "DoHyeon",
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  Expanded(
-                    child: Container(
-                      clipBehavior: Clip.antiAlias,
-                      height: uiHeight / 1.2,
-                      width: uiWidth,
-                        decoration: BoxDecoration(
-                        color: Color.fromRGBO(10, 10, 10, 1),
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(24),
-                          topRight: Radius.circular(24)
                         ),
-                        border: Border(
-                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          top: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                        )
+                        // SizedBox(height: uiHeight / 100)
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(height: uiHeight / 200),
+                        Text(
+                          ":관심 직업인의 진로 경로 탐색",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: fontScale * 50,
+                            fontWeight: FontWeight.w100,
+                            fontFamily: "DoHyeon",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Expanded(
+                  child: Container(
+                    clipBehavior: Clip.antiAlias,
+                    height: uiHeight / 1.2,
+                    width: uiWidth,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(10, 10, 10, 1),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(24),
+                        topRight: Radius.circular(24),
+                      ),
+                      border: Border(
+                        left: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
+                        ),
+                        top: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
+                        ),
+                        right: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
+                        ),
                       ),
                     ),
                   ),
-                ],
+                ),
+              ],
             ),
           ),
           Container(
             padding: EdgeInsets.only(
-                top: uiHeight / 4.5,
-                left: uiWidth / 7,
-                right: uiWidth / 7
+              top: uiHeight / 4.5,
+              left: uiWidth / 7,
+              right: uiWidth / 7,
             ),
             child: Stack(
               children: [
                 Container(
                   padding: EdgeInsets.only(
                     top: uiHeight / 18,
-                    left: uiWidth / 40
+                    left: uiWidth / 40,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -3400,15 +3810,16 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         height: uiWidth / 6.5,
                         decoration: BoxDecoration(
                           color: Colors.red,
-                          shape: BoxShape.circle
+                          shape: BoxShape.circle,
                         ),
                         child: Image(
                           image: AssetImage("assets/profile.png"),
                           fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(height: uiHeight / 100,),
-                      Text("Lee Myung-ho",
+                      SizedBox(height: uiHeight / 100),
+                      Text(
+                        "Lee Myung-ho",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 1),
                           fontSize: fontScale * 32,
@@ -3416,14 +3827,15 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           fontFamily: "StackSansText",
                         ),
                       ),
-                      Text("Skyyype234",
+                      Text(
+                        "Skyyype234",
                         style: TextStyle(
                           color: Color.fromRGBO(90, 96, 104, 1),
                           fontSize: fontScale * 26,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(height: uiHeight / 50,),
+                      SizedBox(height: uiHeight / 50),
                       InkWell(
                         onTap: () {
                           setState(() {
@@ -3447,14 +3859,17 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             height: uiHeight / 30,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: (_isHovered_Follow) ? Color.fromRGBO(38, 44, 54, 1) : Color.fromRGBO(32, 40, 48, 1),
+                              color: (_isHovered_Follow)
+                                  ? Color.fromRGBO(38, 44, 54, 1)
+                                  : Color.fromRGBO(32, 40, 48, 1),
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(
                                 color: Color.fromRGBO(61, 68, 77, 1),
-                                width: 1.2
-                              )
+                                width: 1.2,
+                              ),
                             ),
-                            child: Text((_isFollowed) ? "Unfollow" : "Follow",
+                            child: Text(
+                              (_isFollowed) ? "Unfollow" : "Follow",
                               style: TextStyle(
                                 color: Color.fromRGBO(255, 255, 255, 0.9),
                                 fontSize: fontScale * 18,
@@ -3465,48 +3880,54 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ),
                       ), // 팔로우 버튼
-                      SizedBox(height: uiHeight / 100,),
-                      SizedBox(height: uiHeight / 100,),
+                      SizedBox(height: uiHeight / 100),
+                      SizedBox(height: uiHeight / 100),
                       Row(
                         children: [
-                          Icon(Icons.people_alt_outlined,
-                              color: Color.fromRGBO(154, 152, 161, 1),
-                              size: uiWidth / (designWidth / 22)
+                          Icon(
+                            Icons.people_alt_outlined,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 22),
                           ),
-                          SizedBox(width: uiWidth / 700,),
-                          Text((_isFollowed) ? "450" : "449",
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            (_isFollowed) ? "450" : "449",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 238, 1),
                               fontSize: fontScale * 20,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 700,),
-                          Text("followers",
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            "followers",
                             style: TextStyle(
                               color: Color.fromRGBO(145, 152, 161, 0.9),
                               fontSize: fontScale * 18,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 300,),
-                          Text("●",
+                          SizedBox(width: uiWidth / 300),
+                          Text(
+                            "●",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 238, 0.8),
                               fontSize: fontScale * 8,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 400,),
-                          Text("19 ",
+                          SizedBox(width: uiWidth / 400),
+                          Text(
+                            "19 ",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 238, 1),
                               fontSize: fontScale * 20,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 700,),
-                          Text("followers",
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            "followers",
                             style: TextStyle(
                               color: Color.fromRGBO(145, 152, 161, 0.9),
                               fontSize: fontScale * 18,
@@ -3515,11 +3936,15 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ],
                       ), // 팔로우
-                      SizedBox(height: uiHeight / 50,),
+                      SizedBox(height: uiHeight / 50),
                       Row(
                         children: [
-                          Icon(Icons.apartment, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 800,),
+                          Icon(
+                            Icons.apartment,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 20),
+                          ),
+                          SizedBox(width: uiWidth / 800),
                           MouseRegion(
                             onEnter: (_) {
                               setState(() {
@@ -3534,18 +3959,21 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             child: InkWell(
                               onTap: () {
                                 launchUrl(
-                                  Uri.parse(
-                                    "https://github.com/532501124",
-                                  ),
+                                  Uri.parse("https://github.com/532501124"),
                                 );
                               },
-                              child: Text("532501124.//",
+                              child: Text(
+                                "532501124.//",
                                 style: TextStyle(
                                   color: Color.fromRGBO(240, 246, 252, 0.9),
                                   fontSize: fontScale * 20,
                                   fontWeight: FontWeight.w500,
-                                  decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
-                                  decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
+                                  decoration: (_isHovered_Organization)
+                                      ? TextDecoration.underline
+                                      : null,
+                                  decorationColor: (_isHovered_Organization)
+                                      ? Color.fromRGBO(240, 246, 252, 0.9)
+                                      : null,
                                 ),
                               ),
                             ),
@@ -3554,9 +3982,14 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ), // 조직
                       Row(
                         children: [
-                          Icon(Icons.location_on_outlined, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 800,),
-                          Text("Moon",
+                          Icon(
+                            Icons.location_on_outlined,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 20),
+                          ),
+                          SizedBox(width: uiWidth / 800),
+                          Text(
+                            "Moon",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 252, 0.9),
                               fontSize: fontScale * 20,
@@ -3567,8 +4000,12 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ), // 달
                       Row(
                         children: [
-                          Icon(Icons.email_outlined, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 700,),
+                          Icon(
+                            Icons.email_outlined,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 20),
+                          ),
+                          SizedBox(width: uiWidth / 700),
                           MouseRegion(
                             onEnter: (_) {
                               setState(() {
@@ -3583,18 +4020,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             child: InkWell(
                               onTap: () {
                                 launchUrl(
-                                  Uri.parse(
-                                    "mailto:skyyype.biz@gmail.com",
-                                  ),
+                                  Uri.parse("mailto:skyyype.biz@gmail.com"),
                                 );
                               },
-                              child: Text("skyyype.biz@gmail.com",
+                              child: Text(
+                                "skyyype.biz@gmail.com",
                                 style: TextStyle(
-                                  color: (_isHovered_Email) ? Color.fromRGBO(68, 147, 248, 1) : Color.fromRGBO(240, 246, 252, 0.9),
+                                  color: (_isHovered_Email)
+                                      ? Color.fromRGBO(68, 147, 248, 1)
+                                      : Color.fromRGBO(240, 246, 252, 0.9),
                                   fontSize: fontScale * 20,
                                   fontWeight: FontWeight.w500,
-                                  decoration: (_isHovered_Email) ? TextDecoration.underline : null,
-                                  decorationColor: (_isHovered_Email) ? Color.fromRGBO(68, 147, 248, 1) : null,
+                                  decoration: (_isHovered_Email)
+                                      ? TextDecoration.underline
+                                      : null,
+                                  decorationColor: (_isHovered_Email)
+                                      ? Color.fromRGBO(68, 147, 248, 1)
+                                      : null,
                                 ),
                               ),
                             ),
@@ -3603,8 +4045,12 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ), // 이메일
                       Row(
                         children: [
-                          Icon(Icons.link, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 800,),
+                          Icon(
+                            Icons.link,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 20),
+                          ),
+                          SizedBox(width: uiWidth / 800),
                           MouseRegion(
                             onEnter: (_) {
                               setState(() {
@@ -3619,19 +4065,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             child: InkWell(
                               onTap: () {
                                 launchUrl(
-                                  Uri.parse(
-                                    "https://skyyype.sh/status",
-                                  ),
+                                  Uri.parse("https://skyyype.sh/status"),
                                 );
                               },
                               child: Text(
                                 "https://skyyype.sh/status",
                                 style: TextStyle(
-                                  color: (_isHovered_Link) ? Color.fromRGBO(68, 147, 248, 1) : Color.fromRGBO(240, 246, 252, 0.9),
+                                  color: (_isHovered_Link)
+                                      ? Color.fromRGBO(68, 147, 248, 1)
+                                      : Color.fromRGBO(240, 246, 252, 0.9),
                                   fontSize: fontScale * 20,
                                   fontWeight: FontWeight.w500,
-                                  decoration: (_isHovered_Link) ? TextDecoration.underline : null,
-                                  decorationColor: (_isHovered_Link) ? Color.fromRGBO(68, 147, 248, 1) : null,
+                                  decoration: (_isHovered_Link)
+                                      ? TextDecoration.underline
+                                      : null,
+                                  decorationColor: (_isHovered_Link)
+                                      ? Color.fromRGBO(68, 147, 248, 1)
+                                      : null,
                                 ),
                               ),
                             ),
@@ -3639,16 +4089,16 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ],
                       ), // 링크
                     ],
-                  ) // profile
-                )
+                  ), // profile
+                ),
               ],
             ),
           ), //profile
           Container(
             padding: EdgeInsets.only(
-                top: uiHeight / 3.8,
-                left: uiWidth / 2.95,
-                right: uiWidth / 6
+              top: uiHeight / 3.8,
+              left: uiWidth / 2.95,
+              right: uiWidth / 6,
             ),
             child: Stack(
               children: [
@@ -3662,14 +4112,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     ),
                     decoration: BoxDecoration(
                       border: Border(
-                        left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        top: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                        left: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 2,
+                        ),
+                        top: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 2,
+                        ),
+                        right: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 2,
+                        ),
                       ),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(12),
                         topRight: Radius.circular(12),
-                      )
+                      ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -3677,39 +4136,44 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Skyyype234",
+                            Text(
+                              "Skyyype234",
                               style: TextStyle(
                                 color: Color.fromRGBO(240, 246, 252, 1),
                                 fontSize: fontScale * 16,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(width: uiWidth / 600,),
-                            Text("/",
+                            SizedBox(width: uiWidth / 600),
+                            Text(
+                              "/",
                               style: TextStyle(
                                 color: Color.fromRGBO(145, 152, 161, 1),
                                 fontSize: fontScale * 16,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(width: uiWidth / 600,),
-                            Text("README",
+                            SizedBox(width: uiWidth / 600),
+                            Text(
+                              "README",
                               style: TextStyle(
                                 color: Color.fromRGBO(240, 246, 252, 1),
                                 fontSize: fontScale * 16,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(width: uiWidth / 1000,),
-                            Text(".",
+                            SizedBox(width: uiWidth / 1000),
+                            Text(
+                              ".",
                               style: TextStyle(
                                 color: Color.fromRGBO(145, 152, 161, 1),
                                 fontSize: fontScale * 16,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(width: uiWidth / 1000,),
-                            Text("md",
+                            SizedBox(width: uiWidth / 1000),
+                            Text(
+                              "md",
                               style: TextStyle(
                                 color: Color.fromRGBO(145, 152, 161, 1),
                                 fontSize: fontScale * 16,
@@ -3718,16 +4182,17 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                           ],
                         ),
-                        SizedBox(height: uiHeight / 80,),
+                        SizedBox(height: uiHeight / 80),
                         Expanded(
                           child: Image(
                             width: uiWidth,
                             fit: BoxFit.fill,
-                            image: AssetImage("assets/SkyyypeBannerImage.png",),
+                            image: AssetImage("assets/SkyyypeBannerImage.png"),
                           ),
                         ),
-                        SizedBox(height: uiHeight / 100,),
-                        Text("이명호: 게으른 8년차 프론트엔드 개발자",
+                        SizedBox(height: uiHeight / 100),
+                        Text(
+                          "이명호: 게으른 8년차 프론트엔드 개발자",
                           style: TextStyle(
                             color: Color.fromRGBO(240, 246, 252, 1),
                             fontSize: fontScale * 36,
@@ -3739,8 +4204,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           height: uiHeight / 300,
                           color: Color.fromRGBO(61, 68, 71, 1),
                         ),
-                        SizedBox(height: uiHeight / 80,),
-                        Text("️ ⚙️ 주 사용 기술/스택",
+                        SizedBox(height: uiHeight / 80),
+                        Text(
+                          "️ ⚙️ 주 사용 기술/스택",
                           style: TextStyle(
                             color: Color.fromRGBO(240, 246, 252, 1),
                             fontSize: fontScale * 32,
@@ -3752,15 +4218,17 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           height: uiHeight / 600,
                           color: Color.fromRGBO(61, 68, 71, 1),
                         ),
-                        Text(" - React\n - Vue.js\n - Flutter",
+                        Text(
+                          " - React\n - Vue.js\n - Flutter",
                           style: TextStyle(
                             color: Color.fromRGBO(240, 246, 252, 0.9),
                             fontSize: fontScale * 24,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        SizedBox(height: uiHeight / 80,),
-                        Text("🌐 저는 이런 기술을 다뤄본 적이 있어요:",
+                        SizedBox(height: uiHeight / 80),
+                        Text(
+                          "🌐 저는 이런 기술을 다뤄본 적이 있어요:",
                           style: TextStyle(
                             color: Color.fromRGBO(240, 246, 252, 1),
                             fontSize: fontScale * 32,
@@ -3776,29 +4244,24 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           alignment: Alignment.topLeft,
                           padding: EdgeInsets.only(
                             top: uiHeight / 40,
-                            left: uiWidth / 100
+                            left: uiWidth / 100,
                           ),
                           height: uiHeight / 6,
-                          child: Image(
-                            image: AssetImage("assets/badge.png",),
-                          ),
+                          child: Image(image: AssetImage("assets/badge.png")),
                         ),
                       ],
-                    )
+                    ),
                   ),
-                ) // readme
+                ), // readme
               ],
             ),
-          ) // readme
+          ), // readme
         ],
       ),
       Stack(
         children: [
           Container(
-            padding: EdgeInsets.only(
-              left: uiWidth / 7,
-              right: uiWidth / 7,
-            ),
+            padding: EdgeInsets.only(left: uiWidth / 7, right: uiWidth / 7),
             // height: uiHeight / 1.08,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -3806,16 +4269,22 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(10, 10, 10, 1),
-                        borderRadius: BorderRadius.only(
-                            // bottomLeft: Radius.circular(24),
-                            // bottomRight: Radius.circular(24)
+                      color: Color.fromRGBO(10, 10, 10, 1),
+                      borderRadius: BorderRadius.only(
+                        // bottomLeft: Radius.circular(24),
+                        // bottomRight: Radius.circular(24)
+                      ),
+                      border: Border(
+                        left: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
                         ),
-                        border: Border(
-                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          // bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                        )
+                        right: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
+                        ),
+                        // bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
+                      ),
                     ),
                   ),
                 ),
@@ -3824,16 +4293,16 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
           Container(
             padding: EdgeInsets.only(
-                // top: uiHeight / 4.5,
-                left: uiWidth / 7.5,
-                right: uiWidth / 7
+              // top: uiHeight / 4.5,
+              left: uiWidth / 7.5,
+              right: uiWidth / 7,
             ),
             child: Stack(
               children: [
                 Container(
                   padding: EdgeInsets.only(
-                      top: uiHeight / 18,
-                      left: uiWidth / 40
+                    top: uiHeight / 18,
+                    left: uiWidth / 40,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -3845,20 +4314,17 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           Container(
                             clipBehavior: Clip.antiAlias,
                             width: uiWidth / 25,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle
-                            ),
+                            decoration: BoxDecoration(shape: BoxShape.circle),
                             child: Image(
                               image: AssetImage("assets/profile.png"),
                             ),
                           ),
-                          SizedBox(
-                            width: uiWidth / 200,
-                          ),
+                          SizedBox(width: uiWidth / 200),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Lee Myung-ho",
+                              Text(
+                                "Lee Myung-ho",
                                 style: TextStyle(
                                   color: Color.fromRGBO(240, 246, 252, 1),
                                   fontSize: fontScale * 32,
@@ -3866,7 +4332,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                   fontFamily: "StackSansText",
                                 ),
                               ),
-                              Text("Skyyype234",
+                              Text(
+                                "Skyyype234",
                                 style: TextStyle(
                                   color: Color.fromRGBO(90, 96, 104, 1),
                                   fontSize: fontScale * 26,
@@ -3874,10 +4341,10 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                 ),
                               ),
                             ],
-                          )
+                          ),
                         ],
                       ),
-                      SizedBox(height: uiHeight / 50,),
+                      SizedBox(height: uiHeight / 50),
                       InkWell(
                         onTap: () {
                           setState(() {
@@ -3901,14 +4368,17 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             height: uiHeight / 30,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                                color: (_isHovered_Follow) ? Color.fromRGBO(38, 44, 54, 1) : Color.fromRGBO(32, 40, 48, 1),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                    color: Color.fromRGBO(61, 68, 77, 1),
-                                    width: 1.2
-                                )
+                              color: (_isHovered_Follow)
+                                  ? Color.fromRGBO(38, 44, 54, 1)
+                                  : Color.fromRGBO(32, 40, 48, 1),
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Color.fromRGBO(61, 68, 77, 1),
+                                width: 1.2,
+                              ),
                             ),
-                            child: Text((_isFollowed) ? "Unfollow" : "Follow",
+                            child: Text(
+                              (_isFollowed) ? "Unfollow" : "Follow",
                               style: TextStyle(
                                 color: Color.fromRGBO(255, 255, 255, 0.9),
                                 fontSize: fontScale * 18,
@@ -3919,47 +4389,53 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ),
                       ), // 팔로우 버튼
-                      SizedBox(height: uiHeight / 100,),
+                      SizedBox(height: uiHeight / 100),
                       Row(
                         children: [
-                          Icon(Icons.people_alt_outlined,
-                              color: Color.fromRGBO(154, 152, 161, 1),
-                              size: uiWidth / (designWidth / 22)
+                          Icon(
+                            Icons.people_alt_outlined,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 22),
                           ),
-                          SizedBox(width: uiWidth / 700,),
-                          Text((_isFollowed) ? "450" : "449",
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            (_isFollowed) ? "450" : "449",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 238, 1),
                               fontSize: fontScale * 20,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 700,),
-                          Text("followers",
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            "followers",
                             style: TextStyle(
                               color: Color.fromRGBO(145, 152, 161, 0.9),
                               fontSize: fontScale * 18,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 300,),
-                          Text("●",
+                          SizedBox(width: uiWidth / 300),
+                          Text(
+                            "●",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 238, 0.8),
                               fontSize: fontScale * 8,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 400,),
-                          Text("19 ",
+                          SizedBox(width: uiWidth / 400),
+                          Text(
+                            "19 ",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 238, 1),
                               fontSize: fontScale * 20,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 700,),
-                          Text("followers",
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            "followers",
                             style: TextStyle(
                               color: Color.fromRGBO(145, 152, 161, 0.9),
                               fontSize: fontScale * 18,
@@ -3968,58 +4444,59 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ],
                       ), // 팔로우
-                      SizedBox(height: uiHeight / 50,),
+                      SizedBox(height: uiHeight / 50),
                       Container(
                         width: uiWidth / 6,
                         height: uiHeight / 600,
                         color: Color.fromRGBO(61, 68, 71, 1),
                       ),
-                      SizedBox(height: uiHeight / 80,),
-                      Text("Achievements",
+                      SizedBox(height: uiHeight / 80),
+                      Text(
+                        "Achievements",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 0.9),
                           fontSize: fontScale * 22,
                           fontWeight: FontWeight.w500,
-                          decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
-                          decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
+                          decoration: (_isHovered_Organization)
+                              ? TextDecoration.underline
+                              : null,
+                          decorationColor: (_isHovered_Organization)
+                              ? Color.fromRGBO(240, 246, 252, 0.9)
+                              : null,
                         ),
                       ),
-                      SizedBox(height: uiHeight / 200,),
+                      SizedBox(height: uiHeight / 200),
                       Row(
                         children: [
                           Container(
                             clipBehavior: Clip.antiAlias,
                             width: uiWidth / 30,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10)
+                              borderRadius: BorderRadius.circular(10),
                             ),
                             child: Image(
                               fit: BoxFit.fill,
                               image: AssetImage("assets/YOLO_Badge.png"),
                             ),
                           ),
-                          SizedBox(
-                            width: uiWidth / 800,
-                          ),
+                          SizedBox(width: uiWidth / 800),
                           Container(
                             clipBehavior: Clip.antiAlias,
                             width: uiWidth / 30,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10)
+                              borderRadius: BorderRadius.circular(10),
                             ),
                             child: Image(
                               fit: BoxFit.fill,
                               image: AssetImage("assets/PullShark.png"),
                             ),
                           ),
-                          SizedBox(
-                            width: uiWidth / 800,
-                          ),
+                          SizedBox(width: uiWidth / 800),
                           Container(
                             clipBehavior: Clip.antiAlias,
                             width: uiWidth / 30,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10)
+                              borderRadius: BorderRadius.circular(10),
                             ),
                             child: Image(
                               fit: BoxFit.fill,
@@ -4028,36 +4505,37 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ],
                       ),
-                      SizedBox(height: uiHeight / 40,),
+                      SizedBox(height: uiHeight / 40),
                       Container(
                         width: uiWidth / 6,
                         height: uiHeight / 600,
                         color: Color.fromRGBO(61, 68, 71, 1),
                       ),
-                      SizedBox(height: uiHeight / 80,),
-                      Text("Organizations",
+                      SizedBox(height: uiHeight / 80),
+                      Text(
+                        "Organizations",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 0.9),
                           fontSize: fontScale * 22,
                           fontWeight: FontWeight.w500,
-                          decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
-                          decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
+                          decoration: (_isHovered_Organization)
+                              ? TextDecoration.underline
+                              : null,
+                          decorationColor: (_isHovered_Organization)
+                              ? Color.fromRGBO(240, 246, 252, 0.9)
+                              : null,
                         ),
                       ),
-                      SizedBox(height: uiHeight / 200,),
+                      SizedBox(height: uiHeight / 200),
                       InkWell(
                         onTap: () {
-                          launchUrl(
-                            Uri.parse(
-                              "https://github.com/532501124",
-                            ),
-                          );
+                          launchUrl(Uri.parse("https://github.com/532501124"));
                         },
                         child: Container(
                           clipBehavior: Clip.antiAlias,
                           width: uiWidth / 40,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10)
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           child: Image(
                             fit: BoxFit.fill,
@@ -4065,18 +4543,15 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ),
                       ),
-                    ]
-                  )
-                )
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
           Container(
             height: uiHeight / 1.6,
-            padding: EdgeInsets.only(
-                left: uiWidth / 2.95,
-                right: uiWidth / 6
-            ),
+            padding: EdgeInsets.only(left: uiWidth / 2.95, right: uiWidth / 6),
             child: Stack(
               children: [
                 Positioned.fill(
@@ -4087,21 +4562,31 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       bottom: uiHeight / 50,
                     ),
                     decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                          bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                      border: Border(
+                        left: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 2,
                         ),
+                        right: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 2,
+                        ),
+                        bottom: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 2,
+                        ),
+                      ),
                       borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(12),
-                          bottomRight: Radius.circular(12)
+                        bottomLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12),
                       ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         // SizedBox(height: uiHeight / 80,),
-                        Text("Super Project: 초거대 프로젝트",
+                        Text(
+                          "Super Project: 초거대 프로젝트",
                           style: TextStyle(
                             color: Color.fromRGBO(240, 246, 252, 1),
                             fontSize: fontScale * 36,
@@ -4113,16 +4598,18 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           height: uiHeight / 600,
                           color: Color.fromRGBO(61, 68, 71, 1),
                         ),
-                        SizedBox(height: uiHeight / 140,),
-                        Text(" - DarkLSE\n - Grassy\n - MultiTool",
+                        SizedBox(height: uiHeight / 140),
+                        Text(
+                          " - DarkLSE\n - Grassy\n - MultiTool",
                           style: TextStyle(
                             color: Color.fromRGBO(240, 246, 252, 0.9),
                             fontSize: fontScale * 24,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        SizedBox(height: uiHeight / 80,),
-                        Text("My Career Path ⌛ (2015-2020)",
+                        SizedBox(height: uiHeight / 80),
+                        Text(
+                          "My Career Path ⌛ (2015-2020)",
                           style: TextStyle(
                             color: Color.fromRGBO(240, 246, 252, 1),
                             fontSize: fontScale * 32,
@@ -4134,7 +4621,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           height: uiHeight / 600,
                           color: Color.fromRGBO(61, 68, 71, 1),
                         ),
-                        SizedBox(height: uiHeight / 80,),
+                        SizedBox(height: uiHeight / 80),
                         Expanded(
                           child: Image(
                             image: AssetImage("assets/careerPath.png"),
@@ -4142,9 +4629,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -4157,78 +4644,83 @@ class _MyStatefulPageState extends State<MyStatefulPage>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: uiHeight / 600,),
-                Text("Pinned",
+                SizedBox(height: uiHeight / 600),
+                Text(
+                  "Pinned",
                   style: TextStyle(
                     color: Color.fromRGBO(240, 246, 252, 0.9),
                     fontSize: fontScale * 22,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: uiHeight / 400,),
+                SizedBox(height: uiHeight / 400),
                 Row(
                   children: [
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.only(
-                            top: uiHeight / 50,
-                            left: uiWidth / 110
+                          top: uiHeight / 50,
+                          left: uiWidth / 110,
                         ),
                         height: uiHeight / 8,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                                color:  Color.fromRGBO(60, 60, 64, 1),
-                                width: 2
-                            )
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Color.fromRGBO(60, 60, 64, 1),
+                            width: 2,
+                          ),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.book_outlined,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)
+                                Icon(
+                                  Icons.book_outlined,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
                                 ),
-                                SizedBox(width: uiWidth / 300,),
-                                Text("Grassy",
+                                SizedBox(width: uiWidth / 300),
+                                Text(
+                                  "Grassy",
                                   style: TextStyle(
                                     color: Color.fromRGBO(68, 147, 248, 1),
                                     fontSize: fontScale * 18,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 200,),
+                                SizedBox(width: uiWidth / 200),
                                 Container(
                                   alignment: Alignment.center,
                                   width: uiWidth / 32,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16),
-                                      border: Border.all(
-                                          color:  Color.fromRGBO(50, 50, 54, 1),
-                                          width: 2
-                                      )
+                                    borderRadius: BorderRadius.circular(16),
+                                    border: Border.all(
+                                      color: Color.fromRGBO(50, 50, 54, 1),
+                                      width: 2,
+                                    ),
                                   ),
-                                  child: Text("Public",
+                                  child: Text(
+                                    "Public",
                                     style: TextStyle(
                                       color: Color.fromRGBO(154, 152, 161, 1),
                                       fontSize: fontScale * 16,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                            SizedBox(height: uiHeight / 200,),
-                            Text('go inside and touch the grass.',
+                            SizedBox(height: uiHeight / 200),
+                            Text(
+                              'go inside and touch the grass.',
                               style: TextStyle(
                                 color: Color.fromRGBO(154, 152, 161, 1),
                                 fontSize: fontScale * 16,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: uiHeight / 70,),
+                            SizedBox(height: uiHeight / 70),
                             Row(
                               children: [
                                 Container(
@@ -4239,19 +4731,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                     color: Color.fromRGBO(241, 224, 90, 1),
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 600,),
-                                Text("JavaScript",
+                                SizedBox(width: uiWidth / 600),
+                                Text(
+                                  "JavaScript",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 100,),
-                                Icon(Icons.star_border,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)),
-                                Text("132",
+                                SizedBox(width: uiWidth / 100),
+                                Icon(
+                                  Icons.star_border,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
+                                ),
+                                Text(
+                                  "132",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
@@ -4264,68 +4760,72 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ),
                       ),
                     ),
-                    SizedBox(width: uiWidth / 80,),
+                    SizedBox(width: uiWidth / 80),
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.only(
-                            top: uiHeight / 50,
-                            left: uiWidth / 110
+                          top: uiHeight / 50,
+                          left: uiWidth / 110,
                         ),
                         height: uiHeight / 8,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                                color: Color.fromRGBO(60, 60, 64, 1),
-                                width: 2
-                            )
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Color.fromRGBO(60, 60, 64, 1),
+                            width: 2,
+                          ),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.book_outlined,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)
+                                Icon(
+                                  Icons.book_outlined,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
                                 ),
-                                SizedBox(width: uiWidth / 300,),
-                                Text("DarkLSE",
+                                SizedBox(width: uiWidth / 300),
+                                Text(
+                                  "DarkLSE",
                                   style: TextStyle(
                                     color: Color.fromRGBO(68, 147, 248, 1),
                                     fontSize: fontScale * 18,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 200,),
+                                SizedBox(width: uiWidth / 200),
                                 Container(
                                   alignment: Alignment.center,
                                   width: uiWidth / 32,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16),
-                                      border: Border.all(
-                                          color:  Color.fromRGBO(50, 50, 54, 1),
-                                          width: 2
-                                      )
+                                    borderRadius: BorderRadius.circular(16),
+                                    border: Border.all(
+                                      color: Color.fromRGBO(50, 50, 54, 1),
+                                      width: 2,
+                                    ),
                                   ),
-                                  child: Text("Public",
+                                  child: Text(
+                                    "Public",
                                     style: TextStyle(
                                       color: Color.fromRGBO(154, 152, 161, 1),
                                       fontSize: fontScale * 16,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                            SizedBox(height: uiHeight / 200,),
-                            Text('웹/텍스트 기반 탐험 게임, 잊혀진 문명을 되찾으세요',
+                            SizedBox(height: uiHeight / 200),
+                            Text(
+                              '웹/텍스트 기반 탐험 게임, 잊혀진 문명을 되찾으세요',
                               style: TextStyle(
                                 color: Color.fromRGBO(154, 152, 161, 1),
                                 fontSize: fontScale * 16,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: uiHeight / 70,),
+                            SizedBox(height: uiHeight / 70),
                             Row(
                               children: [
                                 Container(
@@ -4336,19 +4836,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                     color: Color.fromRGBO(227, 76, 38, 1),
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 600,),
-                                Text("HTML",
+                                SizedBox(width: uiWidth / 600),
+                                Text(
+                                  "HTML",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 100,),
-                                Icon(Icons.star_border,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)),
-                                Text("53",
+                                SizedBox(width: uiWidth / 100),
+                                Icon(
+                                  Icons.star_border,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
+                                ),
+                                Text(
+                                  "53",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
@@ -4363,70 +4867,74 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     ),
                   ],
                 ),
-                SizedBox(height: uiHeight / 60,),
+                SizedBox(height: uiHeight / 60),
                 Row(
                   children: [
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.only(
-                            top: uiHeight / 50,
-                            left: uiWidth / 110
+                          top: uiHeight / 50,
+                          left: uiWidth / 110,
                         ),
                         height: uiHeight / 8,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                                color:  Color.fromRGBO(60, 60, 64, 1),
-                                width: 2
-                            )
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Color.fromRGBO(60, 60, 64, 1),
+                            width: 2,
+                          ),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.book_outlined,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)
+                                Icon(
+                                  Icons.book_outlined,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
                                 ),
-                                SizedBox(width: uiWidth / 300,),
-                                Text("Origami",
+                                SizedBox(width: uiWidth / 300),
+                                Text(
+                                  "Origami",
                                   style: TextStyle(
                                     color: Color.fromRGBO(68, 147, 248, 1),
                                     fontSize: fontScale * 18,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 200,),
+                                SizedBox(width: uiWidth / 200),
                                 Container(
                                   alignment: Alignment.center,
                                   width: uiWidth / 32,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16),
-                                      border: Border.all(
-                                          color:  Color.fromRGBO(50, 50, 54, 1),
-                                          width: 2
-                                      )
+                                    borderRadius: BorderRadius.circular(16),
+                                    border: Border.all(
+                                      color: Color.fromRGBO(50, 50, 54, 1),
+                                      width: 2,
+                                    ),
                                   ),
-                                  child: Text("Public",
+                                  child: Text(
+                                    "Public",
                                     style: TextStyle(
                                       color: Color.fromRGBO(154, 152, 161, 1),
                                       fontSize: fontScale * 16,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                            SizedBox(height: uiHeight / 200,),
-                            Text('순수 HTML에서 종이접기를 접해보세요.',
+                            SizedBox(height: uiHeight / 200),
+                            Text(
+                              '순수 HTML에서 종이접기를 접해보세요.',
                               style: TextStyle(
                                 color: Color.fromRGBO(154, 152, 161, 1),
                                 fontSize: fontScale * 16,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: uiHeight / 70,),
+                            SizedBox(height: uiHeight / 70),
                             Row(
                               children: [
                                 Container(
@@ -4437,19 +4945,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                     color: Color.fromRGBO(227, 76, 38, 1),
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 600,),
-                                Text("HTML",
+                                SizedBox(width: uiWidth / 600),
+                                Text(
+                                  "HTML",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 100,),
-                                Icon(Icons.star_border,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)),
-                                Text("173",
+                                SizedBox(width: uiWidth / 100),
+                                Icon(
+                                  Icons.star_border,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
+                                ),
+                                Text(
+                                  "173",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
@@ -4462,24 +4974,22 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ),
                       ),
                     ),
-                    SizedBox(width: uiWidth / 80,),
-                    Expanded(
-                      child: Container(),
-                    ),
+                    SizedBox(width: uiWidth / 80),
+                    Expanded(child: Container()),
                   ],
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
       Stack(
         children: [
           Container(
             padding: EdgeInsets.only(
-                // top: uiHeight / 8,
-                left: uiWidth / 7,
-                right: uiWidth / 7,
+              // top: uiHeight / 8,
+              left: uiWidth / 7,
+              right: uiWidth / 7,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -4488,16 +4998,22 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   child: Container(
                     // height: uiHeight / 1.2,
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(10, 10, 10, 1),
-                        borderRadius: BorderRadius.only(
-                            // topLeft: Radius.circular(24),
-                            // topRight: Radius.circular(24)
+                      color: Color.fromRGBO(10, 10, 10, 1),
+                      borderRadius: BorderRadius.only(
+                        // topLeft: Radius.circular(24),
+                        // topRight: Radius.circular(24)
+                      ),
+                      border: Border(
+                        // top: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
+                        left: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
                         ),
-                        border: Border(
-                          // top: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                        )
+                        right: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -4506,9 +5022,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ), // 나의 진로 경로 container
           Container(
             padding: EdgeInsets.only(
-                top: uiHeight / 12,
-                left: uiWidth / 6,
-                right: uiWidth / 3
+              top: uiHeight / 12,
+              left: uiWidth / 6,
+              right: uiWidth / 3,
             ),
             child: Stack(
               children: [
@@ -4522,18 +5038,27 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   // height: uiHeight / 1.38,
                   width: uiWidth / 2,
                   decoration: BoxDecoration(
-                      border: Border(
-                        left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        top: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        // bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                    border: Border(
+                      left: BorderSide(
+                        color: Color.fromRGBO(50, 50, 54, 1),
+                        width: 2,
                       ),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12),
-                        topRight: Radius.circular(12),
-                        // bottomLeft: Radius.circular(12),
-                        // bottomRight: Radius.circular(12),
-                      )
+                      top: BorderSide(
+                        color: Color.fromRGBO(50, 50, 54, 1),
+                        width: 2,
+                      ),
+                      right: BorderSide(
+                        color: Color.fromRGBO(50, 50, 54, 1),
+                        width: 2,
+                      ),
+                      // bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                    ),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      topRight: Radius.circular(12),
+                      // bottomLeft: Radius.circular(12),
+                      // bottomRight: Radius.circular(12),
+                    ),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -4541,39 +5066,44 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("YeongGyu1110",
+                          Text(
+                            "YeongGyu1110",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 252, 1),
                               fontSize: fontScale * 16,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 600,),
-                          Text("/",
+                          SizedBox(width: uiWidth / 600),
+                          Text(
+                            "/",
                             style: TextStyle(
                               color: Color.fromRGBO(145, 152, 161, 1),
                               fontSize: fontScale * 16,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 600,),
-                          Text("README",
+                          SizedBox(width: uiWidth / 600),
+                          Text(
+                            "README",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 252, 1),
                               fontSize: fontScale * 16,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 1000,),
-                          Text(".",
+                          SizedBox(width: uiWidth / 1000),
+                          Text(
+                            ".",
                             style: TextStyle(
                               color: Color.fromRGBO(145, 152, 161, 1),
                               fontSize: fontScale * 16,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 1000,),
-                          Text("md",
+                          SizedBox(width: uiWidth / 1000),
+                          Text(
+                            "md",
                             style: TextStyle(
                               color: Color.fromRGBO(145, 152, 161, 1),
                               fontSize: fontScale * 16,
@@ -4582,17 +5112,18 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ],
                       ),
-                      SizedBox(height: uiHeight / 100,),
+                      SizedBox(height: uiHeight / 100),
                       Expanded(
                         child: Image(
                           width: uiWidth,
                           // height: uiHeight / 20,
                           image: AssetImage("assets/yeonggyuAsciiBanner.png"),
-                          fit: BoxFit.cover
+                          fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(height: uiHeight / 100,),
-                      Text("Hi, Where! 👋",
+                      SizedBox(height: uiHeight / 100),
+                      Text(
+                        "Hi, Where! 👋",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 1),
                           fontSize: fontScale * 36,
@@ -4604,8 +5135,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         height: uiHeight / 600,
                         color: Color.fromRGBO(61, 68, 71, 1),
                       ),
-                      SizedBox(height: uiHeight / 140,),
-                      Text("저는 영규(이)라고 해요!\n다음과 같은 기술을 주로 다뤄요:",
+                      SizedBox(height: uiHeight / 140),
+                      Text(
+                        "저는 영규(이)라고 해요!\n다음과 같은 기술을 주로 다뤄요:",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 0.9),
                           fontSize: fontScale * 24,
@@ -4614,14 +5146,15 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                       Row(
                         children: [
-                          Text("-",
+                          Text(
+                            "-",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 252, 0.9),
                               fontSize: fontScale * 24,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 300,),
+                          SizedBox(width: uiWidth / 300),
                           Image(
                             height: uiHeight / 24,
                             image: AssetImage("assets/javascript.png"),
@@ -4629,7 +5162,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ],
                       ),
-                      Text("      └ MessengerBot을 활용한 메신저 앱 알림 자동답장기 제작\n      └ Discord.Js를 활용한 디스코드 봇 제작",
+                      Text(
+                        "      └ MessengerBot을 활용한 메신저 앱 알림 자동답장기 제작\n      └ Discord.Js를 활용한 디스코드 봇 제작",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 0.9),
                           fontSize: fontScale * 24,
@@ -4638,20 +5172,21 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                       Row(
                         children: [
-                          Text("-",
+                          Text(
+                            "-",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 252, 0.9),
                               fontSize: fontScale * 24,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 300,),
+                          SizedBox(width: uiWidth / 300),
                           Image(
                             height: uiHeight / 28,
                             image: AssetImage("assets/flutter.png"),
                             fit: BoxFit.cover,
                           ),
-                          SizedBox(width: uiWidth / 200,),
+                          SizedBox(width: uiWidth / 200),
                           Image(
                             height: uiHeight / 28,
                             image: AssetImage("assets/dart.png"),
@@ -4659,22 +5194,25 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ],
                       ),
-                      Text("      └ 앱 UI/UX 디자인\n      └ 프론트엔드 구현",
+                      Text(
+                        "      └ 앱 UI/UX 디자인\n      └ 프론트엔드 구현",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 0.9),
                           fontSize: fontScale * 24,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      SizedBox(height: uiHeight / 30,),
-                      Text("저는 개발자 2차 전직으로 2가지 길을 걸을 수 있어요.",
+                      SizedBox(height: uiHeight / 30),
+                      Text(
+                        "저는 개발자 2차 전직으로 2가지 길을 걸을 수 있어요.",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 0.9),
                           fontSize: fontScale * 24,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      Text("1. 유저와 상호작용하는 '프론트-엔드 개발자' 🖼️",
+                      Text(
+                        "1. 유저와 상호작용하는 '프론트-엔드 개발자' 🖼️",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 1),
                           fontSize: fontScale * 36,
@@ -4682,35 +5220,34 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ),
                       ),
 
-
                       Container(
                         width: uiWidth,
                         height: uiHeight / 600,
                         color: Color.fromRGBO(61, 68, 71, 1),
                       ),
-                      SizedBox(height: uiHeight / 80,),
+                      SizedBox(height: uiHeight / 80),
                       Image(
                         image: AssetImage("assets/flutter_careerPath.png"),
                         fit: BoxFit.cover,
                       ),
                     ],
-                  )
+                  ),
                 ),
               ],
             ),
           ), // readme
           Container(
             padding: EdgeInsets.only(
-                top: uiHeight / 12,
-                left: uiWidth / 1.52,
-                right: uiWidth / 7
+              top: uiHeight / 12,
+              left: uiWidth / 1.52,
+              right: uiWidth / 7,
             ),
             child: Stack(
               children: [
                 Container(
                   padding: EdgeInsets.only(
-                      top: uiHeight / 18,
-                      left: uiWidth / 40
+                    top: uiHeight / 18,
+                    left: uiWidth / 40,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -4718,7 +5255,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       InkWell(
                         onTap: () {
                           setState(() {
-                            (_currentProfileImageIndex == 3) ? _currentProfileImageIndex = 0 : _currentProfileImageIndex ++;
+                            (_currentProfileImageIndex == 3)
+                                ? _currentProfileImageIndex = 0
+                                : _currentProfileImageIndex++;
                           });
                         },
                         child: Container(
@@ -4726,23 +5265,24 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           width: uiWidth / 6.5,
                           height: uiWidth / 6.5,
                           decoration: BoxDecoration(
-                              color: Color.fromRGBO(61, 68, 77, 1),
-                              shape: BoxShape.circle
+                            color: Color.fromRGBO(61, 68, 77, 1),
+                            shape: BoxShape.circle,
                           ),
                           child: Image(
                             image: (_currentProfileImageIndex == 0)
-                            ? AssetImage("assets/Yeonggyu.jpg")
-                            : (_currentProfileImageIndex == 1)
-                              ? AssetImage("assets/Yeonggyu2.jpg")
-                              : (_currentProfileImageIndex == 2)
+                                ? AssetImage("assets/Yeonggyu.jpg")
+                                : (_currentProfileImageIndex == 1)
+                                ? AssetImage("assets/Yeonggyu2.jpg")
+                                : (_currentProfileImageIndex == 2)
                                 ? AssetImage("assets/hacker.png")
                                 : AssetImage("assets/Yeonggyu4.jpg"),
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                      SizedBox(height: uiHeight / 100,),
-                      Text("YEONGGYU1110",
+                      SizedBox(height: uiHeight / 100),
+                      Text(
+                        "YEONGGYU1110",
                         style: TextStyle(
                           color: Color.fromRGBO(240, 246, 252, 1),
                           fontSize: fontScale * 32,
@@ -4750,14 +5290,15 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           fontFamily: "StackSansText",
                         ),
                       ),
-                      Text("YeongGyu1110",
+                      Text(
+                        "YeongGyu1110",
                         style: TextStyle(
                           color: Color.fromRGBO(90, 96, 104, 1),
                           fontSize: fontScale * 26,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(height: uiHeight / 50,),
+                      SizedBox(height: uiHeight / 50),
                       InkWell(
                         onTap: () {
                           setState(() {
@@ -4781,14 +5322,17 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             height: uiHeight / 30,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                                color: (_isHovered_Follow) ? Color.fromRGBO(38, 44, 54, 1) : Color.fromRGBO(32, 40, 48, 1),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                    color: Color.fromRGBO(61, 68, 77, 1),
-                                    width: 1.2
-                                )
+                              color: (_isHovered_Follow)
+                                  ? Color.fromRGBO(38, 44, 54, 1)
+                                  : Color.fromRGBO(32, 40, 48, 1),
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Color.fromRGBO(61, 68, 77, 1),
+                                width: 1.2,
+                              ),
                             ),
-                            child: Text((_isFollowed_YEONGGYU) ? "Unfollow" : "Follow",
+                            child: Text(
+                              (_isFollowed_YEONGGYU) ? "Unfollow" : "Follow",
                               style: TextStyle(
                                 color: Color.fromRGBO(255, 255, 255, 0.9),
                                 fontSize: fontScale * 18,
@@ -4799,48 +5343,54 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ),
                       ), // 팔로우 버튼
-                      SizedBox(height: uiHeight / 100,),
-                      SizedBox(height: uiHeight / 100,),
+                      SizedBox(height: uiHeight / 100),
+                      SizedBox(height: uiHeight / 100),
                       Row(
                         children: [
-                          Icon(Icons.people_alt_outlined,
-                              color: Color.fromRGBO(154, 152, 161, 1),
-                              size: uiWidth / (designWidth / 22)
+                          Icon(
+                            Icons.people_alt_outlined,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 22),
                           ),
-                          SizedBox(width: uiWidth / 700,),
-                          Text((_isFollowed_YEONGGYU) ? "116" : "115",
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            (_isFollowed_YEONGGYU) ? "116" : "115",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 238, 1),
                               fontSize: fontScale * 20,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 700,),
-                          Text("followers",
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            "followers",
                             style: TextStyle(
                               color: Color.fromRGBO(145, 152, 161, 0.9),
                               fontSize: fontScale * 18,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 300,),
-                          Text("●",
+                          SizedBox(width: uiWidth / 300),
+                          Text(
+                            "●",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 238, 0.8),
                               fontSize: fontScale * 8,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 400,),
-                          Text("51",
+                          SizedBox(width: uiWidth / 400),
+                          Text(
+                            "51",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 238, 1),
                               fontSize: fontScale * 20,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: uiWidth / 700,),
-                          Text("followers",
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            "followers",
                             style: TextStyle(
                               color: Color.fromRGBO(145, 152, 161, 0.9),
                               fontSize: fontScale * 18,
@@ -4849,11 +5399,15 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ],
                       ), // 팔로우
-                      SizedBox(height: uiHeight / 50,),
+                      SizedBox(height: uiHeight / 50),
                       Row(
                         children: [
-                          Icon(Icons.apartment, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 800,),
+                          Icon(
+                            Icons.apartment,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 20),
+                          ),
+                          SizedBox(width: uiWidth / 800),
                           MouseRegion(
                             onEnter: (_) {
                               setState(() {
@@ -4873,13 +5427,18 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                   ),
                                 );
                               },
-                              child: Text("LICHTKRANKHEIT",
+                              child: Text(
+                                "LICHTKRANKHEIT",
                                 style: TextStyle(
                                   color: Color.fromRGBO(240, 246, 252, 0.9),
                                   fontSize: fontScale * 20,
                                   fontWeight: FontWeight.w500,
-                                  decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
-                                  decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
+                                  decoration: (_isHovered_Organization)
+                                      ? TextDecoration.underline
+                                      : null,
+                                  decorationColor: (_isHovered_Organization)
+                                      ? Color.fromRGBO(240, 246, 252, 0.9)
+                                      : null,
                                 ),
                               ),
                             ),
@@ -4888,9 +5447,14 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ), // 조직
                       Row(
                         children: [
-                          Icon(Icons.location_on_outlined, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 800,),
-                          Text("🪐",
+                          Icon(
+                            Icons.location_on_outlined,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 20),
+                          ),
+                          SizedBox(width: uiWidth / 800),
+                          Text(
+                            "🪐",
                             style: TextStyle(
                               color: Color.fromRGBO(240, 246, 252, 0.9),
                               fontSize: fontScale * 20,
@@ -4901,8 +5465,12 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ), // 달
                       Row(
                         children: [
-                          Icon(Icons.email_outlined, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 700,),
+                          Icon(
+                            Icons.email_outlined,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 20),
+                          ),
+                          SizedBox(width: uiWidth / 700),
                           MouseRegion(
                             onEnter: (_) {
                               setState(() {
@@ -4922,13 +5490,20 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                   ),
                                 );
                               },
-                              child: Text("YeongGyu1110.work@gmail.com",
+                              child: Text(
+                                "YeongGyu1110.work@gmail.com",
                                 style: TextStyle(
-                                  color: (_isHovered_Email) ? Color.fromRGBO(68, 147, 248, 1) : Color.fromRGBO(240, 246, 252, 0.9),
+                                  color: (_isHovered_Email)
+                                      ? Color.fromRGBO(68, 147, 248, 1)
+                                      : Color.fromRGBO(240, 246, 252, 0.9),
                                   fontSize: fontScale * 20,
                                   fontWeight: FontWeight.w500,
-                                  decoration: (_isHovered_Email) ? TextDecoration.underline : null,
-                                  decorationColor: (_isHovered_Email) ? Color.fromRGBO(68, 147, 248, 1) : null,
+                                  decoration: (_isHovered_Email)
+                                      ? TextDecoration.underline
+                                      : null,
+                                  decorationColor: (_isHovered_Email)
+                                      ? Color.fromRGBO(68, 147, 248, 1)
+                                      : null,
                                 ),
                               ),
                             ),
@@ -4937,8 +5512,12 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ), // 이메일
                       Row(
                         children: [
-                          Icon(Icons.link, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 800,),
+                          Icon(
+                            Icons.link,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 20),
+                          ),
+                          SizedBox(width: uiWidth / 800),
                           MouseRegion(
                             onEnter: (_) {
                               setState(() {
@@ -4961,11 +5540,17 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                               child: Text(
                                 "https://notion.site/YeongGyu1110",
                                 style: TextStyle(
-                                  color: (_isHovered_Link) ? Color.fromRGBO(68, 147, 248, 1) : Color.fromRGBO(240, 246, 252, 0.9),
+                                  color: (_isHovered_Link)
+                                      ? Color.fromRGBO(68, 147, 248, 1)
+                                      : Color.fromRGBO(240, 246, 252, 0.9),
                                   fontSize: fontScale * 20,
                                   fontWeight: FontWeight.w500,
-                                  decoration: (_isHovered_Link) ? TextDecoration.underline : null,
-                                  decorationColor: (_isHovered_Link) ? Color.fromRGBO(68, 147, 248, 1) : null,
+                                  decoration: (_isHovered_Link)
+                                      ? TextDecoration.underline
+                                      : null,
+                                  decorationColor: (_isHovered_Link)
+                                      ? Color.fromRGBO(68, 147, 248, 1)
+                                      : null,
                                 ),
                               ),
                             ),
@@ -4973,8 +5558,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ],
                       ), // 링크
                     ],
-                  ) // profile
-                )
+                  ), // profile
+                ),
               ],
             ),
           ), // profile
@@ -4984,26 +5569,32 @@ class _MyStatefulPageState extends State<MyStatefulPage>
         children: [
           Container(
             height: uiHeight / 1.18,
-            padding: EdgeInsets.only(
-              left: uiWidth / 7,
-              right: uiWidth / 7,
-            ),
+            padding: EdgeInsets.only(left: uiWidth / 7, right: uiWidth / 7),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(10, 10, 10, 1),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(16),
-                          bottomRight: Radius.circular(16),
+                      color: Color.fromRGBO(10, 10, 10, 1),
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(16),
+                        bottomRight: Radius.circular(16),
+                      ),
+                      border: Border(
+                        left: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
                         ),
-                        border: Border(
-                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                        )
+                        right: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
+                        ),
+                        bottom: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 1,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -5011,273 +5602,280 @@ class _MyStatefulPageState extends State<MyStatefulPage>
             ),
           ),
           Container(
-            padding: EdgeInsets.only(
-                left: uiWidth / 1.52,
-                right: uiWidth / 7
-            ),
+            padding: EdgeInsets.only(left: uiWidth / 1.52, right: uiWidth / 7),
             child: Stack(
               children: [
                 Container(
-                    padding: EdgeInsets.only(
-                        top: uiHeight / 18,
-                        left: uiWidth / 40
-                    ),
-                    child: Column(
+                  padding: EdgeInsets.only(
+                    top: uiHeight / 18,
+                    left: uiWidth / 40,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    (_currentProfileImageIndex == 3) ? _currentProfileImageIndex = 0 : _currentProfileImageIndex ++;
-                                  });
-                                },
-                                child: Container(
-                                  clipBehavior: Clip.antiAlias,
-                                  width: uiWidth / 25,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle
-                                  ),
-                                  child: Image(
-                                    image: (_currentProfileImageIndex == 0)
-                                        ? AssetImage("assets/Yeonggyu.jpg")
-                                        : (_currentProfileImageIndex == 1)
-                                        ? AssetImage("assets/Yeonggyu2.jpg")
-                                        : (_currentProfileImageIndex == 2)
-                                        ? AssetImage("assets/hacker.png")
-                                        : AssetImage("assets/Yeonggyu4.jpg"),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: uiWidth / 200,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("YEONGGYU1110",
-                                    style: TextStyle(
-                                      color: Color.fromRGBO(240, 246, 252, 1),
-                                      fontSize: fontScale * 32,
-                                      fontWeight: FontWeight.w800,
-                                      fontFamily: "StackSansText",
-                                    ),
-                                  ),
-                                  Text("YeongGyu1110",
-                                    style: TextStyle(
-                                      color: Color.fromRGBO(90, 96, 104, 1),
-                                      fontSize: fontScale * 26,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          SizedBox(height: uiHeight / 50,),
                           InkWell(
                             onTap: () {
                               setState(() {
-                                _isFollowed_YEONGGYU = !_isFollowed_YEONGGYU;
+                                (_currentProfileImageIndex == 3)
+                                    ? _currentProfileImageIndex = 0
+                                    : _currentProfileImageIndex++;
                               });
-                            },
-                            child: MouseRegion(
-                              onEnter: (_) {
-                                setState(() {
-                                  _isHovered_Follow = true;
-                                });
-                              },
-                              onExit: (_) {
-                                setState(() {
-                                  _isHovered_Follow = false;
-                                });
-                              },
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 100),
-                                width: uiWidth / 6,
-                                height: uiHeight / 30,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                    color: (_isHovered_Follow) ? Color.fromRGBO(38, 44, 54, 1) : Color.fromRGBO(32, 40, 48, 1),
-                                    borderRadius: BorderRadius.circular(8),
-                                    border: Border.all(
-                                        color: Color.fromRGBO(61, 68, 77, 1),
-                                        width: 1.2
-                                    )
-                                ),
-                                child: Text((_isFollowed_YEONGGYU) ? "Unfollow" : "Follow",
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(255, 255, 255, 0.9),
-                                    fontSize: fontScale * 18,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: "StackSansText",
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: uiHeight / 100,),
-                          Row(
-                            children: [
-                              Icon(Icons.people_alt_outlined,
-                                  color: Color.fromRGBO(154, 152, 161, 1),
-                                  size: uiWidth / (designWidth / 22)
-                              ),
-                              SizedBox(width: uiWidth / 700,),
-                              Text((_isFollowed_YEONGGYU) ?  "116" : "115",
-                                style: TextStyle(
-                                  color: Color.fromRGBO(240, 246, 238, 1),
-                                  fontSize: fontScale * 20,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              SizedBox(width: uiWidth / 700,),
-                              Text("followers",
-                                style: TextStyle(
-                                  color: Color.fromRGBO(145, 152, 161, 0.9),
-                                  fontSize: fontScale * 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              SizedBox(width: uiWidth / 300,),
-                              Text("●",
-                                style: TextStyle(
-                                  color: Color.fromRGBO(240, 246, 238, 0.8),
-                                  fontSize: fontScale * 8,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              SizedBox(width: uiWidth / 400,),
-                              Text("51",
-                                style: TextStyle(
-                                  color: Color.fromRGBO(240, 246, 238, 1),
-                                  fontSize: fontScale * 20,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              SizedBox(width: uiWidth / 700,),
-                              Text("followers",
-                                style: TextStyle(
-                                  color: Color.fromRGBO(145, 152, 161, 0.9),
-                                  fontSize: fontScale * 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ), // 팔로우
-                          SizedBox(height: uiHeight / 50,),
-                          Container(
-                            width: uiWidth / 6,
-                            height: uiHeight / 600,
-                            color: Color.fromRGBO(61, 68, 71, 1),
-                          ),
-                          SizedBox(height: uiHeight / 80,),
-                          Text("Achievements",
-                            style: TextStyle(
-                              color: Color.fromRGBO(240, 246, 252, 0.9),
-                              fontSize: fontScale * 22,
-                              fontWeight: FontWeight.w500,
-                              decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
-                              decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
-                            ),
-                          ),
-                          SizedBox(height: uiHeight / 200,),
-                          Row(
-                            children: [
-                              Container(
-                                clipBehavior: Clip.antiAlias,
-                                width: uiWidth / 30,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Image(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage("assets/YOLO_Badge.png"),
-                                ),
-                              ),
-                              SizedBox(
-                                width: uiWidth / 800,
-                              ),
-                              Container(
-                                clipBehavior: Clip.antiAlias,
-                                width: uiWidth / 30,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Image(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage("assets/PullShark.png"),
-                                ),
-                              ),
-                              SizedBox(
-                                width: uiWidth / 800,
-                              ),
-                              Container(
-                                clipBehavior: Clip.antiAlias,
-                                width: uiWidth / 30,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Image(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage("assets/QuickDraw.png"),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: uiHeight / 40,),
-                          Container(
-                            width: uiWidth / 6,
-                            height: uiHeight / 600,
-                            color: Color.fromRGBO(61, 68, 71, 1),
-                          ),
-                          SizedBox(height: uiHeight / 80,),
-                          Text("Organizations",
-                            style: TextStyle(
-                              color: Color.fromRGBO(240, 246, 252, 0.9),
-                              fontSize: fontScale * 22,
-                              fontWeight: FontWeight.w500,
-                              decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
-                              decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
-                            ),
-                          ),
-                          SizedBox(height: uiHeight / 200,),
-                          InkWell(
-                            onTap: () {
-                              launchUrl(
-                                Uri.parse(
-                                  "https://github.com/LICHTKRANKHEIT",
-                                ),
-                              );
                             },
                             child: Container(
                               clipBehavior: Clip.antiAlias,
-                              width: uiWidth / 45,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10)
-                              ),
+                              width: uiWidth / 25,
+                              decoration: BoxDecoration(shape: BoxShape.circle),
                               child: Image(
-                                fit: BoxFit.fill,
-                                image: AssetImage("assets/LICHTKRANKHEIT.jpg"),
+                                image: (_currentProfileImageIndex == 0)
+                                    ? AssetImage("assets/Yeonggyu.jpg")
+                                    : (_currentProfileImageIndex == 1)
+                                    ? AssetImage("assets/Yeonggyu2.jpg")
+                                    : (_currentProfileImageIndex == 2)
+                                    ? AssetImage("assets/hacker.png")
+                                    : AssetImage("assets/Yeonggyu4.jpg"),
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                        ]
-                    )
-                )
+                          SizedBox(width: uiWidth / 200),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "YEONGGYU1110",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(240, 246, 252, 1),
+                                  fontSize: fontScale * 32,
+                                  fontWeight: FontWeight.w800,
+                                  fontFamily: "StackSansText",
+                                ),
+                              ),
+                              Text(
+                                "YeongGyu1110",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(90, 96, 104, 1),
+                                  fontSize: fontScale * 26,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: uiHeight / 50),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            _isFollowed_YEONGGYU = !_isFollowed_YEONGGYU;
+                          });
+                        },
+                        child: MouseRegion(
+                          onEnter: (_) {
+                            setState(() {
+                              _isHovered_Follow = true;
+                            });
+                          },
+                          onExit: (_) {
+                            setState(() {
+                              _isHovered_Follow = false;
+                            });
+                          },
+                          child: AnimatedContainer(
+                            duration: Duration(milliseconds: 100),
+                            width: uiWidth / 6,
+                            height: uiHeight / 30,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: (_isHovered_Follow)
+                                  ? Color.fromRGBO(38, 44, 54, 1)
+                                  : Color.fromRGBO(32, 40, 48, 1),
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Color.fromRGBO(61, 68, 77, 1),
+                                width: 1.2,
+                              ),
+                            ),
+                            child: Text(
+                              (_isFollowed_YEONGGYU) ? "Unfollow" : "Follow",
+                              style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 0.9),
+                                fontSize: fontScale * 18,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText",
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 100),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.people_alt_outlined,
+                            color: Color.fromRGBO(154, 152, 161, 1),
+                            size: uiWidth / (designWidth / 22),
+                          ),
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            (_isFollowed_YEONGGYU) ? "116" : "115",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 238, 1),
+                              fontSize: fontScale * 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            "followers",
+                            style: TextStyle(
+                              color: Color.fromRGBO(145, 152, 161, 0.9),
+                              fontSize: fontScale * 18,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 300),
+                          Text(
+                            "●",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 238, 0.8),
+                              fontSize: fontScale * 8,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 400),
+                          Text(
+                            "51",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 238, 1),
+                              fontSize: fontScale * 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 700),
+                          Text(
+                            "followers",
+                            style: TextStyle(
+                              color: Color.fromRGBO(145, 152, 161, 0.9),
+                              fontSize: fontScale * 18,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ), // 팔로우
+                      SizedBox(height: uiHeight / 50),
+                      Container(
+                        width: uiWidth / 6,
+                        height: uiHeight / 600,
+                        color: Color.fromRGBO(61, 68, 71, 1),
+                      ),
+                      SizedBox(height: uiHeight / 80),
+                      Text(
+                        "Achievements",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 0.9),
+                          fontSize: fontScale * 22,
+                          fontWeight: FontWeight.w500,
+                          decoration: (_isHovered_Organization)
+                              ? TextDecoration.underline
+                              : null,
+                          decorationColor: (_isHovered_Organization)
+                              ? Color.fromRGBO(240, 246, 252, 0.9)
+                              : null,
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 200),
+                      Row(
+                        children: [
+                          Container(
+                            clipBehavior: Clip.antiAlias,
+                            width: uiWidth / 30,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Image(
+                              fit: BoxFit.fill,
+                              image: AssetImage("assets/YOLO_Badge.png"),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 800),
+                          Container(
+                            clipBehavior: Clip.antiAlias,
+                            width: uiWidth / 30,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Image(
+                              fit: BoxFit.fill,
+                              image: AssetImage("assets/PullShark.png"),
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 800),
+                          Container(
+                            clipBehavior: Clip.antiAlias,
+                            width: uiWidth / 30,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Image(
+                              fit: BoxFit.fill,
+                              image: AssetImage("assets/QuickDraw.png"),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: uiHeight / 40),
+                      Container(
+                        width: uiWidth / 6,
+                        height: uiHeight / 600,
+                        color: Color.fromRGBO(61, 68, 71, 1),
+                      ),
+                      SizedBox(height: uiHeight / 80),
+                      Text(
+                        "Organizations",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 0.9),
+                          fontSize: fontScale * 22,
+                          fontWeight: FontWeight.w500,
+                          decoration: (_isHovered_Organization)
+                              ? TextDecoration.underline
+                              : null,
+                          decorationColor: (_isHovered_Organization)
+                              ? Color.fromRGBO(240, 246, 252, 0.9)
+                              : null,
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 200),
+                      InkWell(
+                        onTap: () {
+                          launchUrl(
+                            Uri.parse("https://github.com/LICHTKRANKHEIT"),
+                          );
+                        },
+                        child: Container(
+                          clipBehavior: Clip.antiAlias,
+                          width: uiWidth / 45,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Image(
+                            fit: BoxFit.fill,
+                            image: AssetImage("assets/LICHTKRANKHEIT.jpg"),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ), // 프로필
           Container(
             height: uiHeight / 1.66,
-            padding: EdgeInsets.only(
-                left: uiWidth / 6,
-                right: uiWidth / 3
-            ),
+            padding: EdgeInsets.only(left: uiWidth / 6, right: uiWidth / 3),
             child: Stack(
               children: [
                 Positioned.fill(
@@ -5290,20 +5888,30 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     ),
                     decoration: BoxDecoration(
                       border: Border(
-                        left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                        left: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 2,
+                        ),
+                        right: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 2,
+                        ),
+                        bottom: BorderSide(
+                          color: Color.fromRGBO(50, 50, 54, 1),
+                          width: 2,
+                        ),
                       ),
                       borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(12),
-                          bottomRight: Radius.circular(12)
+                        bottomLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12),
                       ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: uiHeight / 30,),
-                        Text("2. 서버과 통신하는 뒷무대, '백-엔드' ⚙️",
+                        SizedBox(height: uiHeight / 30),
+                        Text(
+                          "2. 서버과 통신하는 뒷무대, '백-엔드' ⚙️",
                           style: TextStyle(
                             color: Color.fromRGBO(240, 246, 252, 1),
                             fontSize: fontScale * 36,
@@ -5315,13 +5923,14 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           height: uiHeight / 600,
                           color: Color.fromRGBO(61, 68, 71, 1),
                         ),
-                        SizedBox(height: uiHeight / 80,),
+                        SizedBox(height: uiHeight / 80),
                         Image(
                           image: AssetImage("assets/backend_careerPath.png"),
                           fit: BoxFit.cover,
                         ),
-                        SizedBox(height: uiHeight / 30,),
-                        Text("쉿, 지금은 이런 기술을 배우고 있어요",
+                        SizedBox(height: uiHeight / 30),
+                        Text(
+                          "쉿, 지금은 이런 기술을 배우고 있어요",
                           style: TextStyle(
                             color: Color.fromRGBO(240, 246, 252, 0.9),
                             fontSize: fontScale * 34,
@@ -5333,17 +5942,18 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           height: uiHeight / 600,
                           color: Color.fromRGBO(61, 68, 71, 1),
                         ),
-                        SizedBox(height: uiHeight / 100,),
+                        SizedBox(height: uiHeight / 100),
                         Row(
                           children: [
-                            Text("-",
+                            Text(
+                              "-",
                               style: TextStyle(
                                 color: Color.fromRGBO(240, 246, 252, 0.9),
                                 fontSize: fontScale * 24,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
-                            SizedBox(width: uiWidth / 300,),
+                            SizedBox(width: uiWidth / 300),
                             Image(
                               height: uiHeight / 26,
                               image: AssetImage("assets/react.png"),
@@ -5351,17 +5961,18 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                           ],
                         ),
-                        SizedBox(height: uiHeight / 100,),
+                        SizedBox(height: uiHeight / 100),
                         Row(
                           children: [
-                            Text("-",
+                            Text(
+                              "-",
                               style: TextStyle(
                                 color: Color.fromRGBO(240, 246, 252, 0.9),
                                 fontSize: fontScale * 24,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
-                            SizedBox(width: uiWidth / 300,),
+                            SizedBox(width: uiWidth / 300),
                             Image(
                               height: uiHeight / 26,
                               image: AssetImage("assets/flutter.png"),
@@ -5370,92 +5981,97 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ],
                         ),
                       ],
-                    )
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ), // 리드미
           Container(
             padding: EdgeInsets.only(
-                top: uiWidth / 3.2,
-                left: uiWidth / 6,
-                right: uiWidth / 3
+              top: uiWidth / 3.2,
+              left: uiWidth / 6,
+              right: uiWidth / 3,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Pinned",
+                Text(
+                  "Pinned",
                   style: TextStyle(
                     color: Color.fromRGBO(240, 246, 252, 0.9),
                     fontSize: fontScale * 22,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: uiHeight / 400,),
+                SizedBox(height: uiHeight / 400),
                 Row(
                   children: [
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.only(
-                            top: uiHeight / 50,
-                            left: uiWidth / 110
+                          top: uiHeight / 50,
+                          left: uiWidth / 110,
                         ),
                         height: uiHeight / 8,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                                color:  Color.fromRGBO(60, 60, 64, 1),
-                                width: 2
-                            )
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Color.fromRGBO(60, 60, 64, 1),
+                            width: 2,
+                          ),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.book_outlined,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)
+                                Icon(
+                                  Icons.book_outlined,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
                                 ),
-                                SizedBox(width: uiWidth / 300,),
-                                Text("project_JinRo",
+                                SizedBox(width: uiWidth / 300),
+                                Text(
+                                  "project_JinRo",
                                   style: TextStyle(
                                     color: Color.fromRGBO(68, 147, 248, 1),
                                     fontSize: fontScale * 18,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 200,),
+                                SizedBox(width: uiWidth / 200),
                                 Container(
                                   alignment: Alignment.center,
                                   width: uiWidth / 32,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16),
-                                      border: Border.all(
-                                          color:  Color.fromRGBO(50, 50, 54, 1),
-                                          width: 2
-                                      )
+                                    borderRadius: BorderRadius.circular(16),
+                                    border: Border.all(
+                                      color: Color.fromRGBO(50, 50, 54, 1),
+                                      width: 2,
+                                    ),
                                   ),
-                                  child: Text("Public",
+                                  child: Text(
+                                    "Public",
                                     style: TextStyle(
                                       color: Color.fromRGBO(154, 152, 161, 1),
                                       fontSize: fontScale * 16,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                            SizedBox(height: uiHeight / 200,),
-                            Text('학교 수행평가임.',
+                            SizedBox(height: uiHeight / 200),
+                            Text(
+                              '학교 수행평가임.',
                               style: TextStyle(
                                 color: Color.fromRGBO(154, 152, 161, 1),
                                 fontSize: fontScale * 16,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: uiHeight / 70,),
+                            SizedBox(height: uiHeight / 70),
                             Row(
                               children: [
                                 Container(
@@ -5466,19 +6082,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                     color: Color.fromRGBO(0, 180, 171, 1),
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 600,),
-                                Text("Dart",
+                                SizedBox(width: uiWidth / 600),
+                                Text(
+                                  "Dart",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 100,),
-                                Icon(Icons.star_border,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)),
-                                Text("4",
+                                SizedBox(width: uiWidth / 100),
+                                Icon(
+                                  Icons.star_border,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
+                                ),
+                                Text(
+                                  "4",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
@@ -5491,68 +6111,72 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ),
                       ),
                     ),
-                    SizedBox(width: uiWidth / 80,),
+                    SizedBox(width: uiWidth / 80),
                     Expanded(
                       child: Container(
                         padding: EdgeInsets.only(
-                            top: uiHeight / 50,
-                            left: uiWidth / 110
+                          top: uiHeight / 50,
+                          left: uiWidth / 110,
                         ),
                         height: uiHeight / 8,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                                color: Color.fromRGBO(60, 60, 64, 1),
-                                width: 2
-                            )
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Color.fromRGBO(60, 60, 64, 1),
+                            width: 2,
+                          ),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.book_outlined,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)
+                                Icon(
+                                  Icons.book_outlined,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
                                 ),
-                                SizedBox(width: uiWidth / 300,),
-                                Text("Js-for-Beginners",
+                                SizedBox(width: uiWidth / 300),
+                                Text(
+                                  "Js-for-Beginners",
                                   style: TextStyle(
                                     color: Color.fromRGBO(68, 147, 248, 1),
                                     fontSize: fontScale * 18,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 200,),
+                                SizedBox(width: uiWidth / 200),
                                 Container(
                                   alignment: Alignment.center,
                                   width: uiWidth / 32,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16),
-                                      border: Border.all(
-                                          color:  Color.fromRGBO(50, 50, 54, 1),
-                                          width: 2
-                                      )
+                                    borderRadius: BorderRadius.circular(16),
+                                    border: Border.all(
+                                      color: Color.fromRGBO(50, 50, 54, 1),
+                                      width: 2,
+                                    ),
                                   ),
-                                  child: Text("Public",
+                                  child: Text(
+                                    "Public",
                                     style: TextStyle(
                                       color: Color.fromRGBO(154, 152, 161, 1),
                                       fontSize: fontScale * 16,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                            SizedBox(height: uiHeight / 200,),
-                            Text('JavaScript, 코딩 입문자를 위한 예제코드 v3',
+                            SizedBox(height: uiHeight / 200),
+                            Text(
+                              'JavaScript, 코딩 입문자를 위한 예제코드 v3',
                               style: TextStyle(
                                 color: Color.fromRGBO(154, 152, 161, 1),
                                 fontSize: fontScale * 16,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: uiHeight / 70,),
+                            SizedBox(height: uiHeight / 70),
                             Row(
                               children: [
                                 Container(
@@ -5563,19 +6187,23 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                                     color: Color.fromRGBO(241, 224, 90, 1),
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 600,),
-                                Text("JavaScript",
+                                SizedBox(width: uiWidth / 600),
+                                Text(
+                                  "JavaScript",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(width: uiWidth / 100,),
-                                Icon(Icons.star_border,
-                                    color: Color.fromRGBO(154, 152, 161, 1),
-                                    size: uiWidth / (designWidth / 22)),
-                                Text("17",
+                                SizedBox(width: uiWidth / 100),
+                                Icon(
+                                  Icons.star_border,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22),
+                                ),
+                                Text(
+                                  "17",
                                   style: TextStyle(
                                     color: Color.fromRGBO(154, 152, 161, 1),
                                     fontSize: fontScale * 16,
@@ -5590,10 +6218,10 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     ),
                   ],
                 ),
-                Container()
+                Container(),
               ],
             ),
-          ) // repo
+          ), // repo
         ],
       ),
     ];
