@@ -34,9 +34,12 @@ class _MyStatefulPageState extends State<MyStatefulPage>
   bool _isHovered_GetStart = false;
   bool _isHovered_Follow = false;
   bool _isFollowed = false;
+  bool _isFollowed_YEONGGYU = false;
   bool _isHovered_Organization = false;
   bool _isHovered_Email = false;
   bool _isHovered_Link = false;
+
+  int _currentProfileImageIndex = 0;
 
   int _currentIndex = 0;
   int _page2SizeBarIndex = 0;
@@ -71,14 +74,14 @@ class _MyStatefulPageState extends State<MyStatefulPage>
     });
     // 3. 왼쪽 이미지 애니메이션 초기화
     _leftController = AnimationController(
-      duration: const Duration(milliseconds: 2100), // 약간 다른 속도
+      duration: const Duration(milliseconds: 4200), // 약간 다른 속도
       vsync: this,
     )..repeat(reverse: true);
 
     _leftAnimation =
         Tween<Offset>(
           begin: Offset.zero,
-          end: const Offset(0.0, 0.022), // 약간 다른 움직임 범위
+          end: const Offset(0.0, 0.044), // 약간 다른 움직임 범위
         ).animate(
           CurvedAnimation(parent: _leftController, curve: Curves.easeInOut),
         );
@@ -105,14 +108,14 @@ class _MyStatefulPageState extends State<MyStatefulPage>
 
     // 3. 오른쪽 이미지 애니메이션 초기화
     _rightController = AnimationController(
-      duration: const Duration(milliseconds: 1900), // 약간 다른 속도
+      duration: const Duration(milliseconds: 3800), // 약간 다른 속도
       vsync: this,
     )..repeat(reverse: true);
 
     _rightAnimation =
         Tween<Offset>(
           begin: Offset.zero,
-          end: const Offset(0.0, 0.018), // 약간 다른 움직임 범위
+          end: const Offset(0.0, 0.054), // 약간 다른 움직임 범위
         ).animate(
           CurvedAnimation(parent: _rightController, curve: Curves.easeInOut),
         );
@@ -1842,7 +1845,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
           child: Stack(
             children: [
-              Expanded(
+              Positioned.fill(
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -2448,6 +2451,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           'assets/background4.png',
           'assets/background1.png',
           'assets/background3.png',
+          'assets/background1.png',
           'assets/background4.png',
         ]
           .map(
@@ -2639,7 +2643,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   SizedBox(width: uiWidth / (designWidth / 2)),
                   InkWell(
                     onTap: () {
-                      print("${uiWidth}, ${uiHeight}");
+                      // print("${uiWidth}, ${uiHeight}");
                       launchUrl(
                         Uri.parse(
                           "https://github.com/yeonggyu1110/project_jinro",
@@ -3460,7 +3464,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                           ),
                         ),
-                      ),
+                      ), // 팔로우 버튼
                       SizedBox(height: uiHeight / 100,),
                       SizedBox(height: uiHeight / 100,),
                       Row(
@@ -3510,7 +3514,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                           ),
                         ],
-                      ),
+                      ), // 팔로우
                       SizedBox(height: uiHeight / 50,),
                       Row(
                         children: [
@@ -3635,11 +3639,11 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ],
                       ), // 링크
                     ],
-                  )
+                  ) // profile
                 )
               ],
             ),
-          ),
+          ), //profile
           Container(
             padding: EdgeInsets.only(
                 top: uiHeight / 3.8,
@@ -3648,7 +3652,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
             ),
             child: Stack(
               children: [
-                Expanded(
+                Positioned.fill(
                   child: Container(
                     padding: EdgeInsets.only(
                       top: uiHeight / 50,
@@ -3656,19 +3660,15 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       right: uiWidth / 100,
                       bottom: uiHeight / 50,
                     ),
-                    // height: uiHeight / 1.6,
                     decoration: BoxDecoration(
                       border: Border(
                         left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
                         top: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
                         right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        // bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
                       ),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(12),
                         topRight: Radius.circular(12),
-                        // bottomLeft: Radius.circular(12),
-                        // bottomRight: Radius.circular(12),
                       )
                     ),
                     child: Column(
@@ -3752,9 +3752,9 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           height: uiHeight / 600,
                           color: Color.fromRGBO(61, 68, 71, 1),
                         ),
-                        Text(" ● React\n ● Vue.js\n ● Flutter",
+                        Text(" - React\n - Vue.js\n - Flutter",
                           style: TextStyle(
-                            color: Color.fromRGBO(240, 246, 252, 0.8),
+                            color: Color.fromRGBO(240, 246, 252, 0.9),
                             fontSize: fontScale * 24,
                             fontWeight: FontWeight.w700,
                           ),
@@ -3786,10 +3786,10 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ],
                     )
                   ),
-                )
+                ) // readme
               ],
             ),
-          )
+          ) // readme
         ],
       ),
       Stack(
@@ -3799,6 +3799,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
               left: uiWidth / 7,
               right: uiWidth / 7,
             ),
+            // height: uiHeight / 1.08,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -3806,9 +3807,14 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   child: Container(
                     decoration: BoxDecoration(
                         color: Color.fromRGBO(10, 10, 10, 1),
+                        borderRadius: BorderRadius.only(
+                            // bottomLeft: Radius.circular(24),
+                            // bottomRight: Radius.circular(24)
+                        ),
                         border: Border(
                           left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
                           right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
+                          // bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
                         )
                     ),
                   ),
@@ -3818,258 +3824,8 @@ class _MyStatefulPageState extends State<MyStatefulPage>
           ),
           Container(
             padding: EdgeInsets.only(
-                left: uiWidth / 2.95,
-                right: uiWidth / 6
-            ),
-            child: Stack(
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.only(
-                      top: uiHeight / 50,
-                      left: uiWidth / 100,
-                      right: uiWidth / 100,
-                      bottom: uiHeight / 50,
-                    ),
-                    decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: uiHeight / 80,),
-                        Text("이명호: 게으른 8년차 프론트엔드 개발자",
-                          style: TextStyle(
-                            color: Color.fromRGBO(240, 246, 252, 1),
-                            fontSize: fontScale * 28,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        Container(
-                          width: uiWidth,
-                          height: uiHeight / 300,
-                          color: Color.fromRGBO(61, 68, 71, 1),
-                        ),
-                        SizedBox(height: uiHeight / 140,),
-                        Text("사용 기술/스택",
-                          style: TextStyle(
-                            color: Color.fromRGBO(240, 246, 252, 1),
-                            fontSize: fontScale * 24,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        Text(" ● React\n ● TypeScript\n ● Flutter",
-                          style: TextStyle(
-                            color: Color.fromRGBO(240, 246, 252, 0.8),
-                            fontSize: fontScale * 24,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        SizedBox(height: uiHeight / 80,),
-                        Text("My Career Path ⌛",
-                          style: TextStyle(
-                            color: Color.fromRGBO(240, 246, 252, 1),
-                            fontSize: fontScale * 32,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        Container(
-                          width: uiWidth,
-                          height: uiHeight / 300,
-                          color: Color.fromRGBO(61, 68, 71, 1),
-                        ),
-                        SizedBox(height: uiHeight / 80,),
-                        Image(
-                          image: AssetImage("assets/careerPath.png"),
-                          fit: BoxFit.cover,
-                        ),
-                      ],
-                    )
-                  ),
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-      Stack(
-        children: [
-          Container(
-            padding: EdgeInsets.only(
-                left: uiWidth / 7,
-                right: uiWidth / 7,
-                bottom: uiHeight / 6,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Expanded(
-                  child: Container(
-                    height: uiHeight / 1.2,
-                    decoration: BoxDecoration(
-                        color: Color.fromRGBO(10, 10, 10, 1),
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(24),
-                            bottomRight: Radius.circular(24)
-                        ),
-                        border: Border(
-                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
-                        )
-                    ),
-                  ),
-                ),
-                Text(
-                  "나의 진로 경로 ",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: fontScale * 50,
-                    fontWeight: FontWeight.w100,
-                    fontFamily: "DoHyeon",
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-                top: uiHeight / 30,
-                left: uiWidth / 6,
-                right: uiWidth / 6
-            ),
-            child: Stack(
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.only(
-                      top: uiHeight / 50,
-                      left: uiWidth / 100,
-                      right: uiWidth / 100,
-                      bottom: uiHeight / 50,
-                    ),
-                    height: uiHeight / 1.6,
-                    width: uiWidth / 2,
-                    decoration: BoxDecoration(
-                        border: Border(
-                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                          top: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                          bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
-                        ),
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          topRight: Radius.circular(12),
-                          bottomLeft: Radius.circular(12),
-                          bottomRight: Radius.circular(12),
-                        )
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("YeongGyu1110",
-                              style: TextStyle(
-                                color: Color.fromRGBO(240, 246, 252, 1),
-                                fontSize: fontScale * 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(width: uiWidth / 600,),
-                            Text("/",
-                              style: TextStyle(
-                                color: Color.fromRGBO(145, 152, 161, 1),
-                                fontSize: fontScale * 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(width: uiWidth / 600,),
-                            Text("README",
-                              style: TextStyle(
-                                color: Color.fromRGBO(240, 246, 252, 1),
-                                fontSize: fontScale * 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(width: uiWidth / 1000,),
-                            Text(".",
-                              style: TextStyle(
-                                color: Color.fromRGBO(145, 152, 161, 1),
-                                fontSize: fontScale * 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(width: uiWidth / 1000,),
-                            Text("md",
-                              style: TextStyle(
-                                color: Color.fromRGBO(145, 152, 161, 1),
-                                fontSize: fontScale * 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: uiHeight / 80,),
-                        Text("이호림: 6년차 백엔드 개발자",
-                          style: TextStyle(
-                            color: Color.fromRGBO(240, 246, 252, 1),
-                            fontSize: fontScale * 28,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        Container(
-                          width: uiWidth,
-                          height: uiHeight / 300,
-                          color: Color.fromRGBO(61, 68, 71, 1),
-                        ),
-                        SizedBox(height: uiHeight / 140,),
-                        Text("사용 기술/스택",
-                          style: TextStyle(
-                            color: Color.fromRGBO(240, 246, 252, 1),
-                            fontSize: fontScale * 24,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        Text(" ● React\n ● TypeScript\n ● Flutter",
-                          style: TextStyle(
-                            color: Color.fromRGBO(240, 246, 252, 0.8),
-                            fontSize: fontScale * 24,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        SizedBox(height: uiHeight / 80,),
-                        Text("My Career Path ⌛",
-                          style: TextStyle(
-                            color: Color.fromRGBO(240, 246, 252, 1),
-                            fontSize: fontScale * 32,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        Container(
-                          width: uiWidth,
-                          height: uiHeight / 300,
-                          color: Color.fromRGBO(61, 68, 71, 1),
-                        ),
-                        SizedBox(height: uiHeight / 80,),
-                        Image(
-                          image: AssetImage("assets/careerPath.png"),
-                          fit: BoxFit.cover,
-                        ),
-                      ],
-                    )
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-                left: uiWidth / 1.52,
+                // top: uiHeight / 4.5,
+                left: uiWidth / 7.5,
                 right: uiWidth / 7
             ),
             child: Stack(
@@ -4082,34 +3838,44 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        clipBehavior: Clip.antiAlias,
-                        width: uiWidth / 6.5,
-                        height: uiWidth / 6.5,
-                        decoration: BoxDecoration(
-                            color: Colors.red,
-                            shape: BoxShape.circle
-                        ),
-                        child: Image(
-                          image: AssetImage("assets/profile.png"),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      SizedBox(height: uiHeight / 100,),
-                      Text("Lee Myung-ho",
-                        style: TextStyle(
-                          color: Color.fromRGBO(240, 246, 252, 1),
-                          fontSize: fontScale * 32,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "StackSansText",
-                        ),
-                      ),
-                      Text("Skyyype234",
-                        style: TextStyle(
-                          color: Color.fromRGBO(90, 96, 104, 1),
-                          fontSize: fontScale * 26,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            clipBehavior: Clip.antiAlias,
+                            width: uiWidth / 25,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle
+                            ),
+                            child: Image(
+                              image: AssetImage("assets/profile.png"),
+                            ),
+                          ),
+                          SizedBox(
+                            width: uiWidth / 200,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Lee Myung-ho",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(240, 246, 252, 1),
+                                  fontSize: fontScale * 32,
+                                  fontWeight: FontWeight.w800,
+                                  fontFamily: "StackSansText",
+                                ),
+                              ),
+                              Text("Skyyype234",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(90, 96, 104, 1),
+                                  fontSize: fontScale * 26,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
                       ),
                       SizedBox(height: uiHeight / 50,),
                       InkWell(
@@ -4131,7 +3897,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           },
                           child: AnimatedContainer(
                             duration: Duration(milliseconds: 100),
-                            width: uiWidth / 6.5,
+                            width: uiWidth / 6,
                             height: uiHeight / 30,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
@@ -4152,8 +3918,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: uiHeight / 100,),
+                      ), // 팔로우 버튼
                       SizedBox(height: uiHeight / 100,),
                       Row(
                         children: [
@@ -4202,40 +3967,1633 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                           ),
                         ],
-                      ),
+                      ), // 팔로우
                       SizedBox(height: uiHeight / 50,),
+                      Container(
+                        width: uiWidth / 6,
+                        height: uiHeight / 600,
+                        color: Color.fromRGBO(61, 68, 71, 1),
+                      ),
+                      SizedBox(height: uiHeight / 80,),
+                      Text("Achievements",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 0.9),
+                          fontSize: fontScale * 22,
+                          fontWeight: FontWeight.w500,
+                          decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
+                          decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 200,),
                       Row(
                         children: [
-                          Icon(Icons.email_outlined, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 700,),
-                          Text("skyyype.biz@gmail.com",
-                            style: TextStyle(
-                              color: Color.fromRGBO(240, 246, 252, 0.9),
-                              fontSize: fontScale * 20,
-                              fontWeight: FontWeight.w500,
+                          Container(
+                            clipBehavior: Clip.antiAlias,
+                            width: uiWidth / 30,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                            child: Image(
+                              fit: BoxFit.fill,
+                              image: AssetImage("assets/YOLO_Badge.png"),
+                            ),
+                          ),
+                          SizedBox(
+                            width: uiWidth / 800,
+                          ),
+                          Container(
+                            clipBehavior: Clip.antiAlias,
+                            width: uiWidth / 30,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                            child: Image(
+                              fit: BoxFit.fill,
+                              image: AssetImage("assets/PullShark.png"),
+                            ),
+                          ),
+                          SizedBox(
+                            width: uiWidth / 800,
+                          ),
+                          Container(
+                            clipBehavior: Clip.antiAlias,
+                            width: uiWidth / 30,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                            child: Image(
+                              fit: BoxFit.fill,
+                              image: AssetImage("assets/QuickDraw.png"),
                             ),
                           ),
                         ],
                       ),
-                      Row(
-                        children: [
-                          Icon(Icons.location_on_outlined, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
-                          SizedBox(width: uiWidth / 800,),
-                          Text("Moon",
-                            style: TextStyle(
-                              color: Color.fromRGBO(240, 246, 252, 0.9),
-                              fontSize: fontScale * 20,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
+                      SizedBox(height: uiHeight / 40,),
+                      Container(
+                        width: uiWidth / 6,
+                        height: uiHeight / 600,
+                        color: Color.fromRGBO(61, 68, 71, 1),
                       ),
-                    ],
+                      SizedBox(height: uiHeight / 80,),
+                      Text("Organizations",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 0.9),
+                          fontSize: fontScale * 22,
+                          fontWeight: FontWeight.w500,
+                          decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
+                          decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 200,),
+                      InkWell(
+                        onTap: () {
+                          launchUrl(
+                            Uri.parse(
+                              "https://github.com/532501124",
+                            ),
+                          );
+                        },
+                        child: Container(
+                          clipBehavior: Clip.antiAlias,
+                          width: uiWidth / 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)
+                          ),
+                          child: Image(
+                            fit: BoxFit.fill,
+                            image: AssetImage("assets/532501124.jpg"),
+                          ),
+                        ),
+                      ),
+                    ]
                   )
                 )
               ],
             ),
           ),
+          Container(
+            height: uiHeight / 1.6,
+            padding: EdgeInsets.only(
+                left: uiWidth / 2.95,
+                right: uiWidth / 6
+            ),
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      left: uiWidth / 100,
+                      right: uiWidth / 100,
+                      bottom: uiHeight / 50,
+                    ),
+                    decoration: BoxDecoration(
+                        border: Border(
+                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                          bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                        ),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(12),
+                          bottomRight: Radius.circular(12)
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // SizedBox(height: uiHeight / 80,),
+                        Text("Super Project: 초거대 프로젝트",
+                          style: TextStyle(
+                            color: Color.fromRGBO(240, 246, 252, 1),
+                            fontSize: fontScale * 36,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        Container(
+                          width: uiWidth,
+                          height: uiHeight / 600,
+                          color: Color.fromRGBO(61, 68, 71, 1),
+                        ),
+                        SizedBox(height: uiHeight / 140,),
+                        Text(" - DarkLSE\n - Grassy\n - MultiTool",
+                          style: TextStyle(
+                            color: Color.fromRGBO(240, 246, 252, 0.9),
+                            fontSize: fontScale * 24,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        SizedBox(height: uiHeight / 80,),
+                        Text("My Career Path ⌛ (2015-2020)",
+                          style: TextStyle(
+                            color: Color.fromRGBO(240, 246, 252, 1),
+                            fontSize: fontScale * 32,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        Container(
+                          width: uiWidth,
+                          height: uiHeight / 600,
+                          color: Color.fromRGBO(61, 68, 71, 1),
+                        ),
+                        SizedBox(height: uiHeight / 80,),
+                        Expanded(
+                          child: Image(
+                            image: AssetImage("assets/careerPath.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    )
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(
+              top: uiWidth / 3.14,
+              left: uiWidth / 2.95,
+              right: uiWidth / 6,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: uiHeight / 600,),
+                Text("Pinned",
+                  style: TextStyle(
+                    color: Color.fromRGBO(240, 246, 252, 0.9),
+                    fontSize: fontScale * 22,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(height: uiHeight / 400,),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.only(
+                            top: uiHeight / 50,
+                            left: uiWidth / 110
+                        ),
+                        height: uiHeight / 8,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                                color:  Color.fromRGBO(60, 60, 64, 1),
+                                width: 2
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.book_outlined,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)
+                                ),
+                                SizedBox(width: uiWidth / 300,),
+                                Text("Grassy",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(68, 147, 248, 1),
+                                    fontSize: fontScale * 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 200,),
+                                Container(
+                                  alignment: Alignment.center,
+                                  width: uiWidth / 32,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                          color:  Color.fromRGBO(50, 50, 54, 1),
+                                          width: 2
+                                      )
+                                  ),
+                                  child: Text("Public",
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(154, 152, 161, 1),
+                                      fontSize: fontScale * 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            SizedBox(height: uiHeight / 200,),
+                            Text('go inside and touch the grass.',
+                              style: TextStyle(
+                                color: Color.fromRGBO(154, 152, 161, 1),
+                                fontSize: fontScale * 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 70,),
+                            Row(
+                              children: [
+                                Container(
+                                  height: uiHeight / 80,
+                                  width: uiHeight / 80,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color.fromRGBO(241, 224, 90, 1),
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 600,),
+                                Text("JavaScript",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 100,),
+                                Icon(Icons.star_border,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)),
+                                Text("132",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: uiWidth / 80,),
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.only(
+                            top: uiHeight / 50,
+                            left: uiWidth / 110
+                        ),
+                        height: uiHeight / 8,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                                color: Color.fromRGBO(60, 60, 64, 1),
+                                width: 2
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.book_outlined,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)
+                                ),
+                                SizedBox(width: uiWidth / 300,),
+                                Text("DarkLSE",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(68, 147, 248, 1),
+                                    fontSize: fontScale * 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 200,),
+                                Container(
+                                  alignment: Alignment.center,
+                                  width: uiWidth / 32,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                          color:  Color.fromRGBO(50, 50, 54, 1),
+                                          width: 2
+                                      )
+                                  ),
+                                  child: Text("Public",
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(154, 152, 161, 1),
+                                      fontSize: fontScale * 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            SizedBox(height: uiHeight / 200,),
+                            Text('웹/텍스트 기반 탐험 게임, 잊혀진 문명을 되찾으세요',
+                              style: TextStyle(
+                                color: Color.fromRGBO(154, 152, 161, 1),
+                                fontSize: fontScale * 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 70,),
+                            Row(
+                              children: [
+                                Container(
+                                  height: uiHeight / 80,
+                                  width: uiHeight / 80,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color.fromRGBO(227, 76, 38, 1),
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 600,),
+                                Text("HTML",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 100,),
+                                Icon(Icons.star_border,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)),
+                                Text("53",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: uiHeight / 60,),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.only(
+                            top: uiHeight / 50,
+                            left: uiWidth / 110
+                        ),
+                        height: uiHeight / 8,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                                color:  Color.fromRGBO(60, 60, 64, 1),
+                                width: 2
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.book_outlined,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)
+                                ),
+                                SizedBox(width: uiWidth / 300,),
+                                Text("Origami",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(68, 147, 248, 1),
+                                    fontSize: fontScale * 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 200,),
+                                Container(
+                                  alignment: Alignment.center,
+                                  width: uiWidth / 32,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                          color:  Color.fromRGBO(50, 50, 54, 1),
+                                          width: 2
+                                      )
+                                  ),
+                                  child: Text("Public",
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(154, 152, 161, 1),
+                                      fontSize: fontScale * 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            SizedBox(height: uiHeight / 200,),
+                            Text('순수 HTML에서 종이접기를 접해보세요.',
+                              style: TextStyle(
+                                color: Color.fromRGBO(154, 152, 161, 1),
+                                fontSize: fontScale * 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 70,),
+                            Row(
+                              children: [
+                                Container(
+                                  height: uiHeight / 80,
+                                  width: uiHeight / 80,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color.fromRGBO(227, 76, 38, 1),
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 600,),
+                                Text("HTML",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 100,),
+                                Icon(Icons.star_border,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)),
+                                Text("173",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: uiWidth / 80,),
+                    Expanded(
+                      child: Container(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+      Stack(
+        children: [
+          Container(
+            padding: EdgeInsets.only(
+                // top: uiHeight / 8,
+                left: uiWidth / 7,
+                right: uiWidth / 7,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Expanded(
+                  child: Container(
+                    // height: uiHeight / 1.2,
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(10, 10, 10, 1),
+                        borderRadius: BorderRadius.only(
+                            // topLeft: Radius.circular(24),
+                            // topRight: Radius.circular(24)
+                        ),
+                        border: Border(
+                          // top: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
+                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
+                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
+                        )
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ), // 나의 진로 경로 container
+          Container(
+            padding: EdgeInsets.only(
+                top: uiHeight / 12,
+                left: uiWidth / 6,
+                right: uiWidth / 3
+            ),
+            child: Stack(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(
+                    top: uiHeight / 50,
+                    left: uiWidth / 100,
+                    right: uiWidth / 100,
+                    bottom: uiHeight / 50,
+                  ),
+                  // height: uiHeight / 1.38,
+                  width: uiWidth / 2,
+                  decoration: BoxDecoration(
+                      border: Border(
+                        left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                        top: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                        right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                        // bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                      ),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        topRight: Radius.circular(12),
+                        // bottomLeft: Radius.circular(12),
+                        // bottomRight: Radius.circular(12),
+                      )
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("YeongGyu1110",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 252, 1),
+                              fontSize: fontScale * 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 600,),
+                          Text("/",
+                            style: TextStyle(
+                              color: Color.fromRGBO(145, 152, 161, 1),
+                              fontSize: fontScale * 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 600,),
+                          Text("README",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 252, 1),
+                              fontSize: fontScale * 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 1000,),
+                          Text(".",
+                            style: TextStyle(
+                              color: Color.fromRGBO(145, 152, 161, 1),
+                              fontSize: fontScale * 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 1000,),
+                          Text("md",
+                            style: TextStyle(
+                              color: Color.fromRGBO(145, 152, 161, 1),
+                              fontSize: fontScale * 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: uiHeight / 100,),
+                      Expanded(
+                        child: Image(
+                          width: uiWidth,
+                          // height: uiHeight / 20,
+                          image: AssetImage("assets/yeonggyuAsciiBanner.png"),
+                          fit: BoxFit.cover
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 100,),
+                      Text("Hi, Where! 👋",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 1),
+                          fontSize: fontScale * 36,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      Container(
+                        width: uiWidth,
+                        height: uiHeight / 600,
+                        color: Color.fromRGBO(61, 68, 71, 1),
+                      ),
+                      SizedBox(height: uiHeight / 140,),
+                      Text("저는 영규(이)라고 해요!\n다음과 같은 기술을 주로 다뤄요:",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 0.9),
+                          fontSize: fontScale * 24,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Text("-",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 252, 0.9),
+                              fontSize: fontScale * 24,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 300,),
+                          Image(
+                            height: uiHeight / 24,
+                            image: AssetImage("assets/javascript.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                      Text("      └ MessengerBot을 활용한 메신저 앱 알림 자동답장기 제작\n      └ Discord.Js를 활용한 디스코드 봇 제작",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 0.9),
+                          fontSize: fontScale * 24,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Text("-",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 252, 0.9),
+                              fontSize: fontScale * 24,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 300,),
+                          Image(
+                            height: uiHeight / 28,
+                            image: AssetImage("assets/flutter.png"),
+                            fit: BoxFit.cover,
+                          ),
+                          SizedBox(width: uiWidth / 200,),
+                          Image(
+                            height: uiHeight / 28,
+                            image: AssetImage("assets/dart.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                      Text("      └ 앱 UI/UX 디자인\n      └ 프론트엔드 구현",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 0.9),
+                          fontSize: fontScale * 24,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 30,),
+                      Text("저는 개발자 2차 전직으로 2가지 길을 걸을 수 있어요.",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 0.9),
+                          fontSize: fontScale * 24,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Text("1. 유저와 상호작용하는 '프론트-엔드 개발자' 🖼️",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 1),
+                          fontSize: fontScale * 36,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+
+
+                      Container(
+                        width: uiWidth,
+                        height: uiHeight / 600,
+                        color: Color.fromRGBO(61, 68, 71, 1),
+                      ),
+                      SizedBox(height: uiHeight / 80,),
+                      Image(
+                        image: AssetImage("assets/flutter_careerPath.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+                  )
+                ),
+              ],
+            ),
+          ), // readme
+          Container(
+            padding: EdgeInsets.only(
+                top: uiHeight / 12,
+                left: uiWidth / 1.52,
+                right: uiWidth / 7
+            ),
+            child: Stack(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(
+                      top: uiHeight / 18,
+                      left: uiWidth / 40
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            (_currentProfileImageIndex == 3) ? _currentProfileImageIndex = 0 : _currentProfileImageIndex ++;
+                          });
+                        },
+                        child: Container(
+                          clipBehavior: Clip.antiAlias,
+                          width: uiWidth / 6.5,
+                          height: uiWidth / 6.5,
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(61, 68, 77, 1),
+                              shape: BoxShape.circle
+                          ),
+                          child: Image(
+                            image: (_currentProfileImageIndex == 0)
+                            ? AssetImage("assets/Yeonggyu.jpg")
+                            : (_currentProfileImageIndex == 1)
+                              ? AssetImage("assets/Yeonggyu2.jpg")
+                              : (_currentProfileImageIndex == 2)
+                                ? AssetImage("assets/hacker.png")
+                                : AssetImage("assets/Yeonggyu4.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 100,),
+                      Text("YEONGGYU1110",
+                        style: TextStyle(
+                          color: Color.fromRGBO(240, 246, 252, 1),
+                          fontSize: fontScale * 32,
+                          fontWeight: FontWeight.w800,
+                          fontFamily: "StackSansText",
+                        ),
+                      ),
+                      Text("YeongGyu1110",
+                        style: TextStyle(
+                          color: Color.fromRGBO(90, 96, 104, 1),
+                          fontSize: fontScale * 26,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(height: uiHeight / 50,),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            _isFollowed_YEONGGYU = !_isFollowed_YEONGGYU;
+                          });
+                        },
+                        child: MouseRegion(
+                          onEnter: (_) {
+                            setState(() {
+                              _isHovered_Follow = true;
+                            });
+                          },
+                          onExit: (_) {
+                            setState(() {
+                              _isHovered_Follow = false;
+                            });
+                          },
+                          child: AnimatedContainer(
+                            duration: Duration(milliseconds: 100),
+                            width: uiWidth / 6.5,
+                            height: uiHeight / 30,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                                color: (_isHovered_Follow) ? Color.fromRGBO(38, 44, 54, 1) : Color.fromRGBO(32, 40, 48, 1),
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                    color: Color.fromRGBO(61, 68, 77, 1),
+                                    width: 1.2
+                                )
+                            ),
+                            child: Text((_isFollowed_YEONGGYU) ? "Unfollow" : "Follow",
+                              style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 0.9),
+                                fontSize: fontScale * 18,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "StackSansText",
+                              ),
+                            ),
+                          ),
+                        ),
+                      ), // 팔로우 버튼
+                      SizedBox(height: uiHeight / 100,),
+                      SizedBox(height: uiHeight / 100,),
+                      Row(
+                        children: [
+                          Icon(Icons.people_alt_outlined,
+                              color: Color.fromRGBO(154, 152, 161, 1),
+                              size: uiWidth / (designWidth / 22)
+                          ),
+                          SizedBox(width: uiWidth / 700,),
+                          Text((_isFollowed_YEONGGYU) ? "116" : "115",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 238, 1),
+                              fontSize: fontScale * 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 700,),
+                          Text("followers",
+                            style: TextStyle(
+                              color: Color.fromRGBO(145, 152, 161, 0.9),
+                              fontSize: fontScale * 18,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 300,),
+                          Text("●",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 238, 0.8),
+                              fontSize: fontScale * 8,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 400,),
+                          Text("51",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 238, 1),
+                              fontSize: fontScale * 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: uiWidth / 700,),
+                          Text("followers",
+                            style: TextStyle(
+                              color: Color.fromRGBO(145, 152, 161, 0.9),
+                              fontSize: fontScale * 18,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ), // 팔로우
+                      SizedBox(height: uiHeight / 50,),
+                      Row(
+                        children: [
+                          Icon(Icons.apartment, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
+                          SizedBox(width: uiWidth / 800,),
+                          MouseRegion(
+                            onEnter: (_) {
+                              setState(() {
+                                _isHovered_Organization = true;
+                              });
+                            },
+                            onExit: (_) {
+                              setState(() {
+                                _isHovered_Organization = false;
+                              });
+                            },
+                            child: InkWell(
+                              onTap: () {
+                                launchUrl(
+                                  Uri.parse(
+                                    "https://github.com/LICHTKRANKHEIT",
+                                  ),
+                                );
+                              },
+                              child: Text("LICHTKRANKHEIT",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(240, 246, 252, 0.9),
+                                  fontSize: fontScale * 20,
+                                  fontWeight: FontWeight.w500,
+                                  decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
+                                  decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ), // 조직
+                      Row(
+                        children: [
+                          Icon(Icons.location_on_outlined, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
+                          SizedBox(width: uiWidth / 800,),
+                          Text("🪐",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 252, 0.9),
+                              fontSize: fontScale * 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ), // 달
+                      Row(
+                        children: [
+                          Icon(Icons.email_outlined, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
+                          SizedBox(width: uiWidth / 700,),
+                          MouseRegion(
+                            onEnter: (_) {
+                              setState(() {
+                                _isHovered_Email = true;
+                              });
+                            },
+                            onExit: (_) {
+                              setState(() {
+                                _isHovered_Email = false;
+                              });
+                            },
+                            child: InkWell(
+                              onTap: () {
+                                launchUrl(
+                                  Uri.parse(
+                                    "mailto:YeongGyu1110.work@gmail.com",
+                                  ),
+                                );
+                              },
+                              child: Text("YeongGyu1110.work@gmail.com",
+                                style: TextStyle(
+                                  color: (_isHovered_Email) ? Color.fromRGBO(68, 147, 248, 1) : Color.fromRGBO(240, 246, 252, 0.9),
+                                  fontSize: fontScale * 20,
+                                  fontWeight: FontWeight.w500,
+                                  decoration: (_isHovered_Email) ? TextDecoration.underline : null,
+                                  decorationColor: (_isHovered_Email) ? Color.fromRGBO(68, 147, 248, 1) : null,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ), // 이메일
+                      Row(
+                        children: [
+                          Icon(Icons.link, color: Color.fromRGBO(154, 152, 161, 1), size: uiWidth / (designWidth / 20)),
+                          SizedBox(width: uiWidth / 800,),
+                          MouseRegion(
+                            onEnter: (_) {
+                              setState(() {
+                                _isHovered_Link = true;
+                              });
+                            },
+                            onExit: (_) {
+                              setState(() {
+                                _isHovered_Link = false;
+                              });
+                            },
+                            child: InkWell(
+                              onTap: () {
+                                launchUrl(
+                                  Uri.parse(
+                                    "https://able-daughter-6e8.notion.site/YeongGyu-292a9dde58f480ba8a2bc0098e555938",
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                "https://notion.site/YeongGyu1110",
+                                style: TextStyle(
+                                  color: (_isHovered_Link) ? Color.fromRGBO(68, 147, 248, 1) : Color.fromRGBO(240, 246, 252, 0.9),
+                                  fontSize: fontScale * 20,
+                                  fontWeight: FontWeight.w500,
+                                  decoration: (_isHovered_Link) ? TextDecoration.underline : null,
+                                  decorationColor: (_isHovered_Link) ? Color.fromRGBO(68, 147, 248, 1) : null,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ), // 링크
+                    ],
+                  ) // profile
+                )
+              ],
+            ),
+          ), // profile
+        ],
+      ),
+      Stack(
+        children: [
+          Container(
+            height: uiHeight / 1.18,
+            padding: EdgeInsets.only(
+              left: uiWidth / 7,
+              right: uiWidth / 7,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(10, 10, 10, 1),
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(16),
+                          bottomRight: Radius.circular(16),
+                        ),
+                        border: Border(
+                          left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
+                          right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
+                          bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 1),
+                        )
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(
+                left: uiWidth / 1.52,
+                right: uiWidth / 7
+            ),
+            child: Stack(
+              children: [
+                Container(
+                    padding: EdgeInsets.only(
+                        top: uiHeight / 18,
+                        left: uiWidth / 40
+                    ),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    (_currentProfileImageIndex == 3) ? _currentProfileImageIndex = 0 : _currentProfileImageIndex ++;
+                                  });
+                                },
+                                child: Container(
+                                  clipBehavior: Clip.antiAlias,
+                                  width: uiWidth / 25,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle
+                                  ),
+                                  child: Image(
+                                    image: (_currentProfileImageIndex == 0)
+                                        ? AssetImage("assets/Yeonggyu.jpg")
+                                        : (_currentProfileImageIndex == 1)
+                                        ? AssetImage("assets/Yeonggyu2.jpg")
+                                        : (_currentProfileImageIndex == 2)
+                                        ? AssetImage("assets/hacker.png")
+                                        : AssetImage("assets/Yeonggyu4.jpg"),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: uiWidth / 200,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("YEONGGYU1110",
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(240, 246, 252, 1),
+                                      fontSize: fontScale * 32,
+                                      fontWeight: FontWeight.w800,
+                                      fontFamily: "StackSansText",
+                                    ),
+                                  ),
+                                  Text("YeongGyu1110",
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(90, 96, 104, 1),
+                                      fontSize: fontScale * 26,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          SizedBox(height: uiHeight / 50,),
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                _isFollowed_YEONGGYU = !_isFollowed_YEONGGYU;
+                              });
+                            },
+                            child: MouseRegion(
+                              onEnter: (_) {
+                                setState(() {
+                                  _isHovered_Follow = true;
+                                });
+                              },
+                              onExit: (_) {
+                                setState(() {
+                                  _isHovered_Follow = false;
+                                });
+                              },
+                              child: AnimatedContainer(
+                                duration: Duration(milliseconds: 100),
+                                width: uiWidth / 6,
+                                height: uiHeight / 30,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    color: (_isHovered_Follow) ? Color.fromRGBO(38, 44, 54, 1) : Color.fromRGBO(32, 40, 48, 1),
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                        color: Color.fromRGBO(61, 68, 77, 1),
+                                        width: 1.2
+                                    )
+                                ),
+                                child: Text((_isFollowed_YEONGGYU) ? "Unfollow" : "Follow",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(255, 255, 255, 0.9),
+                                    fontSize: fontScale * 18,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "StackSansText",
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: uiHeight / 100,),
+                          Row(
+                            children: [
+                              Icon(Icons.people_alt_outlined,
+                                  color: Color.fromRGBO(154, 152, 161, 1),
+                                  size: uiWidth / (designWidth / 22)
+                              ),
+                              SizedBox(width: uiWidth / 700,),
+                              Text((_isFollowed_YEONGGYU) ?  "116" : "115",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(240, 246, 238, 1),
+                                  fontSize: fontScale * 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(width: uiWidth / 700,),
+                              Text("followers",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(145, 152, 161, 0.9),
+                                  fontSize: fontScale * 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(width: uiWidth / 300,),
+                              Text("●",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(240, 246, 238, 0.8),
+                                  fontSize: fontScale * 8,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(width: uiWidth / 400,),
+                              Text("51",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(240, 246, 238, 1),
+                                  fontSize: fontScale * 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(width: uiWidth / 700,),
+                              Text("followers",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(145, 152, 161, 0.9),
+                                  fontSize: fontScale * 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ), // 팔로우
+                          SizedBox(height: uiHeight / 50,),
+                          Container(
+                            width: uiWidth / 6,
+                            height: uiHeight / 600,
+                            color: Color.fromRGBO(61, 68, 71, 1),
+                          ),
+                          SizedBox(height: uiHeight / 80,),
+                          Text("Achievements",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 252, 0.9),
+                              fontSize: fontScale * 22,
+                              fontWeight: FontWeight.w500,
+                              decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
+                              decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
+                            ),
+                          ),
+                          SizedBox(height: uiHeight / 200,),
+                          Row(
+                            children: [
+                              Container(
+                                clipBehavior: Clip.antiAlias,
+                                width: uiWidth / 30,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10)
+                                ),
+                                child: Image(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage("assets/YOLO_Badge.png"),
+                                ),
+                              ),
+                              SizedBox(
+                                width: uiWidth / 800,
+                              ),
+                              Container(
+                                clipBehavior: Clip.antiAlias,
+                                width: uiWidth / 30,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10)
+                                ),
+                                child: Image(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage("assets/PullShark.png"),
+                                ),
+                              ),
+                              SizedBox(
+                                width: uiWidth / 800,
+                              ),
+                              Container(
+                                clipBehavior: Clip.antiAlias,
+                                width: uiWidth / 30,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10)
+                                ),
+                                child: Image(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage("assets/QuickDraw.png"),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: uiHeight / 40,),
+                          Container(
+                            width: uiWidth / 6,
+                            height: uiHeight / 600,
+                            color: Color.fromRGBO(61, 68, 71, 1),
+                          ),
+                          SizedBox(height: uiHeight / 80,),
+                          Text("Organizations",
+                            style: TextStyle(
+                              color: Color.fromRGBO(240, 246, 252, 0.9),
+                              fontSize: fontScale * 22,
+                              fontWeight: FontWeight.w500,
+                              decoration: (_isHovered_Organization) ? TextDecoration.underline : null,
+                              decorationColor: (_isHovered_Organization) ? Color.fromRGBO(240, 246, 252, 0.9) : null,
+                            ),
+                          ),
+                          SizedBox(height: uiHeight / 200,),
+                          InkWell(
+                            onTap: () {
+                              launchUrl(
+                                Uri.parse(
+                                  "https://github.com/LICHTKRANKHEIT",
+                                ),
+                              );
+                            },
+                            child: Container(
+                              clipBehavior: Clip.antiAlias,
+                              width: uiWidth / 45,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              child: Image(
+                                fit: BoxFit.fill,
+                                image: AssetImage("assets/LICHTKRANKHEIT.jpg"),
+                              ),
+                            ),
+                          ),
+                        ]
+                    )
+                )
+              ],
+            ),
+          ), // 프로필
+          Container(
+            height: uiHeight / 1.66,
+            padding: EdgeInsets.only(
+                left: uiWidth / 6,
+                right: uiWidth / 3
+            ),
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      top: uiHeight / 50,
+                      left: uiWidth / 100,
+                      right: uiWidth / 100,
+                      bottom: uiHeight / 50,
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border(
+                        left: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                        right: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                        bottom: BorderSide(color: Color.fromRGBO(50, 50, 54, 1), width: 2),
+                      ),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(12),
+                          bottomRight: Radius.circular(12)
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: uiHeight / 30,),
+                        Text("2. 서버과 통신하는 뒷무대, '백-엔드' ⚙️",
+                          style: TextStyle(
+                            color: Color.fromRGBO(240, 246, 252, 1),
+                            fontSize: fontScale * 36,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        Container(
+                          width: uiWidth,
+                          height: uiHeight / 600,
+                          color: Color.fromRGBO(61, 68, 71, 1),
+                        ),
+                        SizedBox(height: uiHeight / 80,),
+                        Image(
+                          image: AssetImage("assets/backend_careerPath.png"),
+                          fit: BoxFit.cover,
+                        ),
+                        SizedBox(height: uiHeight / 30,),
+                        Text("쉿, 지금은 이런 기술을 배우고 있어요",
+                          style: TextStyle(
+                            color: Color.fromRGBO(240, 246, 252, 0.9),
+                            fontSize: fontScale * 34,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        Container(
+                          width: uiWidth,
+                          height: uiHeight / 600,
+                          color: Color.fromRGBO(61, 68, 71, 1),
+                        ),
+                        SizedBox(height: uiHeight / 100,),
+                        Row(
+                          children: [
+                            Text("-",
+                              style: TextStyle(
+                                color: Color.fromRGBO(240, 246, 252, 0.9),
+                                fontSize: fontScale * 24,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            SizedBox(width: uiWidth / 300,),
+                            Image(
+                              height: uiHeight / 26,
+                              image: AssetImage("assets/react.png"),
+                              fit: BoxFit.cover,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: uiHeight / 100,),
+                        Row(
+                          children: [
+                            Text("-",
+                              style: TextStyle(
+                                color: Color.fromRGBO(240, 246, 252, 0.9),
+                                fontSize: fontScale * 24,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            SizedBox(width: uiWidth / 300,),
+                            Image(
+                              height: uiHeight / 26,
+                              image: AssetImage("assets/flutter.png"),
+                              fit: BoxFit.cover,
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                  ),
+                )
+              ],
+            ),
+          ), // 리드미
+          Container(
+            padding: EdgeInsets.only(
+                top: uiWidth / 3.2,
+                left: uiWidth / 6,
+                right: uiWidth / 3
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Pinned",
+                  style: TextStyle(
+                    color: Color.fromRGBO(240, 246, 252, 0.9),
+                    fontSize: fontScale * 22,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(height: uiHeight / 400,),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.only(
+                            top: uiHeight / 50,
+                            left: uiWidth / 110
+                        ),
+                        height: uiHeight / 8,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                                color:  Color.fromRGBO(60, 60, 64, 1),
+                                width: 2
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.book_outlined,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)
+                                ),
+                                SizedBox(width: uiWidth / 300,),
+                                Text("project_JinRo",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(68, 147, 248, 1),
+                                    fontSize: fontScale * 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 200,),
+                                Container(
+                                  alignment: Alignment.center,
+                                  width: uiWidth / 32,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                          color:  Color.fromRGBO(50, 50, 54, 1),
+                                          width: 2
+                                      )
+                                  ),
+                                  child: Text("Public",
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(154, 152, 161, 1),
+                                      fontSize: fontScale * 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            SizedBox(height: uiHeight / 200,),
+                            Text('학교 수행평가임.',
+                              style: TextStyle(
+                                color: Color.fromRGBO(154, 152, 161, 1),
+                                fontSize: fontScale * 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 70,),
+                            Row(
+                              children: [
+                                Container(
+                                  height: uiHeight / 80,
+                                  width: uiHeight / 80,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color.fromRGBO(0, 180, 171, 1),
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 600,),
+                                Text("Dart",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 100,),
+                                Icon(Icons.star_border,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)),
+                                Text("4",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: uiWidth / 80,),
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.only(
+                            top: uiHeight / 50,
+                            left: uiWidth / 110
+                        ),
+                        height: uiHeight / 8,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                                color: Color.fromRGBO(60, 60, 64, 1),
+                                width: 2
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.book_outlined,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)
+                                ),
+                                SizedBox(width: uiWidth / 300,),
+                                Text("Js-for-Beginners",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(68, 147, 248, 1),
+                                    fontSize: fontScale * 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 200,),
+                                Container(
+                                  alignment: Alignment.center,
+                                  width: uiWidth / 32,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                          color:  Color.fromRGBO(50, 50, 54, 1),
+                                          width: 2
+                                      )
+                                  ),
+                                  child: Text("Public",
+                                    style: TextStyle(
+                                      color: Color.fromRGBO(154, 152, 161, 1),
+                                      fontSize: fontScale * 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            SizedBox(height: uiHeight / 200,),
+                            Text('JavaScript, 코딩 입문자를 위한 예제코드 v3',
+                              style: TextStyle(
+                                color: Color.fromRGBO(154, 152, 161, 1),
+                                fontSize: fontScale * 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: uiHeight / 70,),
+                            Row(
+                              children: [
+                                Container(
+                                  height: uiHeight / 80,
+                                  width: uiHeight / 80,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color.fromRGBO(241, 224, 90, 1),
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 600,),
+                                Text("JavaScript",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: uiWidth / 100,),
+                                Icon(Icons.star_border,
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    size: uiWidth / (designWidth / 22)),
+                                Text("17",
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(154, 152, 161, 1),
+                                    fontSize: fontScale * 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Container()
+              ],
+            ),
+          ) // repo
         ],
       ),
     ];
