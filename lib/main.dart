@@ -3237,11 +3237,6 @@ class _MyStatefulPageState extends State<MyStatefulPage>
       Container(),
     ];
 
-    late final List<Widget> _currentpage3_1Widget = [
-
-      Container(),
-    ];
-
     late final List<Widget> _page2Widget = [
       Column(
         children: [
@@ -3312,16 +3307,18 @@ class _MyStatefulPageState extends State<MyStatefulPage>
 
     final List<Widget> _backgrounds =
         [
-              'assets/background/background0.png',
-              'assets/background/background1.png',
-              'assets/background/background2.png',
-              'assets/background/background3.png',
-              'assets/background/background4.png',
-              'assets/background/background1.png',
-              'assets/background/background3.png',
-              'assets/background/background1.png',
-              'assets/background/background5.png',
-            ]
+          'assets/background/background0.png',
+          'assets/background/background1.png',
+          'assets/background/background2.png',
+          'assets/background/background3.png',
+          'assets/background/background4.png',
+          'assets/background/background1.png',
+          'assets/background/background3.png',
+          'assets/background/background1.png',
+          'assets/background/background1.png',
+          'assets/background/background2.png',
+          'assets/background/background6.png',
+        ]
             .map(
               (path) =>
                   SizedBox.expand(child: Image.asset(path, fit: BoxFit.fill)),
