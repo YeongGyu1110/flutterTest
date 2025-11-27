@@ -217,7 +217,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                     ),
                     child: Image(
-                      image: AssetImage('assets/halftone_0.png'),
+                      image: AssetImage('assets/halftone/halftone_0.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -413,7 +413,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                     ),
                     child: Image(
-                      image: AssetImage('assets/halftone_1.png'),
+                      image: AssetImage('assets/halftone/halftone_1.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -623,7 +623,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                     ),
                     child: Image(
-                      image: AssetImage('assets/halftone_2.png'),
+                      image: AssetImage('assets/halftone/halftone_2.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -1239,7 +1239,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                     ),
                     child: Image(
-                      image: AssetImage('assets/halftone_3.png'),
+                      image: AssetImage('assets/halftone/halftone_3.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -1471,7 +1471,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                     ),
                     child: Image(
-                      image: AssetImage('assets/halftone_4.png'),
+                      image: AssetImage('assets/halftone/halftone_4.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -1676,7 +1676,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                           ),
                           child: Image(
-                            image: AssetImage('assets/halftone_5.png'),
+                            image: AssetImage('assets/halftone/halftone_5.png'),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -1778,7 +1778,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ),
                         child: Image(
-                          image: AssetImage('assets/halftone_6.png'),
+                          image: AssetImage('assets/halftone/halftone_6.png'),
                         ),
                       ),
                     ),
@@ -2018,7 +2018,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ),
                         child: Image(
-                          image: AssetImage('assets/halftone_7.png'),
+                          image: AssetImage('assets/halftone/halftone_7.png'),
                         ),
                       ),
                     ),
@@ -2251,7 +2251,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ),
                       ),
                     ),
-                    child: Image(image: AssetImage('assets/halftone_8.png')),
+                    child: Image(image: AssetImage('assets/halftone/halftone_8.png')),
                   ),
                 ),
               ),
@@ -2279,7 +2279,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                         ),
                         child: Image(
-                          image: AssetImage('assets/halftone_9.png'),
+                          image: AssetImage('assets/halftone/halftone_9.png'),
                         ),
                       ),
                     ),
@@ -2463,7 +2463,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   borderRadius: BorderRadius.circular(24),
                 ),
                 child: Image(
-                  image: AssetImage("assets/careerPoster1.png"),
+                  image: AssetImage("assets/career-poster/careerPoster1.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -2767,7 +2767,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         borderRadius: BorderRadius.circular(24),
                       ),
                       child: Image(
-                        image: AssetImage("assets/careerPoster2.png"),
+                        image: AssetImage("assets/career-poster/careerPoster2.png"),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -2851,15 +2851,15 @@ class _MyStatefulPageState extends State<MyStatefulPage>
 
     final List<Widget> _backgrounds =
         [
-              'assets/background0.png',
-              'assets/background1.png',
-              'assets/background2.png',
-              'assets/background3.png',
-              'assets/background4.png',
-              'assets/background1.png',
-              'assets/background3.png',
-              'assets/background1.png',
-              'assets/background5.png',
+              'assets/background/background0.png',
+              'assets/background/background1.png',
+              'assets/background/background2.png',
+              'assets/background/background3.png',
+              'assets/background/background4.png',
+              'assets/background/background1.png',
+              'assets/background/background3.png',
+              'assets/background/background1.png',
+              'assets/background/background5.png',
             ]
             .map(
               (path) =>
@@ -2885,7 +2885,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     position: _leftAnimation,
                     child: Image(
                       width: uiWidth / 3,
-                      image: AssetImage('assets/ascii_left.png'),
+                      image: AssetImage('assets/hands/ascii_left.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -2894,7 +2894,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                     position: _rightAnimation,
                     child: Image(
                       width: uiWidth / 3,
-                      image: AssetImage('assets/ascii_right.png'),
+                      image: AssetImage('assets/hands/ascii_right.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -3199,7 +3199,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   position: _topAnimation,
                   child: Image(
                     width: uiWidth / 2.3,
-                    image: AssetImage("assets/ascii_top.png"),
+                    image: AssetImage("assets/hands/ascii_top.png"),
                   ),
                 ),
               ),
@@ -3210,7 +3210,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                   position: _bottomAnimation,
                   child: Image(
                     width: uiWidth / 2.6,
-                    image: AssetImage("assets/ascii_bottom.png"),
+                    image: AssetImage("assets/hands/ascii_bottom.png"),
                   ),
                 ),
               ),
@@ -3569,7 +3569,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         alignment: Alignment.topRight,
                         child: Image(
                           height: uiHeight / 4,
-                          image: AssetImage("assets/ascii_top2.png"),
+                          image: AssetImage("assets/hands/ascii_top2.png"),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -3581,7 +3581,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         alignment: Alignment.bottomLeft,
                         child: Image(
                           height: uiHeight / 4,
-                          image: AssetImage("assets/ascii_bottom2.png"),
+                          image: AssetImage("assets/hands/ascii_bottom2.png"),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -3813,7 +3813,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           shape: BoxShape.circle,
                         ),
                         child: Image(
-                          image: AssetImage("assets/profile.png"),
+                          image: AssetImage("assets/profile/profile-image/profile.png"),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -4187,7 +4187,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           child: Image(
                             width: uiWidth,
                             fit: BoxFit.fill,
-                            image: AssetImage("assets/SkyyypeBannerImage.png"),
+                            image: AssetImage("assets/profile/banner/SkyyypeBannerImage.png"),
                           ),
                         ),
                         SizedBox(height: uiHeight / 100),
@@ -4247,7 +4247,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             left: uiWidth / 100,
                           ),
                           height: uiHeight / 6,
-                          child: Image(image: AssetImage("assets/badge.png")),
+                          child: Image(image: AssetImage("assets/profile/badge/badge.png")),
                         ),
                       ],
                     ),
@@ -4316,7 +4316,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             width: uiWidth / 25,
                             decoration: BoxDecoration(shape: BoxShape.circle),
                             child: Image(
-                              image: AssetImage("assets/profile.png"),
+                              image: AssetImage("assets/profile/profile-image/profile.png"),
                             ),
                           ),
                           SizedBox(width: uiWidth / 200),
@@ -4476,7 +4476,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                             child: Image(
                               fit: BoxFit.fill,
-                              image: AssetImage("assets/YOLO_Badge.png"),
+                              image: AssetImage("assets/profile/achievements/YOLO_Badge.png"),
                             ),
                           ),
                           SizedBox(width: uiWidth / 800),
@@ -4488,7 +4488,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                             child: Image(
                               fit: BoxFit.fill,
-                              image: AssetImage("assets/PullShark.png"),
+                              image: AssetImage("assets/profile/achievements/PullShark.png"),
                             ),
                           ),
                           SizedBox(width: uiWidth / 800),
@@ -4500,7 +4500,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                             child: Image(
                               fit: BoxFit.fill,
-                              image: AssetImage("assets/QuickDraw.png"),
+                              image: AssetImage("assets/profile/achievements/QuickDraw.png"),
                             ),
                           ),
                         ],
@@ -4539,7 +4539,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                           child: Image(
                             fit: BoxFit.fill,
-                            image: AssetImage("assets/532501124.jpg"),
+                            image: AssetImage("assets/organizations/532501124.jpg"),
                           ),
                         ),
                       ),
@@ -4624,7 +4624,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         SizedBox(height: uiHeight / 80),
                         Expanded(
                           child: Image(
-                            image: AssetImage("assets/careerPath.png"),
+                            image: AssetImage("assets/profile/career-path/careerPath.png"),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -5117,7 +5117,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         child: Image(
                           width: uiWidth,
                           // height: uiHeight / 20,
-                          image: AssetImage("assets/yeonggyuAsciiBanner.png"),
+                          image: AssetImage("assets/profile/banner/yeonggyuAsciiBanner.png"),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -5157,7 +5157,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           SizedBox(width: uiWidth / 300),
                           Image(
                             height: uiHeight / 24,
-                            image: AssetImage("assets/javascript.png"),
+                            image: AssetImage("assets/profile/badge/javascript.png"),
                             fit: BoxFit.cover,
                           ),
                         ],
@@ -5183,13 +5183,13 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           SizedBox(width: uiWidth / 300),
                           Image(
                             height: uiHeight / 28,
-                            image: AssetImage("assets/flutter.png"),
+                            image: AssetImage("assets/profile/badge/flutter.png"),
                             fit: BoxFit.cover,
                           ),
                           SizedBox(width: uiWidth / 200),
                           Image(
                             height: uiHeight / 28,
-                            image: AssetImage("assets/dart.png"),
+                            image: AssetImage("assets/profile/badge/dart.png"),
                             fit: BoxFit.cover,
                           ),
                         ],
@@ -5227,7 +5227,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                       ),
                       SizedBox(height: uiHeight / 80),
                       Image(
-                        image: AssetImage("assets/flutter_careerPath.png"),
+                        image: AssetImage("assets/profile/career-path/flutter_careerPath.png"),
                         fit: BoxFit.cover,
                       ),
                     ],
@@ -5270,12 +5270,12 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                           child: Image(
                             image: (_currentProfileImageIndex == 0)
-                                ? AssetImage("assets/Yeonggyu.jpg")
+                                ? AssetImage("assets/profile/profile-image/yeonggyu.jpg")
                                 : (_currentProfileImageIndex == 1)
-                                ? AssetImage("assets/Yeonggyu2.jpg")
+                                ? AssetImage("assets/profile/profile-image/yeonggyu2.jpg")
                                 : (_currentProfileImageIndex == 2)
-                                ? AssetImage("assets/hacker.png")
-                                : AssetImage("assets/Yeonggyu4.jpg"),
+                                ? AssetImage("assets/profile/profile-image/hacker.png")
+                                : AssetImage("assets/profile/profile-image/yeonggyu4.jpg"),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -5631,12 +5631,12 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                               decoration: BoxDecoration(shape: BoxShape.circle),
                               child: Image(
                                 image: (_currentProfileImageIndex == 0)
-                                    ? AssetImage("assets/Yeonggyu.jpg")
+                                    ? AssetImage("assets/profile/profile-image/yeonggyu.jpg")
                                     : (_currentProfileImageIndex == 1)
-                                    ? AssetImage("assets/Yeonggyu2.jpg")
+                                    ? AssetImage("assets/profile/profile-image/yeonggyu2.jpg")
                                     : (_currentProfileImageIndex == 2)
-                                    ? AssetImage("assets/hacker.png")
-                                    : AssetImage("assets/Yeonggyu4.jpg"),
+                                    ? AssetImage("assets/profile/profile-image/hacker.png")
+                                    : AssetImage("assets/profile/profile-image/yeonggyu4.jpg"),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -5798,7 +5798,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                             child: Image(
                               fit: BoxFit.fill,
-                              image: AssetImage("assets/YOLO_Badge.png"),
+                              image: AssetImage("assets/profile/achievements/YOLO_Badge.png"),
                             ),
                           ),
                           SizedBox(width: uiWidth / 800),
@@ -5810,7 +5810,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                             child: Image(
                               fit: BoxFit.fill,
-                              image: AssetImage("assets/PullShark.png"),
+                              image: AssetImage("assets/profile/achievements/PullShark.png"),
                             ),
                           ),
                           SizedBox(width: uiWidth / 800),
@@ -5822,7 +5822,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             ),
                             child: Image(
                               fit: BoxFit.fill,
-                              image: AssetImage("assets/QuickDraw.png"),
+                              image: AssetImage("assets/profile/achievements/QuickDraw.png"),
                             ),
                           ),
                         ],
@@ -5863,7 +5863,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                           ),
                           child: Image(
                             fit: BoxFit.fill,
-                            image: AssetImage("assets/LICHTKRANKHEIT.jpg"),
+                            image: AssetImage("assets/organizations/LICHTKRANKHEIT.jpg"),
                           ),
                         ),
                       ),
@@ -5925,7 +5925,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                         ),
                         SizedBox(height: uiHeight / 80),
                         Image(
-                          image: AssetImage("assets/backend_careerPath.png"),
+                          image: AssetImage("assets/profile/career-path/backend_careerPath.png"),
                           fit: BoxFit.cover,
                         ),
                         SizedBox(height: uiHeight / 30),
@@ -5956,7 +5956,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             SizedBox(width: uiWidth / 300),
                             Image(
                               height: uiHeight / 26,
-                              image: AssetImage("assets/react.png"),
+                              image: AssetImage("assets/profile/badge/react.png"),
                               fit: BoxFit.cover,
                             ),
                           ],
@@ -5975,7 +5975,7 @@ class _MyStatefulPageState extends State<MyStatefulPage>
                             SizedBox(width: uiWidth / 300),
                             Image(
                               height: uiHeight / 26,
-                              image: AssetImage("assets/flutter.png"),
+                              image: AssetImage("assets/profile/badge/flutter.png"),
                               fit: BoxFit.cover,
                             ),
                           ],
